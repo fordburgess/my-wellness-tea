@@ -6,5 +6,11 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact'
   get '/plants' => 'pages#plants'
 
+  # admin routes
+  namespace :admin do
+    root to: 'admin#dashboard'
+    resources :products
+  end
+
   resources :products, only: [:index, :show]
 end

@@ -1,0 +1,3 @@
+class Tea < Product
+
+end

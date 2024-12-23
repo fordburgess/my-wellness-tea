@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   root to: 'pages#home'
 
-  resources :teas, only: [:index, :show]
+  resources :products, only: [:index, :show]
 end

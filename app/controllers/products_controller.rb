@@ -4,6 +4,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all # where product.type == params.type
+    @products = Product.where(type: params[:type])
   end
 end

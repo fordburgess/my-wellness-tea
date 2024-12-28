@@ -1,0 +1,22 @@
+<div class="navbar-container px-3.5">
+  <div class="w-full flex justify-between">
+    <p><strong>Logo</strong></p>
+    <div class="right-display-desktop flex justify-between">
+      <%= link_to "Products", products_path %>
+      <%= link_to "Plants", plants_path %>
+      <%= link_to "Contact", contact_path %>
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <%= link_to "Profile", admin_root_path %>
+        <% else %>
+          <%= link_to "Profile", edit_user_registration_path(@user) %>
+        <% end %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+      <% end %>
+    </div>
+    <div class="right-display-mobile">
+      <p>Simple mobile menu</p>
+    </div>
+  </div>
+</div>

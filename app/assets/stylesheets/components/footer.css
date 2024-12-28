@@ -1,0 +1,7 @@
+.footer-container {
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(169, 209, 248);
+}

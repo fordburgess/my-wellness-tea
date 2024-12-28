@@ -1,0 +1,10 @@
+h1, p {
+  margin: 0;
+}
+
+
+.info-card {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(228, 228, 228, 0.481);
+}

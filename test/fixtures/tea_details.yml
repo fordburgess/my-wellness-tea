@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  infusion_time: 1
+  infusion_temperature: 1
+  time_of_day: MyString
+  dosage: 1.5
+
+two:
+  infusion_time: 1
+  infusion_temperature: 1
+  time_of_day: MyString
+  dosage: 1.5

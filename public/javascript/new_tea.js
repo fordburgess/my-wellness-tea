@@ -4,18 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
   let nextButton = document.getElementById("form-next-toggle");
   let backButton = document.getElementById("form-back-toggle");
 
-  let preliminaryInfo = document.getElementById("preliminary-info");
-  let secondaryInfo = document.getElementById("secondary-info");
+  let preliminarySection = document.getElementById("0");
+  let detailsSection = document.getElementById("1");
+  let finalSection = document.getElementById("2");
+
+  let sections = [preliminarySection, detailsSection, finalSection]
 
   const updateDisplay = () => {
-    if (currentStep === 0) {
-      secondaryInfo.style.display = 'none';
-      preliminaryInfo.style.display = 'block';
-    }
-    else {
-      secondaryInfo.style.display = 'block';
-      preliminaryInfo.style.display = 'none';
-    }
+    sections.forEach((section, index) => {
+      if (index == currentStep) {
+        section.style.display = 'block';
+      }
+      else {
+        section.style.display = 'none';
+      }
+    })
   }
 
   nextButton.addEventListener('click', (e) => {

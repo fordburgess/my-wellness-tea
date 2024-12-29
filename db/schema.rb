@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_12_29_130507) do
+ActiveRecord::Schema.define(version: 2024_12_29_163645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 2024_12_29_130507) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "type"
     t.float "weight"
+  end
+
+  create_table "tea_details", force: :cascade do |t|
+    t.integer "infusion_time"
+    t.integer "infusion_temperature"
+    t.string "time_of_day"
+    t.float "dosage"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_tea_details_on_product_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +49,5 @@ ActiveRecord::Schema.define(version: 2024_12_29_130507) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tea_details", "products", on_delete: :cascade
 end

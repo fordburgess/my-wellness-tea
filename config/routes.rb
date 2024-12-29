@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   # admin routes
   namespace :admin do
     root to: 'admin#dashboard'
-    resources :products
+    # resources :products
+    resources :teas
   end
 
   resources :products, only: [:index, :show]

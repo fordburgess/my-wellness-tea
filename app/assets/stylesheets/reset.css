@@ -2,6 +2,24 @@ h1, p {
   margin: 0;
 }
 
+input[type="text"],
+input[type="number"],
+input[type="checkbox"],
+select {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: rgb(169, 209, 248);
+  border-radius: 4px;
+  padding: 10px 20px;
+
+  &:hover {
+    cursor: pointer
+  }
+}
+
 
 .info-card {
   padding: 10px;

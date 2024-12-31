@@ -2,6 +2,10 @@ h1, p {
   margin: 0;
 }
 
+p, a {
+  font-family: 'Fira Sans', serif;
+}
+
 input[type="text"],
 input[type="number"],
 input[type="checkbox"],

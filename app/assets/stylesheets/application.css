@@ -17,6 +17,9 @@
  @import "~/stylesheets/reset";
  @import "~/stylesheets/components/navbar";
  @import "~/stylesheets/components/footer";
+ @import "~/stylesheets/components/drawer";
+ @import "~/stylesheets/pages/home";
+
 
  html, body {
   margin: 0;
@@ -28,14 +31,21 @@
  }
 
  main {
-  margin-top: 5vh;
+  margin-top: 7vh;
   flex: 1;
-  padding: 0 20px;
+  /* padding: 0 40px; */
+  min-height: calc(100vh - 50px);
+ }
+
+ p, a {
+  font-family: "Fira Sans", serif;
+  font-weight: 200;
+  font-style: normal;
  }
 
  @media (min-width: 900px) {
   main {
     margin-top: 8vh;
-    padding: 10px 100px;
+    /* padding: 10px 100px; */
   }
  }

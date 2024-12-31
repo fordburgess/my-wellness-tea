@@ -1,22 +1,19 @@
-<div class="navbar-container px-3.5">
+<script src="/javascript/drawer_functionality.js"></script>
+<div class="navbar-container">
   <div class="w-full flex justify-between">
-    <p><strong>Logo</strong></p>
-    <div class="right-display-desktop flex justify-between">
-      <%= link_to "Products", products_path %>
-      <%= link_to "Plants", plants_path %>
-      <%= link_to "Contact", contact_path %>
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <%= link_to "Profile", admin_root_path %>
-        <% else %>
-          <%= link_to "Profile", edit_user_registration_path(@user) %>
-        <% end %>
-      <% else %>
-        <%= link_to "Sign In", new_user_session_path %>
-      <% end %>
+    <div class="w-1/4">
+      <%= image_tag "logo-main.png", class: "navbar-logo" %>
     </div>
-    <div class="right-display-mobile">
-      <p>Simple mobile menu</p>
+    <div class="desktop-links w-1/2 justify-around items-center">
+      <%= link_to "Acceuil", root_path %>
+      <%= link_to "Tisanes", products_path %>
+      <%= link_to "Plantes", plants_path %>
+      <%= link_to "Contact", contact_path %>
+    </div>
+    <div class="desktop-helpers w-1/4 flex justify-between justify-around items-center">
+      <p>Langue</p>
+      <%= image_tag "hamburger-menu.png", class: "hamburger-menu", id: "hamburger-menu" %>
+      <%= render partial: "/shared/drawer" %>
     </div>
   </div>
 </div>

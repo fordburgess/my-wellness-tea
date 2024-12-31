@@ -28,6 +28,15 @@
   max-width: 40px;
 }
 
+.helper-image {
+  height: 25px;
+  width: 25px;
+}
+
+#language-select, #cart-icon, #profile-icon {
+  display: none;
+}
+
 @media (min-width: 900px) {
   .navbar-container {
     height: 8vh;
@@ -40,9 +49,21 @@
 
   .desktop-links {
     display: flex;
+    /* margin-left: -0px; */
   }
 
-  .hamburger-menu {
+  #language-select, #cart-icon, #profile-icon {
+    display: block;
+  }
+
+  #language-select {
+    font-size: 0.85rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* padding: 5px 20px; */
+  }
+
+  #hamburger-menu {
     display: none;
   }
 }

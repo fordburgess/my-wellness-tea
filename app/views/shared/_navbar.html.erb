@@ -1,18 +1,24 @@
 <script src="/javascript/drawer_functionality.js"></script>
 <div class="navbar-container">
   <div class="w-full flex justify-between">
-    <div class="w-1/4">
+    <div class="">
       <%= image_tag "logo-main.png", class: "navbar-logo" %>
     </div>
     <div class="desktop-links w-1/2 justify-around items-center">
-      <%= link_to "Acceuil", root_path %>
+      <%= link_to "Accueil", root_path %>
       <%= link_to "Tisanes", products_path %>
       <%= link_to "Plantes", plants_path %>
       <%= link_to "Contact", contact_path %>
     </div>
-    <div class="desktop-helpers w-1/4 flex justify-between justify-around items-center">
-      <p>Langue</p>
-      <%= image_tag "hamburger-menu.png", class: "hamburger-menu", id: "hamburger-menu" %>
+    <div class="desktop-helpers w-1/5 flex justify-between justify-around items-center">
+      <select id="language-select">
+        <option>Français</option>
+        <option>Deutsch</option>
+        <option>Italiano</option>
+      </select>
+      <%= image_tag "cart-icon.png", class: "helper-image", id: "cart-icon" %>
+      <%= image_tag "profile-icon.png", class: "helper-image", id: "profile-icon" %>
+      <%= image_tag "hamburger-menu.png", class: "helper-image", id: "hamburger-menu" %>
       <%= render partial: "/shared/drawer" %>
     </div>
   </div>

@@ -1,5 +1,19 @@
 <div class="drawer-container" id="drawer-container">
-  <div class="drawer-menu" id="drawer-menu">
-    Hello
+  <div class="drawer-menu p-4" id="drawer-menu">
+    <%= image_tag "x-icon.png", class: "x-icon", id: "x-icon" %>
+    <ul>
+      <li>
+        <%= link_to "Acceuil", root_path %>
+      </li>
+      <li>
+        <%= link_to "Tisanes", products_path %>
+      </li>
+      <li>
+        <%= link_to "Plantes", plants_path %>
+      </li>
+      <li>
+        <%= link_to "Contact", contact_path %>
+      </li>
+    </ul>
   </div>
 </div>

@@ -20,6 +20,7 @@
  @import "~/stylesheets/components/drawer";
  @import "~/stylesheets/pages/home";
  @import "~/stylesheets/teas/index";
+ @import "~/stylesheets/teas/show";
  @import "~/stylesheets/devise/auth_form";
 
 

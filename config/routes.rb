@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     resources :teas
   end
 
-  resources :products, only: [:index, :show]
+  resources :teas, only: [:index, :show]
 end

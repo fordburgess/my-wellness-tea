@@ -19,6 +19,7 @@
  @import "~/stylesheets/components/footer";
  @import "~/stylesheets/components/drawer";
  @import "~/stylesheets/pages/home";
+ @import "~/stylesheets/teas/index";
 
 
  html, body {

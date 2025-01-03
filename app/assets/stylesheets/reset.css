@@ -2,7 +2,7 @@ h1, p {
   margin: 0;
 }
 
-p, a {
+p, a, h6 {
   font-family: 'Fira Sans', serif;
 }
 

@@ -17,7 +17,9 @@
         <option>Italiano</option>
       </select>
       <%= image_tag "cart-icon.png", class: "helper-image", id: "cart-icon" %>
-      <%= image_tag "profile-icon.png", class: "helper-image", id: "profile-icon" %>
+      <%= link_to new_user_session_path, class: "helper-image", id: "profile-icon" do %>
+        <%= image_tag "profile-icon.png" %>
+      <% end %>
       <%= image_tag "hamburger-menu.png", class: "helper-image", id: "hamburger-menu" %>
       <%= render partial: "/shared/drawer" %>
     </div>

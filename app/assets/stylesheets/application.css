@@ -20,6 +20,7 @@
  @import "~/stylesheets/components/drawer";
  @import "~/stylesheets/pages/home";
  @import "~/stylesheets/teas/index";
+ @import "~/stylesheets/devise/auth_form";
 
 
  html, body {
@@ -29,6 +30,7 @@
   height: 100%;
   overflow-x: hidden;
   background-color: rgb(247, 247, 247);
+  overscroll-behavior: none;
  }
 
  main {

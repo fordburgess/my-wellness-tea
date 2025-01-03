@@ -17,4 +17,5 @@
   <div class="options flex flex-col">
     <%= link_to "Create New Tea", new_admin_tea_path %>
   </div>
+  <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
 </div>

@@ -32,9 +32,7 @@
 }
 
 .product-item {
-  border-radius: 4px;
-  overflow: hidden;
-  transition: 0.2s;
+  /* transition: 0.2s; */
 }
 
 .product-item:hover {
@@ -44,6 +42,7 @@
 .product-item img {
   height: 200px;
   width: 100%;
+  border-radius: 4px;
   object-fit: cover;
   object-position: center;
   margin-bottom: 5px;

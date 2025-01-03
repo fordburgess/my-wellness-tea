@@ -3,9 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let categorySelect = document.getElementById("category-select");
 
   categorySelect.addEventListener("change", (e) => {
-    console.log("Hello")
-    filterForm.submit();
     e.preventDefault();
+    filterForm.submit();
   })
 
 })

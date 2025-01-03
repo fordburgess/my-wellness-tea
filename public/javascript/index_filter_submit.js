@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let filterForm = document.getElementById("filter-section");
   let categorySelect = document.getElementById("category-select");
+  let products = document.querySelectorAll(".product-container");
 
   categorySelect.addEventListener("change", (e) => {
-    e.preventDefault();
-    filterForm.submit();
+    let category = e.currentTarget.value;
+    products.forEach((product) => {
+      if (product.dataset.category == category) {
+        product.style.display = 'block';
+      }
+      else {
+        product.style.display = 'none';
+      }
+    })
   })
-
 })

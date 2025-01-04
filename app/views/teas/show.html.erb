@@ -1,0 +1,46 @@
+<div class="tea-show-page-container w-full">
+  <div class="mb-4">
+    <%= link_to "All Teas", teas_path, style: 'text-decoration: underline' %> / <%= @tea.title %>
+  </div>
+  <div class="tea-show-page-subcontainer">
+    <div class="tea-image-container">
+      <%= image_tag ["tea-lake-2.jpeg", "tea-wellbeing-2.png", "tea-woman-2.jpeg"].sample, class: 'show-page-image' %>
+    </div>
+    <div class="tea-info-container">
+      <%
+        category_color = {
+          "Bien-être" => "#004f9f",
+          "Bien-être digestif" => "#008337",
+          "Bien-être chez la femme" => "#a60063",
+          "Hiver" => "#67c4d3",
+        }
+      %>
+      <div class="w-full flex justify-between" style="margin-bottom: 1.5rem">
+        <div style="text-align: left;">
+          <h1><%= @tea.title %></h1>
+          <h6 style="color: <%= category_color[@tea.tea_detail.category] || '#000' %>;"><strong><%= @tea.tea_detail.category %></strong></h6>
+        </div>
+        <p class="md:text-xl"><%= sprintf('%.2f', @tea.price) %> CHF</p>
+      </div>
+      <div class="mb-8">
+        <h4>Ingrédients</h4>
+        <div class="special-tea-info" style="border-top: solid 1px <%= category_color[@tea.tea_detail.category] || '#000' %>;">
+          <p>Vigne rouge feuilles BIO, Hibiscus fleurs BIO, Ortie feuilles BIO, Prêle parties aériennes BIO, Queues de cerise BIO, Cynorrhodon fruits BIO, Pomme fruits BIO</p>
+        </div>
+      </div>
+      <div>
+        <h4>Préparation</h4>
+        <div class="special-tea-info mb-8" style="border-top: solid 1px <%= category_color[@tea.tea_detail.category] || '#000' %>;">
+          <p><strong>Temps d'infusion:</strong> <%= @tea.tea_detail.infusion_time %> minutes</p>
+          <p><strong>Température d'infusion:</strong> <%= @tea.tea_detail.infusion_temperature %>°</p>
+          <p><strong>Moment de journée:</strong> <%= @tea.tea_detail.time_of_day %></p>
+          <p><strong>Dosage:</strong> <%= @tea.tea_detail.dosage %>cl</p>
+          <p><strong>Poids:</strong> 60g</p>
+        </div>
+      </div>
+      <div>
+        <%= button_to "Ajouter au Panier - #{sprintf('%.2f', @tea.price)} CHF", line_items_path(:product_id => @tea.id), class: "cart-add-button" %>
+      </div>
+    </div>
+  </div>
+</div>

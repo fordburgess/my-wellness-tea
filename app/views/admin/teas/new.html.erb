@@ -1,0 +1,51 @@
+<script src="/javascript/new_tea.js"></script>
+<div class="w-full grid place-items-center pt-10">
+  <h1>New product page</h1>
+  <div class="w-1/2">
+    <%= form_for [:admin, @tea] do |form| %>
+      <div class="product-form-section" id="0">
+        <div class="flex flex-col mb-6">
+          <%= form.label :title %>
+          <%= form.text_field :title %>
+        </div>
+        <div class="flex flex-col mb-6">
+          <%= form.label :price_chf %>
+          <%= form.number_field :price, step: "any" %>
+        </div>
+        <div class="flex flex-col mb-6">
+          <%= form.label :in_stock %>
+          <%= form.check_box :stock %>
+        </div>
+      </div>
+      <div class="product-form-section" id="1">
+        <p>Tea Details</p>
+        <%= form.fields_for :tea_detail, TeaDetail.new do |details_form| %>
+          <div class="flex flex-col mb-6">
+            <%= details_form.label :infusion_temperature %>
+            <%= details_form.number_field :infusion_temperature %>
+          </div>
+          <div class="flex flex-col mb-6">
+            <%= details_form.label :infusion_time %>
+            <%= details_form.number_field :infusion_time %>
+          </div>
+          <div class="flex flex-col mb-6">
+            <%= details_form.label :time_of_day %>
+            <%= details_form.text_field :time_of_day %>
+          </div>
+          <div class="flex flex-col mb-6">
+            <%= details_form.label :dosage %>
+            <%= details_form.number_field :dosage %>
+          </div>
+        <% end %>
+      </div>
+      <div class="product-form-section" id="2">
+        <p>Submit Product</p>
+        <%= form.submit "Submit" %>
+      </div>
+      <div class="w-full flex justify-between">
+        <button id="form-back-toggle">Back</button>
+        <button id="form-next-toggle">Next</button>
+      </div>
+    <% end %>
+  </div>
+</div>

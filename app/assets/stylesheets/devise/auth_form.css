@@ -1,0 +1,42 @@
+.auth-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.auth-form-subcontainer {
+  width: 100%;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 200;
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    font-family: 'Fira Sans', serif;
+    font-weight: 500;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="submit"] {
+    width: 100%;
+  }
+
+  form, div {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .auth-form-subcontainer {
+    width: 25%;
+    padding-top: 100px;
+  }
+}

@@ -1,0 +1,72 @@
+.tea-show-page-container {
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.tea-show-page-subcontainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-add-button {
+  background-color: #66C4D3;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.tea-image-container {
+  width: 100%;
+  margin-bottom: 1.75rem;
+
+  img {
+    width: 100%;
+    height: 420px;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.tea-info-container {
+  h1 {
+    font-weight: 200;
+    line-height: 1.5rem;
+    margin-left: -2px;
+  }
+}
+
+.special-tea-info {
+  padding-top: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .tea-show-page-subcontainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .tea-info-container {
+    width: 55%;
+
+    h1 {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    h6 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .tea-image-container {
+    width: 43%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+}

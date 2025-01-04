@@ -1,0 +1,39 @@
+<script src="/javascript/index_filter_submit.js"></script>
+<div class="tea-index-container w-full">
+  <div class="tea-index-options">
+    <div class="flex items-center mb-2">
+      <h1>Nos Tisanes</h1>
+      <%= image_tag "bio-seal.webp", style: "height: 40px; width: 40px" %>
+    </div>
+    <h6>Les tisanes My Wellness Tea sont bien plus que de l’eau chaude et des plantes!</h6>
+    <p>Mis à votre disposition par des professionnels de la santé, ces mélanges équilibrés de plantes reposent sur l’idée que l’union des différents végétaux fait la force et agissent en synergie, que leurs diversités peuvent vous aider et vous rendre plus forts !</p>
+    <%= select_tag :category,
+      options_for_select([['Category', nil, { disabled: true, selected: true }] ] + @categories.map { |category| category }),
+      id: "category-select"
+    %>
+  </div>
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-8">
+    <% @teas.each do |tea| %>
+      <%= link_to tea_path(tea.id), class: 'product-container', data: { :category => tea.tea_detail.category } do %>
+        <%
+          category_color = {
+            "Bien-être" => "#004f9f",
+            "Bien-être digestif" => "#008337",
+            "Bien-être chez la femme" => "#a60063",
+            "Hiver" => "#67c4d3",
+          }
+        %>
+        <div class="product-item">
+          <%= image_tag ["tea-lake-2.jpeg", "tea-wellbeing-2.png", "tea-woman-2.jpeg"].sample, class: "tea-index-image" %>
+          <div>
+            <div class="flex justify-between">
+              <h6><%= tea.title %></h6>
+              <h6><%= sprintf('%.2f', tea.price) %> CHF</h6>
+            </div>
+            <p style="color: <%= category_color[tea.tea_detail.category] || '#000' %>;"><strong><%= tea.tea_detail.category %></strong></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

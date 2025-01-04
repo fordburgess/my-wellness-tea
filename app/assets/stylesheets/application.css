@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "~/stylesheets/reset";
+ @import "~/stylesheets/components/navbar";
+ @import "~/stylesheets/components/footer";
+ @import "~/stylesheets/components/drawer";
+ @import "~/stylesheets/pages/home";
+ @import "~/stylesheets/teas/index";
+ @import "~/stylesheets/teas/show";
+ @import "~/stylesheets/devise/auth_form";
+
+
+ html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: rgb(247, 247, 247);
+  overscroll-behavior: none;
+ }
+
+ main {
+  margin-top: 7vh;
+  flex: 1;
+  /* padding: 0 40px; */
+  min-height: calc(100vh - 50px);
+ }
+
+ p, a {
+  font-family: "Fira Sans", serif;
+  font-weight: 200;
+  font-style: normal;
+ }
+
+ @media (min-width: 900px) {
+  main {
+    margin-top: 8vh;
+    /* padding: 10px 100px; */
+  }
+ }

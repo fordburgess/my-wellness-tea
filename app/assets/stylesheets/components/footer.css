@@ -1,0 +1,23 @@
+.footer-container {
+  width: 100%;
+  background-color: #66c4d3a1;
+  box-sizing: border-box;
+  padding: 15px 25px;
+}
+
+ul {
+  display: block;
+}
+
+.footer-logo {
+  height: 40px;
+  width: 140px;
+}
+
+.payment-methods {
+  height: 40px;
+  width: 40px;
+}
+
+@media (min-width: 900px) {
+}

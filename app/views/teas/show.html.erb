@@ -39,7 +39,7 @@
         </div>
       </div>
       <div>
-        <button class="cart-add-button" style="background-color: #66C4D3;">Ajouter au Panier - <%= sprintf('%.2f', @tea.price) %> CHF</button>
+        <%= button_to "Ajouter au Panier - #{sprintf('%.2f', @tea.price)} CHF", line_items_path(:product_id => @tea.id), class: "cart-add-button" %>
       </div>
     </div>
   </div>

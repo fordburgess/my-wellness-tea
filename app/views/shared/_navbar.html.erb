@@ -16,12 +16,20 @@
         <option>Deutsch</option>
         <option>Italiano</option>
       </select>
-      <%= image_tag "cart-icon.png", class: "helper-image", id: "cart-icon" %>
+      <div class="helper-image", id="cart-icon">
+        <% if @current_cart.line_items.length > 0 %>
+          <div class="cart-quantity" id="cart-quantity">
+            <%= @current_cart.line_items.length %>
+          </div>
+        <% end %>
+        <%= image_tag "cart-icon.png" %>
+      </div>
       <%= link_to new_user_session_path, class: "helper-image", id: "profile-icon" do %>
         <%= image_tag "profile-icon.png" %>
       <% end %>
       <%= image_tag "hamburger-menu.png", class: "helper-image", id: "hamburger-menu" %>
-      <%= render partial: "/shared/drawer" %>
+      <%= render partial: "/shared/nav_drawer" %>
+      <%= render partial: "/shared/cart_drawer" %>
     </div>
   </div>
 </div>

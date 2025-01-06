@@ -5,7 +5,7 @@
       <h1>Nos Tisanes</h1>
       <%= image_tag "bio-seal.webp", style: "height: 40px; width: 40px" %>
     </div>
-    <h6>Les tisanes My Wellness Tea sont bien plus que de l’eau chaude et des plantes!</h6>
+    <h6><%= t('tea_blurb') %></h6>
     <p>Mis à votre disposition par des professionnels de la santé, ces mélanges équilibrés de plantes reposent sur l’idée que l’union des différents végétaux fait la force et agissent en synergie, que leurs diversités peuvent vous aider et vous rendre plus forts !</p>
     <%= select_tag :category,
       options_for_select([['Category', nil, { disabled: true, selected: true }] ] + @categories.map { |category| category }),

@@ -33,7 +33,7 @@
   }
 }
 
-#language-select, #profile-icon {
+#profile-icon {
   display: none;
 }
 
@@ -56,6 +56,10 @@
   right: -7px;
 }
 
+#lang-menu-dropdown {
+  background-color: rgb(247, 247, 247);
+}
+
 @media (min-width: 900px) {
   .navbar-container {
     height: 8vh;
@@ -76,8 +80,8 @@
 
   #language-select {
     font-size: 0.85rem;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
     /* padding: 5px 20px; */
   }
 

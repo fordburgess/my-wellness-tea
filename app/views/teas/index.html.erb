@@ -6,9 +6,9 @@
       <%= image_tag "bio-seal.webp", style: "height: 40px; width: 40px" %>
     </div>
     <h6><%= t('tea_blurb') %></h6>
-    <p>Mis à votre disposition par des professionnels de la santé, ces mélanges équilibrés de plantes reposent sur l’idée que l’union des différents végétaux fait la force et agissent en synergie, que leurs diversités peuvent vous aider et vous rendre plus forts !</p>
+    <p><%= t('tea_description') %></p>
     <%= select_tag :category,
-      options_for_select([['Category', nil, { disabled: true, selected: true }] ] + @categories.map { |category| category }),
+      options_for_select([[ t('category'), nil, { disabled: true, selected: true }] ] + @categories.map { |category| category }),
       id: "category-select"
     %>
   </div>

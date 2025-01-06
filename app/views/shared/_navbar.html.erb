@@ -39,9 +39,9 @@
         </div>
       </div>
       <div class="helper-image", id="cart-icon">
-        <% if @current_cart.line_items.length > 0 %>
+        <% if @current_cart.line_items.sum(:quantity) > 0 %>
           <div class="cart-quantity" id="cart-quantity">
-            <%= @current_cart.line_items.length %>
+            <%= @current_cart.line_items.sum(:quantity) %>
           </div>
         <% end %>
         <%= image_tag "cart-icon.png" %>

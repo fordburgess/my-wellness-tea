@@ -19,7 +19,8 @@ class LineItemsController < ApplicationController
 
     # Save and redirect to cart show path
     @line_item.save
-    redirect_to cart_path(current_cart)
+    # redirect_to cart_path(current_cart)
+    redirect_to request.referrer
   end
 
   def destroy

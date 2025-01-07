@@ -27,7 +27,12 @@ class LineItemsController < ApplicationController
     logger.debug "Line Item Deleted"
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-    redirect_back(fallback_location: root_path)
+
+    render turbo_stream:
+      turbo_stream.remove("line_item_#{params[:id]}")
+      # turbo_stream.replace("cart_items",
+      #   partial: "shared/cart_drawer",
+      # )
   end
 
   def add_quantity

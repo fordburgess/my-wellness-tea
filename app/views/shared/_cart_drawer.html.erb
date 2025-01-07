@@ -4,24 +4,27 @@
       <%= image_tag "x-icon.png", class: "x-icon", id: "x-icon-cart", style: "margin: 0" %>
       <h1>Mon Panier</h1>
     </div>
-    <ul class="flex flex-col w-full">
-      <% @current_cart.line_items.each do |line_item| %>
-        <div class="cart-product flex w-full justify-between mb-4" data-id="<%= line_item.id %>">
-          <%= image_tag ["tea-lake-2.jpeg", "tea-wellbeing-2.png", "tea-woman-2.jpeg"].sample, class: 'cart-product-image' %>
-          <div class="flex flex-col justify-between items-end" style="height: 100px;">
-            <div>
-              <p><strong><%= line_item.product.title %></strong></p>
-              <p><%= sprintf('%.2f', line_item.product.price) %> CHF</p>
+      <%= turbo_frame_tag "cart_items", class: 'w-full' do %>
+        <ul class="flex flex-col">
+          <% @current_cart.line_items.each do |line_item| %>
+            <div class="cart-product flex w-full justify-between mb-4" id="line_item_<%= line_item.id %>">
+              <%= image_tag ["tea-lake-2.jpeg", "tea-wellbeing-2.png", "tea-woman-2.jpeg"].sample, class: 'cart-product-image' %>
+              <div class="flex flex-col justify-between items-end" style="height: 100px;">
+                <div>
+                  <p><strong><%= line_item.product.title %></strong></p>
+                  <p><%= sprintf('%.2f', line_item.product.price) %> CHF</p>
+                </div>
+                <div class="flex items-center">
+                  <%= button_to "Supprimer", line_item_path(line_item.id), class: "cart-item-delete", method: :delete %>
+                  <%= link_to image_tag("minus-icon.png"), line_item_reduce_path(:id => line_item), class: "increment-icons ml-6 mr-2", method: :post %>
+                  <p class="mr-2" style="font-size: 1.25rem"><%= line_item.quantity %></p>
+                  <%= link_to image_tag("plus-icon.png"), line_item_add_path(:id => line_item), class: "increment-icons", method: :post %>
+                </div>
+              </div>
             </div>
-            <div class="flex items-center">
-              <%= button_to "Supprimer", line_item_path(line_item.id), class: "cart-item-delete", data: { :id => line_item.id }, method: :delete %>
-              <%= link_to image_tag("minus-icon.png"), line_item_reduce_path(:id => line_item), class: "increment-icons ml-6 mr-2", method: :post %>
-              <p class="mr-2" style="font-size: 1.25rem"><%= line_item.quantity %></p>
-              <%= link_to image_tag("plus-icon.png"), line_item_add_path(:id => line_item), class: "increment-icons", method: :post %>
-            </div>
-          </div>
-        </div>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
+
   </div>
 </div>

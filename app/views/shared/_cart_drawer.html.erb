@@ -16,7 +16,7 @@
               <div class="flex items-center">
                 <%= button_to "Supprimer", line_item_path(line_item.id), class: "cart-item-delete", method: :delete %>
                 <%= link_to image_tag("minus-icon.png"), line_item_reduce_path(:id => line_item), class: "increment-icons ml-6 mr-2", data: { turbo_method: :post } %>
-                <p class="mr-2" style="font-size: 1.25rem"><%= line_item.quantity %></p>
+                <p class="mr-2" style="font-size: 1.25rem" id="line_item_<%= line_item.id %>_quantity"><%= line_item.quantity %></p>
                 <%= link_to image_tag("plus-icon.png"), line_item_add_path(:id => line_item), class: "increment-icons", data: { turbo_method: :post } %>
               </div>
             </div>

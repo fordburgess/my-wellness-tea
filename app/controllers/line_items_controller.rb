@@ -39,7 +39,11 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.quantity += 1
     @line_item.save
-    redirect_to cart_path(@current_cart)
+
+    render turbo_stream:
+      turbo_stream.replace("line_item_#{@line_item.id}_quantity",
+        partial: "partials/quantity", locals: { line_item: @line_item }
+      )
   end
 
   def reduce_quantity
@@ -47,6 +51,11 @@ class LineItemsController < ApplicationController
     if @line_item.quantity > 1
       @line_item.quantity -= 1
       @line_item.save
+
+      render turbo_stream:
+        turbo_stream.replace("line_item_#{@line_item.id}_quantity",
+          partial: "partials/quantity", locals: { line_item: @line_item }
+        )
     else
       render turbo_stream:
         turbo_stream.remove("line_item_#{params[:id]}")

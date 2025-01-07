@@ -7,10 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let cartDrawerContainer = document.getElementById("cart-drawer-container");
   let cartDrawerMenu = document.getElementById("cart-drawer-menu");
 
-  let cartProducts = Array.from(document.querySelectorAll(".cart-product"));
-  let cartItemsDelete = document.querySelectorAll(".cart-item-delete");
-  let cartQuantity = document.getElementById("cart-quantity");
-
   let xIcon = document.getElementById("x-icon");
   let xIconCart = document.getElementById("x-icon-cart")
 
@@ -30,18 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   cartIcon.addEventListener('click', () => {
+    console.log("HELLO")
     cartDrawerContainer.style.display = 'block';
     cartDrawerMenu.classList.add('active');
   })
-
-//   cartItemsDelete.forEach((cartItemDeleteButton) => {
-//     cartItemDeleteButton.addEventListener('click', (e) => {
-//       let lineItemId = cartItemDeleteButton.dataset.id;
-//       let cartItem = cartProducts.find((cartProduct) => cartProduct.dataset.id == lineItemId);
-//
-//       cartItem.remove();
-//
-//       cartQuantity.innerHTML = cartQuantity.innerHTML - 1;
-//     })
-//   })
 });

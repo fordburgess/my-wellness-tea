@@ -7,6 +7,7 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  z-index: 10;
 }
 
 .desktop-links {
@@ -73,7 +74,7 @@
 
 @media (min-width: 900px) {
   .navbar-container {
-    height: 8vh;
+    height: 10vh;
   }
 
   .navbar-logo {

@@ -1,10 +1,12 @@
-.test-banner {
-  height: 300px;
+.main-banner {
+  height: 400px;
   width: 100%;
-  background-color: rgba(120, 251, 120, 0.611);
+  background-color: aquamarine;
+  margin-bottom: 50px;
 }
 
 .introduction-container {
+  margin-bottom: 50px;
 
   h3, p {
     color: #54aab8;
@@ -16,5 +18,69 @@
 
   p {
     font-weight: 200;
+  }
+}
+
+.info-banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 40px;
+  margin-bottom: 100px;
+  /* background-color: rgba(120, 251, 120, 0.611); */
+}
+
+.info-banner-section {
+  box-sizing: border-box;
+  height: 300px;
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+
+.zoom-bg {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  transition: 0.2s;
+}
+
+.info-text-div {
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  background-color: rgb(247, 247, 247);
+  height: 70px;
+  width: 70%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  text-align: center;
+  padding: 10px;
+
+  h3 {
+    color: #54aab8;
+    font-weight: 300;
+  }
+}
+
+@media (min-width: 900px) {
+  .info-banner {
+    height: 400px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info-banner-section {
+    width: 30%;
+    height: 100%;
+  }
+
+  .info-banner-section:hover .zoom-bg {
+    transform: scale(1.02);
   }
 }

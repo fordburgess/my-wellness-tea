@@ -3,3 +3,18 @@
   width: 100%;
   background-color: rgba(120, 251, 120, 0.611);
 }
+
+.introduction-container {
+
+  h3, p {
+    color: #54aab8;
+  }
+
+  h3 {
+    font-weight: 300;
+  }
+
+  p {
+    font-weight: 200;
+  }
+}

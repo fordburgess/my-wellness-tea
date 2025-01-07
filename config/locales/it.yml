@@ -1,5 +1,9 @@
 it:
   hello: "Ciao mondo"
+  slogan: "La mia vita, la mia salute, il mio tè del benessere!"
+  intro: "Scoprite il mondo delle piante, le loro virtù benefiche e come possono migliorare la vostra vita!"
+  history: "Gli esseri umani usano le piante da millenni per curarsi, la medicina più antica del mondo, ancora attuale."
+  call_to_action: "Isolando ed estraendo specifici composti attivi dalle piante per creare farmaci, possiamo garantire che gli infusi rimangano preziosi alleati naturali per sostenere la nostra salute."
   welcome: "Benvenuto"
   teas: "Tisane"
   plants: "Piante"

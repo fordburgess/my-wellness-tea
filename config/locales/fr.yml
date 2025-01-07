@@ -31,6 +31,10 @@
 
 fr:
   hello: "Hello world"
+  slogan: "Ma Vie, ma Santé, My Wellness Tea!"
+  intro: "Découvrez le monde des plantes, leurs vertus bénéfiques et comment elles peuvent améliorer votre vie!"
+  history: "L’homme utilise les plantes pour se soigner depuis des millénaires, la plus ancienne médecine du monde, toujours d’actualité."
+  call_to_action: "Aujourd’hui, si on a appris à isoler et sélectionner certains principes actifs des plantes pour les extraire et en faire des médicaments, les infusions et autres décoctions restent des alliées bénéfiques pour la santé."
   welcome: "Accueil"
   teas: "Tisanes"
   plants: "Plantes"

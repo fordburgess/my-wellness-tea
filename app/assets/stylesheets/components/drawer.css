@@ -1,5 +1,5 @@
 .drawer-container {
-  display: none;
+  /* display: none; */
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -11,7 +11,7 @@
 
 .drawer-menu {
   position: absolute;
-  right: -60vw;
+  right: 0;
   top: 0;
   height: 100vh;
   box-sizing: border-box;

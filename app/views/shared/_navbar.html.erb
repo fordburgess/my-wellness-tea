@@ -38,18 +38,24 @@
           </div>
         </div>
       </div>
-      <div class="helper-image", id="cart-icon">
-        <% if @current_cart.line_items.sum(:quantity) > 0 %>
-          <div class="cart-quantity" id="cart-quantity">
-            <%= @current_cart.line_items.sum(:quantity) %>
-          </div>
-        <% end %>
-        <%= image_tag "cart-icon.png" %>
+      <div data-controller="cart" data-action="click->cart#fire" class="helper-image">
+        <div id="cart-icon">
+          <% if @current_cart.line_items.sum(:quantity) > 0 %>
+            <div class="cart-quantity" id="cart-quantity">
+              <%= @current_cart.line_items.sum(:quantity) %>
+            </div>
+          <% end %>
+          <%= image_tag "cart-icon.png" %>
+        </div>
+        <div class="hidden" data-cart-target="cart">
+          <%= render partial: "/shared/cart_drawer" %>
+        </div>
       </div>
       <%= link_to image_tag("profile-icon.png"), new_user_session_path, class: "helper-image" %>
       <%= image_tag "hamburger-menu.png", class: "helper-image", id: "hamburger-menu" %>
-      <%= render partial: "/shared/nav_drawer" %>
-      <%= render partial: "/shared/cart_drawer" %>
+      <div class="hidden">
+        <%= render partial: "/shared/nav_drawer" %>
+      </div>
     </div>
   </div>
 </div>

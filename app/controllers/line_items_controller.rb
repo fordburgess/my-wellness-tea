@@ -19,7 +19,8 @@ class LineItemsController < ApplicationController
 
     # Save and redirect to cart show path
     @line_item.save
-    redirect_to cart_path(current_cart)
+    # redirect_to cart_path(current_cart)
+    redirect_to request.referrer
   end
 
   def destroy
@@ -27,6 +28,22 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
     redirect_back(fallback_location: root_path)
+  end
+
+  def add_quantity
+    @line_item = LineItem.find(params[:id])
+    @line_item.quantity += 1
+    @line_item.save
+    redirect_to cart_path(@current_cart)
+  end
+
+  def reduce_quantity
+    @line_item = LineItem.find(params[:id])
+    if @line_item.quantity > 1
+      @line_item.quantity -= 1
+    end
+    @line_item.save
+    redirect_to cart_path(@current_cart)
   end
 
   private

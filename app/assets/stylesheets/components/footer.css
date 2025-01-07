@@ -19,5 +19,11 @@ ul {
   width: 40px;
 }
 
+#swiss-graphic {
+  height: 150px;
+  width: 150px;
+  /* margin-bottom: -20px; */
+}
+
 @media (min-width: 900px) {
 }

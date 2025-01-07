@@ -12,7 +12,7 @@
       <%= link_to t('contact'), contact_path %>
     </div>
     <div class="desktop-helpers w-1/5 flex justify-between justify-around items-center">
-      <div class="relative inline-block text-left">
+      <div class="relative inline-block text-left" id="lang-menu-container">
         <div>
           <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" id="lang-menu-button" aria-expanded="true" aria-haspopup="true">
             <%
@@ -38,20 +38,24 @@
           </div>
         </div>
       </div>
-      <div class="helper-image", id="cart-icon">
-        <% if @current_cart.line_items.length > 0 %>
-          <div class="cart-quantity" id="cart-quantity">
-            <%= @current_cart.line_items.length %>
-          </div>
-        <% end %>
-        <%= image_tag "cart-icon.png" %>
+      <div data-controller="cart" data-action="click->cart#fire" class="helper-image">
+        <div id="cart-icon">
+          <% if @current_cart.line_items.sum(:quantity) > 0 %>
+            <div class="cart-quantity" id="cart-quantity">
+              <%= @current_cart.line_items.sum(:quantity) %>
+            </div>
+          <% end %>
+          <%= image_tag "cart-icon.png" %>
+        </div>
+        <div class="hidden" data-cart-target="cart">
+          <%= render partial: "/shared/cart_drawer" %>
+        </div>
       </div>
-      <%= link_to new_user_session_path, class: "helper-image", id: "profile-icon" do %>
-        <%= image_tag "profile-icon.png" %>
-      <% end %>
+      <%= link_to image_tag("profile-icon.png"), new_user_session_path, class: "helper-image" %>
       <%= image_tag "hamburger-menu.png", class: "helper-image", id: "hamburger-menu" %>
-      <%= render partial: "/shared/nav_drawer" %>
-      <%= render partial: "/shared/cart_drawer" %>
+      <div class="hidden">
+        <%= render partial: "/shared/nav_drawer" %>
+      </div>
     </div>
   </div>
 </div>

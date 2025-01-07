@@ -38,6 +38,8 @@
 }
 
 #cart-icon {
+  height: 25px;
+  width: 25px;
   position: relative;
 }
 
@@ -54,6 +56,15 @@
   position: absolute;
   top: -7px;
   right: -7px;
+}
+
+#lang-menu-container {
+  display: none;
+  font-family: 'Fira Sans', serif;
+
+  a {
+    font-weight: 500;
+  }
 }
 
 #lang-menu-dropdown {
@@ -74,15 +85,8 @@
     display: flex;
   }
 
-  #language-select, #cart-icon, #profile-icon {
+  #lang-menu-container, #cart-icon, #profile-icon {
     display: block;
-  }
-
-  #language-select {
-    font-size: 0.85rem;
-    /* padding-top: 5px;
-    padding-bottom: 5px; */
-    /* padding: 5px 20px; */
   }
 
   #hamburger-menu {

@@ -1,8 +1,63 @@
 .main-banner {
-  height: 400px;
+  height: 450px;
   width: 100%;
-  background-color: aquamarine;
+  background-color: rgba(2, 92, 38, 0.639);
   margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 100%;
+    width: 40%;
+    object-fit: cover;
+    border-radius: 300px 0 0 300px;
+  }
+}
+
+.carousel-slide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 50px; */
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    color: #fff;
+  }
+}
+
+.carousel-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+}
+
+.carousel-link {
+  padding: 10px 20px;
+  background-color: rgba(2, 92, 38, 0.639);
+  color: #fff;
+  width: auto;
+  border-radius: 50px;
+}
+
+.poop-test {
+  height: 100%;
+  padding: 50px 100px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    color: #fff;
+  }
+}
+
+.test-graphic {
+  width: 70%;
+  height: 100%;
+  border-radius: 0 200px 200px  0;
 }
 
 .introduction-container {
@@ -59,12 +114,26 @@
   width: 70%;
   transform: translateX(-50%);
   border-radius: 4px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
   padding: 10px;
 
   h3 {
     color: #54aab8;
     font-weight: 300;
+  }
+
+  div {
+    width: 70%;
+    border-bottom: solid 0.5px #54aab8;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+
+  a {
+    font-size: 0.85rem;
   }
 }
 

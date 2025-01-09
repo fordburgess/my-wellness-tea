@@ -23,6 +23,7 @@
  @import "~/stylesheets/teas/index";
  @import "~/stylesheets/teas/show";
  @import "~/stylesheets/devise/auth_form";
+ @import "~/stylesheets/devise/user_dashboard";
 
 
  html, body {

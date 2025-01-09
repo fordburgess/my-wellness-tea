@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     get '/contact' => 'pages#contact'
     get '/plants' => 'pages#plants'
 
+    get '/dashboard' => 'pages#dashboard'
+    # namespace :user do
+    # end
+
     # admin routes
     namespace :admin do
       root to: 'admin#dashboard'

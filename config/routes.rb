@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     get 'orders/show'
     get 'orders/new'
     get 'carts/show'
-    devise_for :users
+    devise_for :users, controllers: {
+      registrations: 'users/registrations'
+    }
 
     # order and cart functionality
     get 'carts/:id' => "carts#show", as: "cart"
@@ -25,9 +27,7 @@ Rails.application.routes.draw do
     get '/contact' => 'pages#contact'
     get '/plants' => 'pages#plants'
 
-    get '/dashboard' => 'pages#dashboard'
-    # namespace :user do
-    # end
+
 
     # admin routes
     namespace :admin do

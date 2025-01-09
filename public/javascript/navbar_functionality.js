@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   let langMenuButton = document.getElementById("lang-menu-button");
   let langMenuDropdown = document.getElementById("lang-menu-dropdown");
 

@@ -3,4 +3,22 @@
   label {
     font-family: 'Fira Sans', serif;
   }
+
+}
+
+.form-images {
+  height: 150px;
+  width: 150px;
+  border-radius: 4px;
+  margin-right: 5px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-input {
+  height: 150px;
+  width: 150px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: dotted 1px #000;
 }

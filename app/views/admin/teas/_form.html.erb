@@ -1,6 +1,4 @@
-
-<div class="">
-  <%= form_for [:admin, @tea] do |form| %>
+<%= form_for [:admin, @tea] do |form| %>
   <div class="product-form-section flex" id="0">
     <div class="flex flex-col mb-6 w-1/2 mr-2">
       <%= form.label :title %>
@@ -38,7 +36,16 @@
         <%= details_form.label t('dosage') %>
         <%= details_form.number_field :dosage %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
+  <div class="product-form-section w-full mb-6">
+    <%= form.label :images, class: 'mb-4' %>
+    <div class="flex mb-4">
+      <% @tea.images.each do |image| %>
+        <%= image_tag image, class: 'form-images' %>
+      <% end %>
+      <%= form.file_field :images, multiple: true, class: 'image-input' %>
+    </div>
   </div>
   <div class="product-form-section" id="2">
     <%= form.submit "Submit" %>

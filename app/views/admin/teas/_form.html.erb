@@ -16,7 +16,7 @@
     <%= form.check_box :stock %>
   </div>
   <h4 class="text-xl mb-6">Détails du Tisane</h4>
-  <%= form.fields_for :tea_detail, TeaDetail.new do |details_form| %>
+  <%= form.fields_for :tea_detail, @tea.tea_detail do |details_form| %>
     <div class="product-form-section flex" id="1">
       <div class="flex flex-col mb-6 w-1/2 mr-2">
         <%= details_form.label t('infusion_temperature') %>

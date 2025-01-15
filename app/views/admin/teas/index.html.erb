@@ -1,14 +1,14 @@
 <div class="w-full px-24 py-8">
-  <div class="flex justify-between">
-    <h1 class="text-3xl font-light mb-6"><%= t('admin_dashboard') %></h1>
-    <h3 class="text-2xl">Mes Produits</h3>
+  <div class="">
+  <h1 class="text-3xl font-light mb-6 flex items-center"><span class="mr-2"><%= t('admin_dashboard') %> /</span> <strong class="text-xl font-light">Mes Produits</strong></h1>
   </div>
   <div class="flex justify-between">
     <%= render partial: "admin/partials/admin_links" %>
-    <div class="grid grid-cols-3 gap-8" style="width: 78%;">
+    <div class="grid grid-cols-4 gap-8" style="width: 78%;">
       <% @teas.each do |tea| %>
         <%= link_to edit_admin_tea_path(tea.id) do %>
-        <div class="bg-red-200">
+        <div class="">
+          <%= image_tag ["tea-lake-2.jpeg", "tea-wellbeing-2.png", "tea-woman-2.jpeg"].sample, class: 'mb-2', style: 'height: 150px; width: 100%; object-fit: cover; object-position: center;' %>
           <p><%= tea.title %></p>
         </div>
         <% end %>

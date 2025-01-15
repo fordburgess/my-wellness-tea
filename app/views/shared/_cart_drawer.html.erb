@@ -5,7 +5,7 @@
       <h1>Mon Panier</h1>
     </div>
     <% if @current_cart.line_items.count > 0 %>
-      <ul class="flex flex-col w-full">
+      <ul class="flex flex-col w-full mb-12">
         <% @current_cart.line_items.each do |line_item| %>
           <div class="cart-product flex w-full justify-between mb-4" id="line_item_<%= line_item.id %>">
             <%= image_tag ["tea-lake-2.jpeg", "tea-wellbeing-2.png", "tea-woman-2.jpeg"].sample, class: 'cart-product-image' %>
@@ -24,6 +24,7 @@
           </div>
         <% end %>
       </ul>
+      <%= link_to "Checkout", cart_path(@current_cart.id), class: "checkout-button" %>
     <% else %>
       <div class="w-full text-center"><h3 class="text-xl"><%= t('empty_cart') %></h3></div>
     <% end %>

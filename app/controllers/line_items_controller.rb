@@ -28,8 +28,12 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
 
-    render turbo_stream:
-      turbo_stream.remove("line_item_#{params[:id]}")
+    if request.referer&.include?("cart") || request.path.include?("cart")
+      redirect_to request.referrer
+    else
+      render turbo_stream:
+        turbo_stream.remove("line_item_#{params[:id]}")
+    end
       # turbo_stream.replace("cart_items",
       #   partial: "shared/cart_drawer",
       # )
@@ -40,10 +44,14 @@ class LineItemsController < ApplicationController
     @line_item.quantity += 1
     @line_item.save
 
-    render turbo_stream:
-      turbo_stream.replace("line_item_#{@line_item.id}_quantity",
-        partial: "partials/quantity", locals: { line_item: @line_item }
-      )
+    if request.referer&.include?("cart") || request.path.include?("cart")
+      redirect_to request.referrer
+    else
+      render turbo_stream:
+        turbo_stream.replace("line_item_#{@line_item.id}_quantity",
+          partial: "partials/quantity", locals: { line_item: @line_item }
+        )
+    end
   end
 
   def reduce_quantity

@@ -93,4 +93,8 @@
   #hamburger-menu {
     display: none;
   }
+
+  #profile-icon {
+    display: block;
+  }
 }

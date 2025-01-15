@@ -55,3 +55,9 @@ input[type="submit"] {
   height: 1px;
   background-color: #54aab8;
 }
+
+/* for active links */
+.active-link {
+  color: #54aab8;
+  text-decoration: underline;
+}

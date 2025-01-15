@@ -20,6 +20,24 @@ class Admin::TeasController < ApplicationController
     @tea = Tea.find(params[:id])
   end
 
+  def index
+    @teas = Tea.all
+  end
+
+  def edit
+    @tea = Tea.find(params[:id])
+  end
+
+  def update
+    @tea = Tea.find(params[:id])
+
+    respond_to do |format|
+      if @tea.update(tea_params)
+        format.html { redirect_to admin_teas_path, notice: "Produit mis à jour avec succès." }
+      end
+    end
+  end
+
   private
 
   def tea_params

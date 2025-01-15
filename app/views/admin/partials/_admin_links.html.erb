@@ -1,8 +1,8 @@
 <div class="p-4 border-solid border-black rounded" style="width: 20%; border-width: 1px; height: 400px;">
   <ul>
-    <p class="mb-2"><strong>Site Content</strong</p>
+    <p class="mb-2"><strong>Site Content</strong></p>
     <li class="mb-2">
-      <%= link_to "Mes Produits" %>
+      <%= link_to "Mes Produits", admin_teas_path %>
     </li>
     <li class="mb-2">
       <%= link_to "Créer un nouveau produit", new_admin_tea_path %>
@@ -13,14 +13,14 @@
     <li class="mb-6">
       <%= link_to "Créer une nouvelle plante" %>
     </li>
-    <p class="mb-2"><strong>Customers</strong</p>
+    <p class="mb-2"><strong>Customers</strong></p>
     <li class="mb-2">
       <%= link_to "Commandes" %>
     </li>
     <li class="mb-4">
       <%= link_to "Membres" %>
     </li>
-    <p class="mb-2"><strong>Actions</strong</p>
+    <p class="mb-2"><strong>Actions</strong></p>
     <li class="mb-4">
       <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
     </li>

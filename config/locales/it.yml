@@ -28,3 +28,4 @@ it:
   infusion_time: "Tempo di infusione"
   dosage: "Dosaggio"
   time_of_day: "Momento della giornata"
+  empty_cart: "Il carrello è vuoto"

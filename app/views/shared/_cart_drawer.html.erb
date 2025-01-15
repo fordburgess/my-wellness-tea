@@ -4,6 +4,7 @@
       <%= image_tag "x-icon.png", class: "x-icon", id: "x-icon-cart", style: "margin: 0" %>
       <h1>Mon Panier</h1>
     </div>
+    <% if @current_cart.line_items.count > 0 %>
       <ul class="flex flex-col w-full">
         <% @current_cart.line_items.each do |line_item| %>
           <div class="cart-product flex w-full justify-between mb-4" id="line_item_<%= line_item.id %>">
@@ -23,6 +24,8 @@
           </div>
         <% end %>
       </ul>
-
+    <% else %>
+      <div class="w-full text-center"><h3 class="text-xl"><%= t('empty_cart') %></h3></div>
+    <% end %>
   </div>
 </div>

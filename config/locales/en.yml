@@ -24,3 +24,7 @@ en:
   account_details: "Account Details"
   my_orders: "Mes commandes"
   admin_dashboard: "Admin Dashboard"
+  infusion_temperature: "Infusion Temperature"
+  infusion_time: "Infusion Time"
+  dosage: "Dosage"
+  time_of_day: "Time of Day"

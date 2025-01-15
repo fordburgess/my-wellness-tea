@@ -55,3 +55,7 @@ fr:
   account_details: "Détails du Compte"
   my_orders: "Mes commandes"
   admin_dashboard: "Tableau de Bord Administrateur"
+  infusion_temperature: "Température d'infusion"
+  infusion_time: "Temps d'infusion"
+  dosage: "Dosage"
+  time_of_day: "Moment de journée"

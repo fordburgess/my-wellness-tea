@@ -24,3 +24,7 @@ de:
   account_details: "Kontodaten"
   my_orders: "Meine Bestellungen"
   admin_dashboard: "Verwaltungsübersicht"
+  infusion_temperature: "Wassertemperatur"
+  infusion_time: "Ziehzeit"
+  dosage: "Dosierung"
+  time_of_day: "Tageszeit"

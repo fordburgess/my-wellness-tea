@@ -1,3 +1,54 @@
-<div class="w-full h-full px-2.5">
-  <h1>t('review_your_order')</h1>
+<div class="w-full h-full px-3 py-10 md:px-72 box-border">
+  <h1 class="text-3xl font-light m-0">Shipping Address</h1>
+  <p class="text-base mb-6">* Indicates a required field</p>
+  <%= form_for @order do |form| %>
+    <div class="product-form-section flex flex-col mb-6 w-full mr-2">
+      <%= form.label :email do %>
+        Email*
+      <% end %>
+      <%= form.email_field :email, value: current_user.email %>
+    </div>
+    <div class="product-form-section w-full flex justify-between" id="0">
+      <div class="flex flex-col mb-6 w-[48%]">
+        <%= form.label :first_name do %>
+          First Name*
+        <% end %>
+        <%= form.text_field :first_name %>
+      </div>
+      <div class="flex flex-col mb-6 w-[48%]">
+        <%= form.label :last_name do %>
+          Last Name*
+        <% end %>
+        <%= form.text_field :last_name %>
+      </div>
+    </div>
+    <div class="product-form-section flex flex-col mb-6 w-full mr-2">
+      <div class="flex flex-col mb-4 w-full">
+        <%= form.label :address_line_1 do %>
+          Address Line 1*
+        <% end %>
+        <%= form.text_field :address_line_2 %>
+      </div>
+      <div class="flex flex-col w-full">
+        <%= form.label :address_line_2 do %>
+          Address Line 2*
+        <% end %>
+        <%= form.text_field :address_line_2 %>
+      </div>
+    </div>
+    <div class="product-form-section w-full flex justify-between" id="0">
+      <div class="flex flex-col mb-6 w-[48%]">
+        <%= form.label :first_name do %>
+          First Name*
+        <% end %>
+        <%= form.text_field :first_name %>
+      </div>
+      <div class="flex flex-col mb-6 w-[48%]">
+        <%= form.label :last_name do %>
+          Last Name*
+        <% end %>
+        <%= form.text_field :last_name %>
+      </div>
+    </div>
+  <% end %>
 </div>

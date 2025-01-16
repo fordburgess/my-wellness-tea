@@ -6,7 +6,7 @@
       <h3 class="text-xl"><strong><%= sprintf('%.2f', @cart_total) %> CHF</strong></h3>
     </div>
     <div class="mb-12">
-      <% @current_cart.line_items.each do |line_item| %>
+      <% @current_cart.line_items.sort_by(&:id).each do |line_item| %>
         <div class="cart-product flex w-full justify-between mb-6 pb-4" id="line_item_<%= line_item.id %>" style="border-bottom: solid 0.5px rgba(84, 170, 184, 0.5)">
           <%= image_tag ["tea-lake-2.jpeg", "tea-wellbeing-2.png", "tea-woman-2.jpeg"].sample, class: 'cart-product-image' %>
           <div class="flex flex-col justify-between items-end" style="height: 100px;">

@@ -23,6 +23,9 @@
   .order-summary {
     width: 36%;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   #shipping-address-form {

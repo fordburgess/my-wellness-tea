@@ -62,25 +62,31 @@
       </div>
     <% end %>
     <div class="order-summary w-full">
-      <h1 class="text-2xl mb-6 font-light">Order Summary</h1>
-      <div class="pb-1.5 mb-4" style="border-bottom: solid 0.5px #147a1c">
-        <% @current_cart.line_items.each do |line_item| %>
-          <div class="flex justify-between">
-            <p>x<%= line_item.quantity %> <%= line_item.product.title %></p>
-            <p><%= sprintf('%.2f', line_item.product.price * line_item.quantity) %> CHF</p>
+      <div>
+        <h1 class="text-2xl mb-6 font-light">Order Summary</h1>
+        <div class="pb-1.5 mb-4" style="border-bottom: solid 0.5px #147a1c">
+          <% @current_cart.line_items.each do |line_item| %>
+            <div class="flex justify-between">
+              <p>x<%= line_item.quantity %> <%= line_item.product.title %></p>
+              <p><%= sprintf('%.2f', line_item.product.price * line_item.quantity) %> CHF</p>
+            </div>
+          <% end %>
+        </div>
+        <div class="flex justify-between pb-1.5 mb-4" style="border-bottom: solid 0.5px #147a1c">
+          <p>Shipping:</p>
+          <p>6.50 CHF</p>
+        </div>
+        <% if @cart_total > 50 %>
+          <div class="flex justify-between pb-1.5" style="border-bottom: solid 0.5px #147a1c">
+            <p>Discount: Free Shipping</p>
+            <p>- 6.50 CHF</p>
           </div>
         <% end %>
       </div>
-      <div class="flex justify-between pb-1.5 mb-4" style="border-bottom: solid 0.5px #147a1c">
-        <p>Shipping:</p>
-        <p>6.50 CHF</p>
+      <div class="w-full flex justify-between pt-4" style="border-top: solid 0.5px #147a1c">
+        <p class="text-md font-medium">Order Total: </p>
+        <p class="text-md font-medium"><%= sprintf('%.2f', @cart_total + 6.50) %> CHF</p>
       </div>
-      <% if @cart_total > 50 %>
-        <div class="flex justify-between pb-1.5" style="border-bottom: solid 0.5px #147a1c">
-          <p>Discount: Free Shipping</p>
-          <p>- 6.50 CHF</p>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>

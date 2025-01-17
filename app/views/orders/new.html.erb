@@ -1,54 +1,86 @@
-<div class="w-full h-full px-3 py-10 md:px-72 box-border">
-  <h1 class="text-3xl font-light m-0">Shipping Address</h1>
+<div class="w-full h-full px-3 py-4 md:px-52 box-border">
+  <h1 class="text-3xl font-light m-0">Shipping Details</h1>
   <p class="text-base mb-6">* Indicates a required field</p>
-  <%= form_for @order do |form| %>
-    <div class="product-form-section flex flex-col mb-6 w-full mr-2">
-      <%= form.label :email do %>
-        Email*
+  <div class="w-full md:flex md:justify-between">
+    <%= form_for @order, :html => { id: "shipping-address-form" } do |form| %>
+      <div class="product-form-section flex flex-col mb-4 w-full mr-2">
+        <%= form.label :email do %>
+          Email*
+        <% end %>
+        <%= form.email_field :email, value: current_user ? current_user.email : '' %>
+      </div>
+      <div class="product-form-section w-full flex justify-between mb-4" id="0">
+        <div class="flex flex-col w-[48%]">
+          <%= form.label :first_name do %>
+            First Name*
+          <% end %>
+          <%= form.text_field :first_name %>
+        </div>
+        <div class="flex flex-col w-[48%]">
+          <%= form.label :last_name do %>
+            Last Name*
+          <% end %>
+          <%= form.text_field :last_name %>
+        </div>
+      </div>
+      <div class="product-form-section flex flex-col mb-4 w-full mr-2">
+        <div class="flex flex-col mb-2 w-full">
+          <%= form.label :address_line_1 do %>
+            Address Line 1*
+          <% end %>
+          <%= form.text_field :address_line_2 %>
+        </div>
+        <div class="flex flex-col mb-2 w-full">
+          <%= form.label :address_line_2 do %>
+            Address Line 2
+          <% end %>
+          <%= form.text_field :address_line_2 %>
+        </div>
+        <div class="flex flex-col w-full">
+          <%= form.label :city do %>
+            City*
+          <% end %>
+          <%= form.text_field :city %>
+        </div>
+      </div>
+      <div class="product-form-section w-full flex justify-between mb-8" id="0">
+        <div class="flex flex-col w-[48%]">
+          <%= form.label :country do %>
+            Country*
+          <% end %>
+          <%= form.country_select :country, { priority_countries: ["CH", "FR", "DE", "IT"], prompt: "Country" } %>
+        </div>
+        <div class="flex flex-col w-[48%]">
+          <%= form.label :post_code do %>
+            Post Code*
+          <% end %>
+          <%= form.text_field :post_code %>
+        </div>
+      </div>
+      <div class="product-form-section w-full flex justify-between" id="0">
+        <h1>Payment Info</h1>
+      </div>
+    <% end %>
+    <div class="order-summary w-full">
+      <h1 class="text-2xl mb-6 font-light">Order Summary</h1>
+      <div class="pb-1.5 mb-4" style="border-bottom: solid 0.5px #147a1c">
+        <% @current_cart.line_items.each do |line_item| %>
+          <div class="flex justify-between">
+            <p>x<%= line_item.quantity %> <%= line_item.product.title %></p>
+            <p><%= sprintf('%.2f', line_item.product.price * line_item.quantity) %> CHF</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="flex justify-between pb-1.5 mb-4" style="border-bottom: solid 0.5px #147a1c">
+        <p>Shipping:</p>
+        <p>6.50 CHF</p>
+      </div>
+      <% if @cart_total > 50 %>
+        <div class="flex justify-between pb-1.5" style="border-bottom: solid 0.5px #147a1c">
+          <p>Discount: Free Shipping</p>
+          <p>- 6.50 CHF</p>
+        </div>
       <% end %>
-      <%= form.email_field :email, value: current_user.email %>
     </div>
-    <div class="product-form-section w-full flex justify-between" id="0">
-      <div class="flex flex-col mb-6 w-[48%]">
-        <%= form.label :first_name do %>
-          First Name*
-        <% end %>
-        <%= form.text_field :first_name %>
-      </div>
-      <div class="flex flex-col mb-6 w-[48%]">
-        <%= form.label :last_name do %>
-          Last Name*
-        <% end %>
-        <%= form.text_field :last_name %>
-      </div>
-    </div>
-    <div class="product-form-section flex flex-col mb-6 w-full mr-2">
-      <div class="flex flex-col mb-4 w-full">
-        <%= form.label :address_line_1 do %>
-          Address Line 1*
-        <% end %>
-        <%= form.text_field :address_line_2 %>
-      </div>
-      <div class="flex flex-col w-full">
-        <%= form.label :address_line_2 do %>
-          Address Line 2*
-        <% end %>
-        <%= form.text_field :address_line_2 %>
-      </div>
-    </div>
-    <div class="product-form-section w-full flex justify-between" id="0">
-      <div class="flex flex-col mb-6 w-[48%]">
-        <%= form.label :first_name do %>
-          First Name*
-        <% end %>
-        <%= form.text_field :first_name %>
-      </div>
-      <div class="flex flex-col mb-6 w-[48%]">
-        <%= form.label :last_name do %>
-          Last Name*
-        <% end %>
-        <%= form.text_field :last_name %>
-      </div>
-    </div>
-  <% end %>
+  </div>
 </div>

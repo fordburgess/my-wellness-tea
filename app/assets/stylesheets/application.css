@@ -25,6 +25,7 @@
  @import "~/stylesheets/devise/auth_form";
  @import "~/stylesheets/devise/user_dashboard";
  @import "~/stylesheets/admin/admin_form";
+ @import "~/stylesheets/orders/orders";
 
 
  html, body {

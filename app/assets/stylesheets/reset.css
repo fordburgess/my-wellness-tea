@@ -30,8 +30,7 @@ select {
 }
 
 select {
-  font-size: 0.8rem;
-  padding: 5px 40px 5px 10px;
+  font-size: 1rem;
 }
 
 input[type="submit"] {

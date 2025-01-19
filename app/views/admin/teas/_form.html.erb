@@ -39,6 +39,10 @@
     </div>
   <% end %>
   <div class="product-form-section w-full mb-6">
+    <%= form.label :plants, "Ingredients" %>
+    <%= form.collection_select :plant_ids, Plant.all, :id, :name, {}, { multiple: true, size: 5, class: "multi-select" } %>
+  </div>
+  <div class="product-form-section w-full mb-6">
     <%= form.label :images, class: 'mb-4' %>
     <div class="flex mb-4">
       <% @tea.images.each do |image| %>

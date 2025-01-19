@@ -41,6 +41,6 @@ class Admin::TeasController < ApplicationController
   private
 
   def tea_params
-    params.require(:tea).permit(:title, :price, :stock, images: [], tea_detail_attributes: [:infusion_time, :infusion_temperature, :time_of_day, :dosage])
+    params.require(:tea).permit(:title, :price, :stock, tea_detail_attributes: [:infusion_time, :infusion_temperature, :time_of_day, :dosage], images: [], plant_ids: [])
   end
 end

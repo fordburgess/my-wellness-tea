@@ -38,6 +38,31 @@ select {
   font-size: 1rem;
 }
 
+.custom-slim-select {
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  border: solid 1px #6b7280;
+}
+
+.ss-main, .ss-values, .ss-value, .ss-value-text {
+  font-size: 0.85rem !important;
+}
+
+.ss-value {
+  background-color: #54aab8 !important;
+}
+
+.ss-option {
+  border-radius: 4px !important;
+  margin-bottom: 2px;
+  font-size: 0.85rem;
+}
+
+.ss-selected {
+  background-color: #54aab8 !important;
+}
+
 input[type="submit"] {
   background-color: rgb(169, 209, 248);
   border-radius: 4px;

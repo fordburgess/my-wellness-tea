@@ -146,24 +146,24 @@ parratoux = Tea.create(
   }
 );
 
-puts "Creating Plants"
-melisse = Plant.create(
-  name: "Mélisse",
-  latin_name: "Melissa officinalis",
-  traditional_qualities: "Les feuilles de la mélisse ont des effets tranquillisants (apaisants) et relaxants.",
-  description: "La mélisse est une plante herbacée vivace originaire de l’Est de la Méditerranée. Elle peut atteindre jusqu’à 80 cm et dégage une odeur citronnée surtout lorsque l’on gratte ses feuilles. L’usage de la mélisse est fréquent dans les préparations en infusions. La plante a en effet des vertus tranquillisantes (apaisantes) et relaxantes.",
-  part_used: "Feuilles"
-)
-
-hibiscus = Plant.create(
-  name: "Hibiscus",
-  latin_name: "Hibiscus fragilis",
-  traditional_qualities: "En infusion les fleurs de l’hibiscus sont réputées pour leurs vertus antiseptiques urinaires et diurétiques. Elles apaisent des douleurs menstruelles et préparent à l’accouchement car elles ont un effet relaxant pour les muscles utérins. De plus elles aident à lutter contre l’hypertension.",
-  description: "L’hibiscus est une plante très prisée aussi bien pour l’aspect ornemental que pour celui de ses vertus thérapeutiques. Il s’agit d’arbustes pouvant atteindre 6 mètres de haut. Ses feuilles sont alternes ovales ou lancéolées et elles ont le bord ondulé. Les fleurs sont d’une taille moyenne à grandes pouvant atteindre 7 cm de diamètres. Elles sont isolées ou groupées en inflorescences.",
-  part_used: "Fleurs"
-)
-
-douce_nuit.plants << melisse
-future_maman.plants << hibiscus
+# puts "Creating Plants"
+# melisse = Plant.create(
+#   name: "Mélisse",
+#   latin_name: "Melissa officinalis",
+#   traditional_qualities: "Les feuilles de la mélisse ont des effets tranquillisants (apaisants) et relaxants.",
+#   description: "La mélisse est une plante herbacée vivace originaire de l’Est de la Méditerranée. Elle peut atteindre jusqu’à 80 cm et dégage une odeur citronnée surtout lorsque l’on gratte ses feuilles. L’usage de la mélisse est fréquent dans les préparations en infusions. La plante a en effet des vertus tranquillisantes (apaisantes) et relaxantes.",
+#   part_used: "Feuilles"
+# )
+#
+# hibiscus = Plant.create(
+#   name: "Hibiscus",
+#   latin_name: "Hibiscus fragilis",
+#   traditional_qualities: "En infusion les fleurs de l’hibiscus sont réputées pour leurs vertus antiseptiques urinaires et diurétiques. Elles apaisent des douleurs menstruelles et préparent à l’accouchement car elles ont un effet relaxant pour les muscles utérins. De plus elles aident à lutter contre l’hypertension.",
+#   description: "L’hibiscus est une plante très prisée aussi bien pour l’aspect ornemental que pour celui de ses vertus thérapeutiques. Il s’agit d’arbustes pouvant atteindre 6 mètres de haut. Ses feuilles sont alternes ovales ou lancéolées et elles ont le bord ondulé. Les fleurs sont d’une taille moyenne à grandes pouvant atteindre 7 cm de diamètres. Elles sont isolées ou groupées en inflorescences.",
+#   part_used: "Fleurs"
+# )
+#
+# douce_nuit.plants << melisse
+# future_maman.plants << hibiscus
 
 puts "Finished Seeding"

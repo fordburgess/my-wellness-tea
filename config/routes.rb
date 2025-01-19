@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     get 'orders/show'
     get 'orders/new'
     get 'carts/show'
-    devise_for :users
+    devise_for :users, controllers: {
+      registrations: 'users/registrations'
+    }
 
     # order and cart functionality
     get 'carts/:id' => "carts#show", as: "cart"
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
       root to: 'admin#dashboard'
       # resources :products
       resources :teas
+      resources :plants
     end
 
     resources :teas, only: [:index, :show]

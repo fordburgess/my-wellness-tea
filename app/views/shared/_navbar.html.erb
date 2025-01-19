@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div data-controller="cart" data-action="click->cart#fire" class="helper-image">
+      <div class="helper-image">
         <div id="cart-icon">
           <% if @current_cart.line_items.sum(:quantity) > 0 %>
             <div class="cart-quantity" id="cart-quantity">
@@ -47,15 +47,11 @@
           <% end %>
           <%= image_tag "cart-icon.png" %>
         </div>
-        <div class="hidden" data-cart-target="cart">
-          <%= render partial: "/shared/cart_drawer" %>
-        </div>
       </div>
-      <%= link_to image_tag("profile-icon.png"), new_user_session_path, class: "helper-image" %>
+      <%= link_to image_tag("profile-icon.png"), edit_user_registration_path, class: "helper-image", id: "profile-icon" %>
       <%= image_tag "hamburger-menu.png", class: "helper-image", id: "hamburger-menu" %>
-      <div class="hidden">
         <%= render partial: "/shared/nav_drawer" %>
-      </div>
+        <%= render partial: "/shared/cart_drawer" %>
     </div>
   </div>
 </div>

@@ -23,6 +23,9 @@
  @import "~/stylesheets/teas/index";
  @import "~/stylesheets/teas/show";
  @import "~/stylesheets/devise/auth_form";
+ @import "~/stylesheets/devise/user_dashboard";
+ @import "~/stylesheets/admin/admin_form";
+ @import "~/stylesheets/orders/orders";
 
 
  html, body {
@@ -50,7 +53,7 @@
 
  @media (min-width: 900px) {
   main {
-    margin-top: 8vh;
+    margin-top: 10vh;
     /* padding: 10px 100px; */
   }
  }

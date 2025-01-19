@@ -1,0 +1,56 @@
+<%= form_for [:admin, @tea] do |form| %>
+  <div class="product-form-section flex" id="0">
+    <div class="flex flex-col mb-6 w-1/2 mr-2">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div class="flex flex-col mb-6 w-1/2 ml-2">
+      <%= form.label :price do %>
+        Prix CHF
+      <% end %>
+      <%= form.number_field :price, step: "any" %>
+    </div>
+  </div>
+  <div class="field flex mb-8 items-center">
+    <%= form.label :in_stock, class: 'mr-2' %>
+    <%= form.check_box :stock %>
+  </div>
+  <h4 class="text-xl mb-6">Détails du Tisane</h4>
+  <%= form.fields_for :tea_detail, @tea.tea_detail do |details_form| %>
+    <div class="product-form-section flex" id="1">
+      <div class="flex flex-col mb-6 w-1/2 mr-2">
+        <%= details_form.label t('infusion_temperature') %>
+        <%= details_form.number_field :infusion_temperature %>
+      </div>
+      <div class="flex flex-col mb-6 w-1/2 ml-2">
+        <%= details_form.label t('infusion_time') %>
+        <%= details_form.number_field :infusion_time %>
+      </div>
+    </div>
+    <div class="product-form-section flex" id="1">
+      <div class="flex flex-col mb-6 w-1/2 mr-2">
+        <%= details_form.label t('time_of_day') %>
+        <%= details_form.text_field :time_of_day %>
+      </div>
+      <div class="flex flex-col mb-6 w-1/2 ml-2">
+        <%= details_form.label t('dosage') %>
+        <%= details_form.number_field :dosage %>
+      </div>
+    </div>
+  <% end %>
+  <div class="product-form-section w-full mb-6">
+
+  </div>
+  <div class="product-form-section w-full mb-6">
+    <%= form.label :images, class: 'mb-4' %>
+    <div class="flex mb-4">
+      <% @tea.images.each do |image| %>
+        <%= image_tag image, class: 'form-images' %>
+      <% end %>
+      <%= form.file_field :images, multiple: true, class: 'image-input' %>
+    </div>
+  </div>
+  <div class="product-form-section" id="2">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>

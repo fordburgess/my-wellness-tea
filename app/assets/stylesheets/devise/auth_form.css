@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 0 0.625rem;
 }
 
 .auth-form-subcontainer {
@@ -31,6 +31,15 @@
 
   form, div {
     width: 100%;
+  }
+}
+
+#edit-user {
+  width: 100% !important;
+  padding: 0 !important;
+
+  form {
+    margin-bottom: 2rem;
   }
 }
 

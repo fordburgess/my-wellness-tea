@@ -1,5 +1,155 @@
-.test-banner {
+.main-banner {
+  height: 450px;
+  width: 100%;
+  background-color: rgba(2, 92, 38, 0.639);
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 100%;
+    width: 40%;
+    object-fit: cover;
+    border-radius: 300px 0 0 300px;
+  }
+}
+
+.carousel-slide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 50px; */
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    color: #fff;
+  }
+}
+
+.carousel-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+}
+
+.carousel-link {
+  padding: 10px 20px;
+  background-color: rgba(2, 92, 38, 0.639);
+  color: #fff;
+  width: auto;
+  border-radius: 50px;
+}
+
+.poop-test {
+  height: 100%;
+  padding: 50px 100px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    color: #fff;
+  }
+}
+
+.test-graphic {
+  width: 70%;
+  height: 100%;
+  border-radius: 0 200px 200px  0;
+}
+
+.introduction-container {
+  margin-bottom: 50px;
+
+  h3, p {
+    color: #54aab8;
+  }
+
+  h3 {
+    font-weight: 300;
+  }
+
+  p {
+    font-weight: 200;
+  }
+}
+
+.info-banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 40px;
+  margin-bottom: 100px;
+  /* background-color: rgba(120, 251, 120, 0.611); */
+}
+
+.info-banner-section {
+  box-sizing: border-box;
   height: 300px;
   width: 100%;
-  background-color: rgba(120, 251, 120, 0.611);
+  margin: 20px 0;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+
+.zoom-bg {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  transition: 0.2s;
+}
+
+.info-text-div {
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  background-color: rgb(247, 247, 247);
+  height: 70px;
+  width: 70%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
+  padding: 10px;
+
+  h3 {
+    color: #54aab8;
+    font-weight: 300;
+  }
+
+  div {
+    width: 70%;
+    border-bottom: solid 0.5px #54aab8;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+
+  a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .info-banner {
+    height: 400px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info-banner-section {
+    width: 30%;
+    height: 100%;
+  }
+
+  .info-banner-section:hover .zoom-bg {
+    transform: scale(1.02);
+  }
 }

@@ -7,6 +7,7 @@ Tea.delete_all
 
 puts "Creating Users"
 User.create(email: "fburg6824@gmail.com", password: 'password123', admin: true);
+User.create(email: "fordburgess1@gmail.com", password: 'password123', admin: false);
 
 puts "Creating Products"
 Tea.create(

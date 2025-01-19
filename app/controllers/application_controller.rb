@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :current_cart
+  before_action :cart_total
   before_action :set_locale
 
   def after_sign_in_path_for(resource)
@@ -33,6 +34,15 @@ class ApplicationController < ActionController::Base
       if session[:cart_id] == nil
         @current_cart = Cart.create
         session[:cart_id] = @current_cart.id
+      end
+    end
+
+    def cart_total
+      if @current_cart.present?
+        @cart_total = @current_cart.line_items.sum { |line_item|
+          product = Product.find(line_item.product_id)
+          product.price * line_item.quantity
+        }
       end
     end
 end

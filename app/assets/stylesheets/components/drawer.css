@@ -1,5 +1,5 @@
 .drawer-container {
-  /* display: none; */
+  display: none;
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -69,6 +69,17 @@
 .increment-icons img {
   height: 20px !important;
   width: 20px !important;
+}
+
+.checkout-button {
+  width: 100%;
+  display: inline-block;
+  padding: 8px 0;
+  background-color: #54aab8;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 @media (min-width: 900px) {

@@ -31,6 +31,10 @@
 
 fr:
   hello: "Hello world"
+  slogan: "Ma Vie, ma Santé, My Wellness Tea!"
+  intro: "Découvrez le monde des plantes, leurs vertus bénéfiques et comment elles peuvent améliorer votre vie!"
+  history: "L’homme utilise les plantes pour se soigner depuis des millénaires, la plus ancienne médecine du monde, toujours d’actualité."
+  call_to_action: "Aujourd’hui, si on a appris à isoler et sélectionner certains principes actifs des plantes pour les extraire et en faire des médicaments, les infusions et autres décoctions restent des alliées bénéfiques pour la santé."
   welcome: "Accueil"
   teas: "Tisanes"
   plants: "Plantes"
@@ -47,3 +51,13 @@ fr:
   tea_description: "Mis à votre disposition par des professionnels de la santé, ces mélanges équilibrés de plantes reposent sur l’idée que l’union des différents végétaux fait la force et agissent en synergie, que leurs diversités peuvent vous aider et vous rendre plus forts!"
   our_herbal_teas: "Nos Tisanes"
   made_in_switzerland: 'Fièrement fabriqué en Suisse'
+  my_account: "Mon Compte"
+  account_details: "Détails du Compte"
+  my_orders: "Mes commandes"
+  admin_dashboard: "Tableau de Bord Administrateur"
+  infusion_temperature: "Température d'infusion"
+  infusion_time: "Temps d'infusion"
+  dosage: "Dosage"
+  time_of_day: "Moment de journée"
+  empty_cart: "Le panier est vide"
+  review_your_order: "Récapitulatif de votre Commande"

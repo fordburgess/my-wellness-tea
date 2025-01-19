@@ -27,23 +27,56 @@ class LineItemsController < ApplicationController
     logger.debug "Line Item Deleted"
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-    redirect_back(fallback_location: root_path)
+
+    if request.referer&.include?("cart") || request.path.include?("cart")
+      redirect_to request.referrer
+    else
+      render turbo_stream:
+        turbo_stream.remove("line_item_#{params[:id]}")
+    end
+      # turbo_stream.replace("cart_items",
+      #   partial: "shared/cart_drawer",
+      # )
   end
 
   def add_quantity
     @line_item = LineItem.find(params[:id])
     @line_item.quantity += 1
     @line_item.save
-    redirect_to cart_path(@current_cart)
+
+    if request.referer&.include?("cart") || request.path.include?("cart")
+      redirect_to request.referrer
+    else
+      render turbo_stream:
+        turbo_stream.replace("line_item_#{@line_item.id}_quantity",
+          partial: "partials/quantity", locals: { line_item: @line_item }
+        )
+    end
   end
 
   def reduce_quantity
     @line_item = LineItem.find(params[:id])
     if @line_item.quantity > 1
       @line_item.quantity -= 1
+      @line_item.save
+
+      if request.referer&.include?("cart") || request.path.include?("cart")
+        redirect_to request.referrer
+      else
+        render turbo_stream:
+          turbo_stream.replace("line_item_#{@line_item.id}_quantity",
+            partial: "partials/quantity", locals: { line_item: @line_item }
+          )
+      end
+    else
+      if request.referer&.include?("cart") || request.path.include?("cart")
+        redirect_to request.referrer
+      else
+        render turbo_stream:
+          turbo_stream.remove("line_item_#{params[:id]}")
+        @line_item.destroy
+      end
     end
-    @line_item.save
-    redirect_to cart_path(@current_cart)
   end
 
   private

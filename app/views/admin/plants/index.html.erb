@@ -1,0 +1,18 @@
+<div class="w-full px-24 py-8">
+  <div class="">
+  <h1 class="text-3xl font-light mb-6 flex items-center"><span class="mr-2"><%= t('admin_dashboard') %> /</span> <strong class="text-xl font-light">Mes Plantes</strong></h1>
+  </div>
+  <div class="flex justify-between">
+    <%= render partial: "admin/partials/admin_links" %>
+    <div class="grid grid-cols-4 gap-8" style="width: 78%;">
+      <% @plants.each do |plant| %>
+        <%= link_to edit_admin_plant_path(plant.id) do %>
+        <div class="">
+          <%= image_tag plant.images[0], class: 'mb-2', style: 'height: 150px; width: 100%; object-fit: cover; object-position: center;' %>
+          <p><%= plant.name %></p>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

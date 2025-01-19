@@ -23,10 +23,15 @@ input[type="password"],
 input[type="text"],
 input[type="number"],
 input[type="checkbox"],
+textarea,
 select {
   background-color: transparent;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
 }
 
 select {

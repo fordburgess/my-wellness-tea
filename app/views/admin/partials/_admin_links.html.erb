@@ -8,10 +8,10 @@
       <%= link_to "Créer un nouveau produit", new_admin_tea_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas/new' ? 'active-link' : '' %>
     </li>
     <li class="mb-2">
-      <%= link_to "Mes Plantes" %>
+      <%= link_to "Mes Plantes", admin_plants_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas/new' ? 'active-link' : '' %>
     </li>
     <li class="mb-6">
-      <%= link_to "Créer une nouvelle plante" %>
+      <%= link_to "Créer une nouvelle plante", new_admin_plant_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/plants/new' ? 'active-link' : '' %>
     </li>
     <p class="mb-2"><strong>Customers</strong></p>
     <li class="mb-2">

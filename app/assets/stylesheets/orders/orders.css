@@ -12,6 +12,7 @@
   input, select {
     font-size: 0.85rem;
     padding: 3px 5px;
+    border: solid 1px #cacaca;
   }
 
   label {
@@ -31,7 +32,7 @@
   #shipping-address-form {
     width: 62%;
     margin: 0;
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 4px;
     border: solid 1px #147a1c3c;
   }

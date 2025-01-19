@@ -1,8 +1,9 @@
 <div class="w-full h-full px-3 py-4 md:px-52 box-border">
-  <h1 class="text-3xl font-light m-0">Shipping Details</h1>
-  <p class="text-base mb-6">* Indicates a required field</p>
-  <div class="w-full md:flex md:justify-between">
+  <h1 class="text-3xl font-light mb-4">Payment Confirmation</h1>
+  <div class="w-full lg:flex lg:justify-between">
     <%= form_for @order, :html => { id: "shipping-address-form" } do |form| %>
+      <h1 class="text-2xl">Shipping Details</h1>
+      <p class="text-sm mb-2">* Indicates a required field</p>
       <div class="product-form-section flex flex-col mb-4 w-full mr-2">
         <%= form.label :email do %>
           Email*
@@ -59,9 +60,10 @@
       </div>
       <div class="product-form-section w-full flex justify-between" id="0">
         <h1>Payment Info</h1>
+
       </div>
     <% end %>
-    <div class="order-summary w-full">
+    <div class="order-summary">
       <div>
         <h1 class="text-2xl mb-6 font-light">Order Summary</h1>
         <div class="pb-1.5 mb-4" style="border-bottom: solid 0.5px #147a1c">
@@ -83,10 +85,11 @@
           </div>
         <% end %>
       </div>
-      <div class="w-full flex justify-between pt-4" style="border-top: solid 0.5px #147a1c">
+      <div class="w-full flex justify-between pt-4 mt-8 md:mt-0" style="border-top: solid 0.5px #147a1c">
         <p class="text-md font-medium">Order Total: </p>
         <p class="text-md font-medium"><%= sprintf('%.2f', @cart_total + 6.50) %> CHF</p>
       </div>
     </div>
   </div>
 </div>
+<script src="https://js.stripe.com/v3/"></script>

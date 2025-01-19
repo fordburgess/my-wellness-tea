@@ -69,4 +69,10 @@
     }
   }
 
+  .plant-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #54aab8;
+  }
+
 }

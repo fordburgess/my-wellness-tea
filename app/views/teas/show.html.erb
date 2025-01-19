@@ -25,7 +25,9 @@
       <div class="mb-8">
         <h4>Ingrédients</h4>
         <div class="special-tea-info" style="border-top: solid 1px <%= category_color[@tea.tea_detail.category] || '#000' %>;">
-          <p>Vigne rouge feuilles BIO, Hibiscus fleurs BIO, Ortie feuilles BIO, Prêle parties aériennes BIO, Queues de cerise BIO, Cynorrhodon fruits BIO, Pomme fruits BIO</p>
+          <% @tea.plants.each do |plant| %>
+            <%= link_to plant.name, plant_path(plant.id), class: 'plant-link' %>
+          <% end %>
         </div>
       </div>
       <div>

@@ -14,6 +14,10 @@ module MyWellnessTea
     config.i18n.available_locales = %i[en fr de it]
     config.i18n.default_locale = :fr
 
+    if Rails.env.development? || Rails.env.test?
+      Dotenv::Railtie.load
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -21,5 +25,7 @@ module MyWellnessTea
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.stripe.publishable_key = ENV['STRIPE_PUBLISHABLE_KEY'],
+    config.stripe.secret_key = ENV['STRIPE_SECRET_KEY']
   end
 end

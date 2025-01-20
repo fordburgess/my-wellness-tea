@@ -23,12 +23,12 @@ gem 'stimulus-rails'
 gem 'jbuilder', '~> 2.7'
 # devise for authentication
 gem 'devise'
-# wicked for multi step forms/wizards
-gem 'wicked'
 # for country select elements
 gem 'country_select', '~> 8.0'
 # stripe
-gem 'stripe'
+gem 'stripe-rails'
+# for env variables
+gem 'dotenv', groups: [:development, :test]
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

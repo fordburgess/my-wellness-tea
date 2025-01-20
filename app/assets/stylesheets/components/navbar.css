@@ -74,8 +74,13 @@
   }
 }
 
-#lang-menu-dropdown, #lang-menu-dropdown-mobile {
+#lang-menu-dropdown {
   background-color: rgb(247, 247, 247);
+  display: none;
+}
+
+.active-dropdown {
+  display: block !important;
 }
 
 @media (min-width: 900px) {

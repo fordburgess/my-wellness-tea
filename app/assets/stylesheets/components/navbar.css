@@ -68,7 +68,7 @@
   }
 }
 
-#lang-menu-dropdown {
+#lang-menu-dropdown, #lang-menu-dropdown-mobile {
   background-color: rgb(247, 247, 247);
 }
 

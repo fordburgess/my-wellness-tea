@@ -24,21 +24,25 @@
 }
 
 #nav-drawer-menu {
-  width: 60vw;
+  width: 80vw;
 }
 
 #cart-drawer-menu {
-  width: 60vw;
+  width: 80vw;
 }
 
 .x-icon {
   height: 25px;
   width: 25px;
-  margin-bottom: 20px;
 
   &:hover {
     cursor: pointer;
   }
+}
+
+#profile-icon-mobile {
+  height: 30px;
+  width: 30px;
 }
 
 .cart-item-delete {

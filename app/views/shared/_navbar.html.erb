@@ -3,7 +3,7 @@
 <div class="navbar-container">
   <div class="w-full flex justify-between">
     <div class="">
-      <%= image_tag "logo-main.png", class: "navbar-logo" %>
+      <%= link_to image_tag("logo-main.png"), root_path, class: "navbar-logo" %>
     </div>
     <div class="desktop-links w-1/2 justify-around items-center">
       <%= link_to t('welcome'), root_path %>
@@ -11,7 +11,7 @@
       <%= link_to t('plants'), plants_path %>
       <%= link_to t('contact'), contact_path %>
     </div>
-    <div class="desktop-helpers w-1/5 flex justify-between justify-around items-center">
+    <div class="desktop-helpers w-1/4 flex justify-between justify-around items-center">
       <div class="relative inline-block text-left" id="lang-menu-container">
         <div>
           <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" id="lang-menu-button" aria-expanded="true" aria-haspopup="true">

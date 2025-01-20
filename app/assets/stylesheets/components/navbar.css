@@ -20,6 +20,10 @@
   max-width: 120px;
 }
 
+.helpers {
+  width: 25%;
+}
+
 .hamburger-menu {
   display: block;
   max-height: 20px;
@@ -86,6 +90,10 @@
 
   .desktop-links {
     display: flex;
+  }
+
+  .helpers {
+    width: 20%;
   }
 
   #lang-menu-container, #cart-icon, #profile-icon {

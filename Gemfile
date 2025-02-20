@@ -26,9 +26,8 @@ gem 'devise'
 # for country select elements
 gem 'country_select', '~> 8.0'
 # stripe
-gem 'stripe-rails'
-# for env variables
-gem 'dotenv', groups: [:development, :test]
+gem 'stripe'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

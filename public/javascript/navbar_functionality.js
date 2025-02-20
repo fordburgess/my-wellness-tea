@@ -2,7 +2,6 @@ document.addEventListener("turbo:load", () => {
   let langMenuButton = document.getElementById("lang-menu-button");
   let langMenuDropdown = document.querySelector(".lang-menu-dropdown");
 
-  console.log(langMenuDropdown)
   langMenuButton.addEventListener("click", (e) => {
     e.stopPropagation();
     langMenuDropdown.classList.toggle('active-dropdown')

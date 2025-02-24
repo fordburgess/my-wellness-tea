@@ -5,9 +5,12 @@
   width: 100%;
 }
 
+.payment-form-container {
+  margin-bottom: 30px;
+}
+
 #shipping-address-form {
   width: 100%;
-  margin-bottom: 30px;
 
   input, select {
     font-size: 0.85rem;
@@ -40,7 +43,7 @@
     justify-content: space-between;
   }
 
-  #shipping-address-form {
+  .payment-form-container {
     width: 62%;
     margin: 0;
     padding: 10px 20px 15px;

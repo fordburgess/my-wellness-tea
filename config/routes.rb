@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/', to: redirect("/#{I18n.default_locale}")
 
+  resources :payments
   scope "/:locale", locale: /fr|de|it|en/ do
     get 'orders/index'
     get 'orders/show'

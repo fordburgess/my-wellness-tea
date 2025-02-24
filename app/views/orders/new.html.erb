@@ -1,3 +1,4 @@
+<script src="/javascript/checkout.js"></script>
 <div class="w-full h-full px-3 py-4 md:px-52 box-border">
   <h1 class="text-3xl font-light mb-4">Payment Confirmation</h1>
   <div class="w-full lg:flex lg:justify-between">
@@ -58,9 +59,16 @@
           <%= form.text_field :post_code %>
         </div>
       </div>
-      <div class="product-form-section w-full flex justify-between" id="0">
+      <div class="product-form-section w-full justify-between" id="0">
         <h1>Payment Info</h1>
-
+        <form id="payment-form">
+          <div id="payment-element"></div>
+          <button id="submit">
+              <div class="spinner hidden" id="spinner"></div>
+              <span id="button-text">Pay now</span>
+          </button>
+          <div id="payment-message" class="hidden"></div>
+        </form>
       </div>
     <% end %>
     <div class="order-summary">

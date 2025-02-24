@@ -4,11 +4,16 @@ class PaymentsController < ApplicationController
   def create
     # data = JSON.parse(request.body.read)
 
-    # puts "cart total"
-    # puts @cart_total
+    def payment_amount
+      if @cart_total > 50
+        return (@cart_total * 100).to_i
+      else
+        return ((@cart_total + 6.50) * 100).to_i
+      end
+    end
 
     payment_intent = Stripe::PaymentIntent.create(
-      amount: 50,  # Dynamic total from frontend
+      amount: payment_amount,  # Dynamic total from frontend
       currency: 'chf',
       # fields: {
       #   billingDetails: "required",

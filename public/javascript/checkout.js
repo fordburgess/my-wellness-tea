@@ -5,25 +5,25 @@ let elements;
 let orderId;
 
 initialize();
-// checkStatus();
+checkStatus();
 
-const stripeIFrameQuery = 'iframe[src^="https://js.stripe.com"]';
-document.addEventListener('turbo:before-render', function (event) {
-  const stripeIFrame = document.querySelector(stripeIFrameQuery);
-  const newStripeIFrame = event.detail.newBody.querySelector(stripeIFrameQuery);
-  if (stripeIFrame && !newStripeIFrame){
-    event.detail.newBody.appendChild(stripeIFrame)
-  }
-});
+// const stripeIFrameQuery = 'iframe[src^="https://js.stripe.com"]';
+// document.addEventListener('turbo:before-render', function (event) {
+//   const stripeIFrame = document.querySelector(stripeIFrameQuery);
+//   const newStripeIFrame = event.detail.newBody.querySelector(stripeIFrameQuery);
+//   if (stripeIFrame && !newStripeIFrame){
+//     event.detail.newBody.appendChild(stripeIFrame)
+//   }
+// });
 
 document.addEventListener("turbo:load", () => {
     var paymentForm = document.getElementById("payment-form");
     var infoForm = document.getElementById("info-form");
     var errorMessage = document.getElementById("error-message");
 
-    // document
-    //   .getElementById("payment-form")
-    //   .addEventListener("submit", handleSubmit);
+    console.log(paymentForm)
+
+    // paymentForm.addEventListener("submit", handleSubmit);
 })
 
 // Fetches a payment intent and captures the client secret
@@ -50,14 +50,12 @@ async function initialize() {
       focusBoxShadow: 'none',
       focusOutline: '-webkit-focus-ring-color auto 1px',
       tabIconSelectedColor: 'var(--colorText)',
-      fontSize: '0.85rem'
     },
     rules: {
       '.Input, .CheckboxInput, .CodeInput': {
         transition: 'none',
         backgroundColor: 'transparent',
         borderRadius: '4px',
-        fontSize: '0.85rem'
         // boxShadow: 'inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080'
       },
       '.Input': {
@@ -107,19 +105,25 @@ async function initialize() {
 
   const paymentElementOptions = {
     layout: "tabs",
-    fields: {
-      shippingDetails: "auto",
-    }
   };
 
   const paymentElement = elements.create("payment", paymentElementOptions);
 
+  // const addressElement = elements.create("address", {
+  //   mode: "shipping",
+  // });
+  // addressElement.mount("#address-element");
   paymentElement.mount("#payment-element");
+
+  console.log(document.getElementById("payment-element"))
+  document.getElementById("payment-element").addEventListener("submit", handleSubmit)
 }
 
 async function handleSubmit(e) {
   e.preventDefault();
   setLoading(true);
+
+  console.log("form submitted")
 
   const { error } = await stripe.confirmPayment({
     elements,

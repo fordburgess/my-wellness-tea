@@ -6,24 +6,14 @@ document.addEventListener("turbo:load", () => {
   let orderId;
 
   initialize();
-  checkStatus();
+  // checkStatus();
 
   // const stripeIFrameQuery = 'iframe[src^="https://js.stripe.com"]';
-  // document.addEventListener('turbo:before-render', function (event) {
-  //   const stripeIFrame = document.querySelector(stripeIFrameQuery);
-  //   const newStripeIFrame = event.detail.newBody.querySelector(stripeIFrameQuery);
-  //   if (stripeIFrame && !newStripeIFrame){
-  //     event.detail.newBody.appendChild(stripeIFrame)
-  //   }
-  // });
-
-  // document.addEventListener("turbo:load", () => {
-      var paymentForm = document.getElementById("payment-form");
-      var infoForm = document.getElementById("info-form");
-      var errorMessage = document.getElementById("error-message");
-
-      // paymentForm.addEventListener("submit", handleSubmit);
-  // })
+  // const stripeIFrame = document.querySelector(stripeIFrameQuery);
+  // const newStripeIFrame = event.detail.newBody.querySelector(stripeIFrameQuery);
+  // if (stripeIFrame && !newStripeIFrame){
+  //   event.detail.newBody.appendChild(stripeIFrame)
+  // }
 
   // Fetches a payment intent and captures the client secret
   async function initialize() {
@@ -36,7 +26,6 @@ document.addEventListener("turbo:load", () => {
           "Content-Type": "application/json",
           "X-CSRF-Token": csrfToken
       },
-      // body: JSON.stringify({ shipping }),
     });
 
     const { clientSecret } = await response.json();
@@ -55,17 +44,12 @@ document.addEventListener("turbo:load", () => {
           transition: 'none',
           backgroundColor: 'transparent',
           borderRadius: '4px',
-          // boxShadow: 'inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080'
         },
         '.Input': {
           padding: '12px'
         },
         '.Input--invalid': {
           color: '#DF1B41'
-        },
-        '.Tab, .Block, .PickerItem--selected': {
-          // backgroundColor: '#dfdfdf',
-          // boxShadow: 'inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf'
         },
         '.Tab': {
           transition: 'none',
@@ -107,21 +91,16 @@ document.addEventListener("turbo:load", () => {
     };
 
     const paymentElement = elements.create("payment", paymentElementOptions);
-
-    // const addressElement = elements.create("address", {
-    //   mode: "shipping",
-    // });
-    // addressElement.mount("#address-element");
     paymentElement.mount("#payment-element");
-    document.getElementById("payment-element").addEventListener("submit", handleSubmit)
+
+    document.getElementById("payment-form").addEventListener("submit", handleSubmit)
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
 
-    console.log("form submitted")
-
+    console.log("form submitted");
     const { error } = await stripe.confirmPayment({
       elements,
       redirect: 'if_required',
@@ -157,6 +136,7 @@ document.addEventListener("turbo:load", () => {
     );
 
     if (!clientSecret) {
+      console.log("invalid client secret")
       return;
     }
 

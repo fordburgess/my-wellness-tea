@@ -80,7 +80,7 @@
 }
 
 .active-dropdown {
-  display: block !important;
+  display: block;
 }
 
 @media (min-width: 900px) {

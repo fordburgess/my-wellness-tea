@@ -1,10 +1,12 @@
 document.addEventListener("turbo:load", () => {
   let langMenuButton = document.getElementById("lang-menu-button");
-  let langMenuDropdown = document.querySelector(".lang-menu-dropdown");
+  let langMenuDropdown = document.getElementById("lang-menu-dropdown");
 
   langMenuButton.addEventListener("click", (e) => {
     e.stopPropagation();
-    langMenuDropdown.classList.toggle('active-dropdown')
+    console.log("Lang menu clicked")
+
+    // langMenuDropdown.classList.toggle('.active-dropdown')
     // langMenuDropdown.style.display = langMenuDropdown.style.display == 'block' ? 'none' : 'block';
   })
 

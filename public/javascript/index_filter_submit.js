@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   let categorySelect = document.getElementById("category-select");
   let products = document.querySelectorAll(".product-container");
 

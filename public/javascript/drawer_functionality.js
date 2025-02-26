@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   let hamburgerMenu = document.getElementById("hamburger-menu");
   let navDrawerContainer = document.getElementById("nav-drawer-container");
   let navDrawerMenu = document.getElementById("nav-drawer-menu");

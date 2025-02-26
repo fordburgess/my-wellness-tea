@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
     get '/contact' => 'pages#contact'
     get '/plants' => 'pages#plants'
+    get '/terms-and-conditions' => 'pages#terms_and_conditions'
 
     # admin routes
     namespace :admin do

@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def plants
   end
 
+  def terms_and_conditions
+  end
+
   def dashboard
     @user = current_user
   end

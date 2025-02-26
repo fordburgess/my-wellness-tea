@@ -1,34 +1,50 @@
 <div class="footer-container">
   <div class="info-container lg:flex justify-between">
-    <div class="flex flex-col items-center justify-start">
-      <%= image_tag 'switzerland.png', id: 'swiss-graphic' %>
+    <div class="flex flex-col items-center justify-start mb-6 lg:mb-0">
+      <%= image_tag 'swiss-silhouette.png', id: 'swiss-graphic' %>
       <p class="text-sm"><strong><%= t('made_in_switzerland') %></strong></p>
     </div>
-    <div class="mb-6">
-      <h6>My Wellness Tea</h6>
+    <div class="mb-6 lg:mb-0">
+      <h6 class="font-medium">My Wellness Tea</h6>
       <ul>
         <li>
           <%= link_to "Notre Marque" %>
         </li>
         <li>
-          <%= link_to "Notre Vision" %>
+          <%= link_to "Nos Tisanes", teas_path %>
+        </li>
+        <li>
+          <%= link_to "Plantes", plants_path %>
         </li>
       </ul>
     </div>
-    <div class="mb-6">
-      <h6>La boutique en ligne</h6>
+    <div class="mb-6 lg:mb-0">
+      <h6 class="font-medium">La boutique en ligne</h6>
       <ul>
         <li>
-          <%= link_to "Aide et Contact" %>
+          <%= link_to t('contact'), contact_path %>
         </li>
         <li>
-          <%= link_to "Livraison" %>
+          <%= link_to t('legal') %>
+        </li>
+        <li>
+          <%= link_to t('privacy_policy') %>
+        </li>
+        <li>
+          <%= link_to t('terms_and_conditions'), terms_and_conditions_path %>
         </li>
       </ul>
     </div>
     <div>
-      <%= image_tag "visa-card.png", class: "payment-methods" %>
-      <%= image_tag "mastercard.png", class: "payment-methods" %>
+      <h6 class="font-medium">Paiment Sécurisé</h6>
+      <div class="flex mb-1">
+        <%= image_tag "visa-card.png", class: "payment-methods-1" %>
+        <%= image_tag "mastercard.png", class: "payment-methods-1" %>
+      </div>
+      <%= image_tag "post-and-twint.png", class: "payment-methods-2" %>
     </div>
+  </div>
+  <div class="w-full text-center">
+    <p>© <%= Time.now.year %> • Laboratoire J. Reboh et Fils SA • Route du Pontet 19 • CH -1744 Chénens • info@wellnesstea.ch • Webdesign: Ford Burgess LinkedIn: https://www.linkedin.com/in/ford-burgess/</p>
   </div>
 </div>

@@ -2,7 +2,19 @@
   width: 100%;
   background-color: #66c4d3a1;
   box-sizing: border-box;
-  padding: 15px 25px;
+  padding: 30px 12px 10px 30px;
+}
+
+.info-container {
+  margin-bottom: 50px;
+}
+
+h6 {
+  font-weight: 500;
+}
+
+p {
+  font-size: 0.85rem;
 }
 
 ul {
@@ -14,16 +26,34 @@ ul {
   width: 140px;
 }
 
-.payment-methods {
+.payment-methods-1 {
   height: 40px;
   width: 40px;
 }
 
+.payment-methods-2 {
+  height: 32px;
+  margin-left: -10px;
+}
+
+.twint-logo {
+  height: 30px;
+  width: 40px;
+}
+
 #swiss-graphic {
-  height: 150px;
-  width: 150px;
+  max-height: 125px;
+  max-width: 150px;
+  /* height: 150px;
+  width: 150px; */
   /* margin-bottom: -20px; */
 }
 
-@media (min-width: 900px) {
+@media (min-width: 800px) {
+  .footer-container {
+    width: 100%;
+    background-color: #66c4d3a1;
+    box-sizing: border-box;
+    padding: 30px 40px 10px 30px;
+  }
 }

@@ -2,7 +2,7 @@
   width: 100%;
   background-color: #66c4d3a1;
   box-sizing: border-box;
-  padding: 30px 12px 10px 30px;
+  padding: 40px 12px 10px 30px;
 }
 
 .info-container {
@@ -11,6 +11,7 @@
 
 h6 {
   font-weight: 500;
+  margin-bottom: 5px;
 }
 
 p {
@@ -44,16 +45,41 @@ ul {
 #swiss-graphic {
   max-height: 125px;
   max-width: 150px;
-  /* height: 150px;
-  width: 150px; */
-  /* margin-bottom: -20px; */
+  margin-bottom: 10px;
 }
 
-@media (min-width: 800px) {
+.newsletter-input {
+  font-size: 0.85rem;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  margin-right: 3px;
+  font-family: 'Fira Sans', serif;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.newsletter-button {
+  font-size: 0.85rem;
+  padding: 8px 15px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #17801f93;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  font-family: 'Fira Sans', serif;
+}
+
+@media (min-width: 1000px) {
   .footer-container {
     width: 100%;
     background-color: #66c4d3a1;
     box-sizing: border-box;
-    padding: 30px 40px 10px 30px;
+    padding: 70px 60px 10px 50px;
+  }
+
+  .info-container {
+    margin-bottom: 70px;
   }
 }

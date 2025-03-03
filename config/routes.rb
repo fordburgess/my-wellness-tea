@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     get '/contact' => 'pages#contact'
     get '/plants' => 'pages#plants'
     get '/terms-and-conditions' => 'pages#terms_and_conditions'
+    get '/our-brand' => 'pages#our_brand'
 
     # admin routes
     namespace :admin do

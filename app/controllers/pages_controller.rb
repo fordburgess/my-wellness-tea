@@ -13,6 +13,9 @@ class PagesController < ApplicationController
   def terms_and_conditions
   end
 
+  def our_brand
+  end
+
   def dashboard
     @user = current_user
   end

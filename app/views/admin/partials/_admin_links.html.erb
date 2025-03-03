@@ -15,7 +15,7 @@
     </li>
     <p class="mb-2"><strong>Customers</strong></p>
     <li class="mb-2">
-      <%= link_to "Commandes" %>
+      <%= link_to "Commandes", admin_orders_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/orders' ? 'active-link' : '' %>
     </li>
     <li class="mb-4">
       <%= link_to "Membres" %>

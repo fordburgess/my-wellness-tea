@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       # resources :products
       resources :teas
       resources :plants
+      resources :orders
     end
 
     resources :teas, only: [:index, :show]

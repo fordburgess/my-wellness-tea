@@ -1,0 +1,27 @@
+.mobile-message {
+  display: block;
+  text-align: center;
+}
+
+.admin-header {
+  display: none;
+}
+
+.admin-info-board {
+  display: none;
+}
+
+
+@media (min-width: 900px) {
+  .mobile-message {
+    display: none;
+  }
+
+  .admin-header {
+    display: block;
+  }
+
+  .admin-info-board {
+    display: flex;
+  }
+}

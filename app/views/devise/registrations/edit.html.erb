@@ -5,8 +5,8 @@
       <h3 class="text-lg font-medium"><%= @user.email %></h3>
     </div>
     <div class="w-full flex mb-4">
-      <div class="w-1/2 text-center py-2" style="border-bottom: solid 1px #54aab8"><h4><%= t('account_details') %><h4></div>
-      <div class="w-1/2 text-center py-2"><h4><%= t('my_orders') %><h4></div>
+      <div class="w-1/2 text-center py-2" style="border-bottom: solid 1px #54aab8"><p class="text-lg"><%= t('account_details') %></p></div>
+      <%= link_to t('my_orders'), orders_path, class: "w-1/2 text-center py-2 text-lg" %>
     </div>
     <div class="auth-form-subcontainer" id="edit-user">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

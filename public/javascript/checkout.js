@@ -57,15 +57,15 @@ document.addEventListener("turbo:load", () => {
           borderRadius: '4px'
         },
         '.Tab--selected, .Tab--selected:focus, .Tab--selected:hover': {
-          color: 'var(--colorText)',
-          backgroundColor: '#ccc'
+          // color: 'var(--colorText)',
+          backgroundColor: '#eee'
         },
         '.Tab:focus, .Tab--selected:focus': {
-          boxShadow: 'inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf',
+          // boxShadow: 'inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf',
           outline: 'none'
         },
         '.Tab:focus-visible': {
-          outline: 'var(--focusOutline)'
+          // outline: 'var(--focusOutline)'
         },
         // '.PickerItem': {
         //   backgroundColor: '#dfdfdf',
@@ -100,20 +100,29 @@ document.addEventListener("turbo:load", () => {
     e.preventDefault();
     setLoading(true);
 
-    console.log("form submitted");
-    const { error } = await stripe.confirmPayment({
-      elements,
-      redirect: 'if_required',
-      confirmParams: {
-        // Make sure to change this to your payment completion page
-        return_url: `http://localhost:3000`,
-      },
-    })
-    .then(res => {
-      if (res.paymentIntent.status == "succeeded") {
-        window.location.href = `http://localhost:3000`
-      }
-    })
+    let orderEmail = document.getElementById("order_email").value;
+    let orderFirstName = document.getElementById("order_first_name").value;
+    let orderLastName = document.getElementById("order_last_name").value;
+    let orderAddressLine1 = document.getElementById("order_address_line_1").value;
+    let orderAddressLine2 = document.getElementById("order_address_line_2").value;
+    let orderCity = document.getElementById("order_city").value;
+    let orderCountry = document.getElementById("order_country").value;
+    let orderPostCode = document.getElementById("order_post_code").value;
+
+
+    // const { error } = await stripe.confirmPayment({
+    //   elements,
+    //   redirect: 'if_required',
+    //   confirmParams: {
+    //     // Make sure to change this to your payment completion page
+    //     return_url: `http://localhost:3000`,
+    //   },
+    // })
+    // .then(res => {
+    //   if (res.paymentIntent.status == "succeeded") {
+    //     window.location.href = `http://localhost:3000`
+    //   }
+    // })
 
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to

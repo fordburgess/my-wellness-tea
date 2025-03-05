@@ -3,64 +3,66 @@
   <h1 class="text-3xl font-light mb-4">Payment Confirmation</h1>
   <div class="w-full lg:flex lg:justify-between">
     <div class="payment-form-container">
-      <%= form_for @order, :html => { id: "shipping-address-form" } do |form| %>
+      <form id="shipping-address-form" action="<%= orders_path %>" method="post">
         <h1 class="text-2xl">Shipping Details</h1>
         <p class="text-sm mb-2">* Indicates a required field</p>
+
+        <!-- Email Field -->
         <div class="product-form-section flex flex-col mb-4 w-full mr-2">
-          <%= form.label :email do %>
-            Email*
-          <% end %>
-          <%= form.email_field :email, value: current_user ? current_user.email : '' %>
+          <label for="order_email">Email*</label>
+          <input type="email" name="order[email]" id="order_email" value="<%= current_user ? current_user.email : '' %>" required>
         </div>
+
+        <!-- First Name and Last Name -->
         <div class="product-form-section w-full flex justify-between mb-4" id="0">
           <div class="flex flex-col w-[48%]">
-            <%= form.label :first_name do %>
-              First Name*
-            <% end %>
-            <%= form.text_field :first_name %>
+            <label for="order_first_name">First Name*</label>
+            <input type="text" name="order[first_name]" id="order_first_name" required>
           </div>
           <div class="flex flex-col w-[48%]">
-            <%= form.label :last_name do %>
-              Last Name*
-            <% end %>
-            <%= form.text_field :last_name %>
+            <label for="order_last_name">Last Name*</label>
+            <input type="text" name="order[last_name]" id="order_last_name" required>
           </div>
         </div>
+
+        <!-- Address Lines and City -->
         <div class="product-form-section flex flex-col mb-4 w-full mr-2">
           <div class="flex flex-col mb-2 w-full">
-            <%= form.label :address_line_1 do %>
-              Address Line 1*
-            <% end %>
-            <%= form.text_field :address_line_2 %>
+            <label for="order_address_line_1">Address Line 1*</label>
+            <input type="text" name="order[address_line_1]" id="order_address_line_1" required>
           </div>
           <div class="flex flex-col mb-2 w-full">
-            <%= form.label :address_line_2 do %>
-              Address Line 2
-            <% end %>
-            <%= form.text_field :address_line_2 %>
+            <label for="order_address_line_2">Address Line 2</label>
+            <input type="text" name="order[address_line_2]" id="order_address_line_2">
           </div>
           <div class="flex flex-col w-full">
-            <%= form.label :city do %>
-              City*
-            <% end %>
-            <%= form.text_field :city %>
+            <label for="order_city">City*</label>
+            <input type="text" name="order[city]" id="order_city" required>
           </div>
         </div>
+
+        <!-- Country and Post Code -->
         <div class="product-form-section w-full flex justify-between mb-8" id="0">
           <div class="flex flex-col w-[48%]">
-            <%= form.label :country do %>
-              Country*
-            <% end %>
-            <%= form.country_select :country, { priority_countries: ["CH", "FR", "DE", "IT"], prompt: "Country" } %>
+            <label for="order_country">Country*</label>
+            <select name="order[country]" id="order_country" required>
+              <option value="" disabled selected>Country</option>
+              <option value="CH">Switzerland</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+              <option value="IT">Italy</option>
+              <!-- Add more countries as necessary -->
+            </select>
           </div>
           <div class="flex flex-col w-[48%]">
-            <%= form.label :post_code do %>
-              Post Code*
-            <% end %>
-            <%= form.text_field :post_code %>
+            <label for="order_post_code">Post Code*</label>
+            <input type="text" name="order[post_code]" id="order_post_code" required>
           </div>
         </div>
-      <% end %>
+
+        <!-- Submit Button -->
+        <button type="submit">Proceed to Payment</button>
+      </form>
       <div class="product-form-section w-full justify-between" id="0">
         <h1>Payment Info</h1>
         <form id="payment-form">

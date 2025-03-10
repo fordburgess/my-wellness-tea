@@ -14,5 +14,7 @@ class Admin::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    @order_total = @order.line_items.sum { |item| item.quantity * item.product.price }
   end
 end

@@ -26,7 +26,7 @@
               <p style="color: #54aab8; font-weight: 600;">#<%= order.id %></p>
             </div>
             <div class="w-1/4">
-              <p><strong>CHF 36.50</strong></p>
+              <p><strong>CHF <%= sprintf('%.2f', order.order_total) %></strong></p>
             </div>
             <div class="w-1/4">
               <p><%= order.name %></p>

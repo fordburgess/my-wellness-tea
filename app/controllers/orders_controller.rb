@@ -6,6 +6,10 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def index
+    @orders = Order.where(user_id: current_user.id)
+  end
+
   def new
     @order = Order.new
     @tea = Tea.find(2)

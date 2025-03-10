@@ -51,7 +51,7 @@
     </div>
   </div>
   <% if request.referer&.include?("/my-orders") %>
-    <%= link_to "Back to My Orders, my_orders_path, style: "margin: 0 auto; color: #448f9b; text-decoration: underline;" %>
+    <%= link_to "Back to My Orders", my_orders_path, style: "margin: 0 auto; color: #448f9b; text-decoration: underline;" %>
   <% else %>
     <%= link_to t('back_to_home'), root_path, style: "margin: 0 auto; color: #448f9b; text-decoration: underline;" %>
   <% end %>

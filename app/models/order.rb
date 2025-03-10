@@ -6,5 +6,4 @@ class Order < ApplicationRecord
   def order_total
     line_items.sum { |item| item.quantity * item.product.price }
   end
-
 end

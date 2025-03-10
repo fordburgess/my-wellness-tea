@@ -38,6 +38,18 @@
   border: none;
 }
 
+.status-div {
+  margin: 0 auto;
+  text-align: center;
+  padding: 2px;
+  border: solid 1px #147a1c;
+  background-color: #147a1c2f;
+  color: #147a1c;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
 @media (min-width: 1000px) {
   .order-summary {
     width: 36%;

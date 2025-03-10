@@ -1,4 +1,58 @@
-<div>
-  <h1 class="font-bold text-4xl">Orders#show</h1>
-  <p>Find me in app/views/orders/show.html.erb</p>
+<div class="w-full h-full px-3 py-10 lg:px-72 text-center">
+  <%= image_tag "logo-main.png", class: "h-[50px] w-[170px]", style: "margin: 0 auto" %>
+  <h1 class="font-light text-3xl mb-4"><%= t('order_confirmation') %></h1>
+  <div class="w-full flex justify-between p-4 mb-4" style="background-color: #EEE; border-radius: 4px">
+    <div class="w-1/2 text-left pr-3 lg:pr-6" style="border-right: solid 2px #cacaca">
+      <h4 class="font-semibold mb-2"><%= t('summary') %></h4>
+      <ul class="w-full">
+        <li class="flex w-full flex justify-between mb-0.5">
+          <p>Order #</p>
+          <p><%= @order.id %></p>
+        </li>
+        <li class="flex w-full flex justify-between">
+          <p>Order Date</p>
+          <p><%= @order.created_at.day %> <%= @order.created_at.strftime("%b") %>, <%= @order.created_at.year %></p>
+        </li>
+      </ul>
+    </div>
+    <div class="w-1/2 text-left pl-3 lg:pl-6">
+      <h4 class="font-semibold mb-2"><%= t('shipping_address') %></h4>
+      <p class="mb-0.5"><%= @order.street_address %></p>
+      <p class="mb-0.5"><%= @order.city %></p>
+      <p class="mb-0.5"><%= @order.country %></p>
+      <p><%= @order.post_code %></p>
+    </div>
+  </div>
+  <div class="text-left mb-20">
+    <h4 class="font-semibold mb-2">Items</h4>
+    <% @order.line_items.each do |item| %>
+      <div class="flex justify-between py-2 mb-4" style="border-bottom: solid 2px #eee">
+        <div class="flex">
+          <%= image_tag ["tea-lake-2.jpeg", "tea-wellbeing-2.png", "tea-woman-2.jpeg"].sample, class: "mr-4", style: "height: 70px; width: 50px;" %>
+          <p><strong><%= item.product.title %></strong></p>
+        </div>
+        <div class="flex">
+          <p class="mr-4">Qty: <%= item.quantity %></p>
+          <p>Price: <strong><%= sprintf('%.2f', item.product.price) %> CHF</strong></p>
+        </div>
+      </div>
+    <% end %>
+    <div class="w-full flex justify-between mb-4">
+      <p>Shipping: </p>
+      <% if @order.order_total > 50 %>
+        <p><strong>Free (0.00 CHF)</strong> - Order is over 50 CHF</p>
+      <% else %>
+        <p><strong>6.50 CHF</strong></p>
+      <% end %>
+    </div>
+    <div class="flex justify-between" style="color: #DF1B41; font-size: 1.25rem;">
+      <p><strong>Total</strong></p>
+      <p><strong><%= sprintf('%.2f', @order.order_total > 50 ? @order.order_total : @order.order_total + 6.50) %> CHF</strong></p>
+    </div>
+  </div>
+  <% if request.referer&.include?("/my-orders") %>
+    <%= link_to "Back to My Orders, my_orders_path, style: "margin: 0 auto; color: #448f9b; text-decoration: underline;" %>
+  <% else %>
+    <%= link_to t('back_to_home'), root_path, style: "margin: 0 auto; color: #448f9b; text-decoration: underline;" %>
+  <% end %>
 </div>

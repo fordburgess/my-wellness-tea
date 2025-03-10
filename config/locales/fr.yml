@@ -65,6 +65,10 @@ fr:
   legal: "Mentions légales"
   privacy_policy: "Politique de confidentialité"
   our_brand: "Notre marque"
+  order_confirmation: "Confirmation de commande"
+  summary: "Résumé"
+  shipping_address: "Adresse de livraison"
+  back_to_home: "Retour à l'accueil"
 
   # terms and conditions
   terms_and_conditions: "Conditions générales de vente"

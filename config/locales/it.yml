@@ -32,3 +32,7 @@ it:
   review_your_order: "Riepilogo del tuo ordine"
   contact_us: "Contattaci"
   our_brand: "Il nostro marchio"
+  order_confirmation: "Conferma dell'ordine"
+  summary: "Sintesi"
+  shipping_address: "Indirizzo di spedizione"
+  back_to_home: "Torna alla home"

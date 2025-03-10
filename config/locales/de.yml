@@ -34,6 +34,10 @@ de:
   legal: "Impressum"
   privacy_policy: "Datenschutzerklärung"
   our_brand: "Unsere Marke"
+  order_confirmation: "Auftragsbestätigung"
+  summary: "Zusammenfassung"
+  shipping_address: "Lieferadresse"
+  back_to_home: "Zurück zur Startseite"
 
   # terms and conditions
   terms_and_conditions: "Allgemeine Geschäftsbedingungen"

@@ -34,6 +34,10 @@ en:
   legal: "Legal"
   privacy_policy: "Privacy Policy"
   our_brand: "Our Brand"
+  order_confirmation: "Order Confirmation"
+  summary: "Summary"
+  shipping_address: "Shipping Address"
+  back_to_home: "Back to Home"
 
   # terms and conditions
   terms_and_conditions: "Terms & Conditions"

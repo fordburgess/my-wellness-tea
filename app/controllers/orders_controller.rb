@@ -11,14 +11,19 @@ class OrdersController < ApplicationController
   end
 
   def create
-    Rails.logger.error order_params
     @order = Order.new(order_params)
     @order.user = current_user if user_signed_in?
 
+    @current_cart.line_items.each do |item|
+      @order.line_items << item
+    end
+
     respond_to do |format|
       if @order.save
+        @current_cart.destroy
         format.json { render json: @order.id }
-        # format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
+        format.html { redirect_to order_url(@order) }
+
         # format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }

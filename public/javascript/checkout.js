@@ -98,7 +98,7 @@ document.addEventListener("turbo:load", () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // setLoading(true);
+    setLoading(true);
 
     let orderEmail = document.getElementById("order_email");
     let orderFirstName = document.getElementById("order_first_name");
@@ -122,7 +122,6 @@ document.addEventListener("turbo:load", () => {
 
       inputs.forEach(input => {
         if (input.value.trim() == "") {
-          console.log({ input, value: input.value })
           input.classList.add("inputError")
         }
       })
@@ -136,43 +135,41 @@ document.addEventListener("turbo:load", () => {
         country: orderCountry.value,
         post_code: orderPostCode.value
       }
-
       const locale = window.location.pathname.split('/')[1];
 
-      fetch(`/${locale}/orders`, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type' : 'application/json',
-          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      const { error } = await stripe.confirmPayment({
+        elements,
+        redirect: 'if_required',
+        confirmParams: {
+          // Make sure to change this to your payment completion page
+          return_url: `http://localhost:3000`,
         },
-        body: JSON.stringify({ order: formData })
       })
-      .then(response => response.json())
-      .then(data => console.log("Order created:", data))
-      .catch(error => console.error("Error:", error));
+      .then(res => {
+        console.log(res)
+        if (res.paymentIntent.status == "succeeded") {
+          fetch(`/${locale}/orders`, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type' : 'application/json',
+              'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            },
+            body: JSON.stringify({ order: formData })
+          })
+          .then(response => response.json())
+          .then(data => console.log("Order created:", data))
+          .catch(orderError => console.error("Error:", orderError));
+        }
+      })
 
-//       const { error } = await stripe.confirmPayment({
-//         elements,
-//         redirect: 'if_required',
-//         confirmParams: {
-//           // Make sure to change this to your payment completion page
-//           return_url: `http://localhost:3000`,
-//         },
-//       })
-//       .then(res => {
-//         if (res.paymentIntent.status == "succeeded") {
-//           // window.location.href = `http://localhost:3000`
-//         }
-//       })
-//
-//       if (error.type === "card_error" || error.type === "validation_error") {
-//         showMessage(error.message);
-//       } else {
-//         showMessage("An unexpected error occurred.");
-//       }
-//
-//       setLoading(false);
+      if (error.type === "card_error" || error.type === "validation_error") {
+        showMessage(error.message);
+      } else {
+        showMessage("An unexpected error occurred.");
+      }
+
+      setLoading(false);
     }
 
     // This point will only be reached if there is an immediate error when

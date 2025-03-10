@@ -3,9 +3,7 @@ Rails.application.routes.draw do
 
   resources :payments
   scope "/:locale", locale: /fr|de|it|en/ do
-    get 'orders/index'
-    get 'orders/show'
-    get 'orders/new'
+    resources :orders
     get 'carts/show'
     devise_for :users, controllers: {
       registrations: 'users/registrations'

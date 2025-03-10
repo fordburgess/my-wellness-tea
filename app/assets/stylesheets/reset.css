@@ -81,6 +81,10 @@ input[type="submit"] {
   background-color: rgba(228, 228, 228, 0.481);
 }
 
+.inputError {
+  border: solid 2px #DF1B41 !important;
+}
+
 .divider {
   width: 100%;
   height: 1px;

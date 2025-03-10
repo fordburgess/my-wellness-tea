@@ -98,44 +98,88 @@ document.addEventListener("turbo:load", () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
 
-    let orderEmail = document.getElementById("order_email").value;
-    let orderFirstName = document.getElementById("order_first_name").value;
-    let orderLastName = document.getElementById("order_last_name").value;
-    let orderAddressLine1 = document.getElementById("order_address_line_1").value;
-    let orderAddressLine2 = document.getElementById("order_address_line_2").value;
-    let orderCity = document.getElementById("order_city").value;
-    let orderCountry = document.getElementById("order_country").value;
-    let orderPostCode = document.getElementById("order_post_code").value;
+    let orderEmail = document.getElementById("order_email");
+    let orderFirstName = document.getElementById("order_first_name");
+    let orderLastName = document.getElementById("order_last_name");
+    let orderAddressLine1 = document.getElementById("order_address_line_1");
+    let orderAddressLine2 = document.getElementById("order_address_line_2");
+    let orderCity = document.getElementById("order_city");
+    let orderCountry = document.getElementById("order_country");
+    let orderPostCode = document.getElementById("order_post_code");
 
+    if (
+      orderEmail.value == "" ||
+      orderFirstName.value == "" ||
+      orderLastName.value == "" ||
+      orderAddressLine1.value == "" ||
+      orderCity.value == "" ||
+      orderCountry.value == "" ||
+      orderPostCode.value == ""
+    ) {
+      let inputs = [orderEmail, orderFirstName, orderLastName, orderAddressLine1, orderCity, orderCountry, orderPostCode]
 
-    // const { error } = await stripe.confirmPayment({
-    //   elements,
-    //   redirect: 'if_required',
-    //   confirmParams: {
-    //     // Make sure to change this to your payment completion page
-    //     return_url: `http://localhost:3000`,
-    //   },
-    // })
-    // .then(res => {
-    //   if (res.paymentIntent.status == "succeeded") {
-    //     window.location.href = `http://localhost:3000`
-    //   }
-    // })
+      inputs.forEach(input => {
+        if (input.value.trim() == "") {
+          console.log({ input, value: input.value })
+          input.classList.add("inputError")
+        }
+      })
+    }
+    else {
+      let formData = {
+        email: orderEmail.value,
+        name: `${orderFirstName.value} ${orderLastName.value}`,
+        street_address: `${orderAddressLine1.value}, ${orderAddressLine2.value}`,
+        city: orderCity.value,
+        country: orderCountry.value,
+        post_code: orderPostCode.value
+      }
+
+      const locale = window.location.pathname.split('/')[1];
+
+      fetch(`/${locale}/orders`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type' : 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+        body: JSON.stringify({ order: formData })
+      })
+      .then(response => response.json())
+      .then(data => console.log("Order created:", data))
+      .catch(error => console.error("Error:", error));
+
+//       const { error } = await stripe.confirmPayment({
+//         elements,
+//         redirect: 'if_required',
+//         confirmParams: {
+//           // Make sure to change this to your payment completion page
+//           return_url: `http://localhost:3000`,
+//         },
+//       })
+//       .then(res => {
+//         if (res.paymentIntent.status == "succeeded") {
+//           // window.location.href = `http://localhost:3000`
+//         }
+//       })
+//
+//       if (error.type === "card_error" || error.type === "validation_error") {
+//         showMessage(error.message);
+//       } else {
+//         showMessage("An unexpected error occurred.");
+//       }
+//
+//       setLoading(false);
+    }
 
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to
     // your `return_url`. For some payment methods like iDEAL, your customer will
     // be redirected to an intermediate site first to authorize the payment, then
     // redirected to the `return_url`.
-    if (error.type === "card_error" || error.type === "validation_error") {
-      showMessage(error.message);
-    } else {
-      showMessage("An unexpected error occurred.");
-    }
-
-    setLoading(false);
   }
 
   // Fetches the payment intent status after payment submission

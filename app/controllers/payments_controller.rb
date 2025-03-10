@@ -21,8 +21,6 @@ class PaymentsController < ApplicationController
       # }
     )
 
-    Rails.logger.error payment_intent
-
     render json: { clientSecret: payment_intent.client_secret }
 
   end

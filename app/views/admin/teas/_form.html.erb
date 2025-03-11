@@ -39,7 +39,7 @@
     </div>
     <div class="flex flex-col mb-6 w-full mr-2">
       <%= details_form.label :category %>
-      <%= details_form.select(:category, options_for_select(['Bien-être', 'Bien-être digestif', 'Bien-être chez la femme', 'Hiver'])) %>
+      <%= details_form.select(:category, options_for_select(['Bien-être', 'Bien-être digestif', 'Bien-être chez la femme', 'Hiver'], @tea.tea_detail.category)) %>
     </div>
   <% end %>
   <div class="product-form-section w-full mb-6">

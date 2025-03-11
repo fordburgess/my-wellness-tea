@@ -20,27 +20,27 @@
   display: flex;
   justify-content: space-between;
   /* padding: 50px; */
+  color: #fff;
 
   h1 {
     font-size: 3rem;
     font-weight: 200;
-    color: #fff;
   }
 }
 
 .carousel-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 100px;
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: center; */
+  padding: 125px 100px;
 }
 
 .carousel-link {
   padding: 10px 20px;
   background-color: rgba(2, 92, 38, 0.639);
   color: #fff;
-  width: auto;
   border-radius: 50px;
+  display: inline-block !important;
 }
 
 .poop-test {

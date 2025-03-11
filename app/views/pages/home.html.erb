@@ -2,8 +2,9 @@
   <div class="main-banner">
     <div class="carousel-slide" id="carousel-slide-1">
       <div class="carousel-info">
-
-        <%= link_to "See our teas for digestion", teas_path, class: "carousel-link" %>
+        <h1>La solution à votre digestion</h1>
+        <p class="font-semibold text-lg mb-6">Pour le confort des gourmands</p>
+        <%= link_to "See our teas for digestion", teas_path, class: "carousel-link", style: "display: inline-block;" %>
       </div>
       <%= image_tag "swiss-lake.jpg" %>
     </div>
@@ -22,26 +23,26 @@
         <div>
           <h3>Discover Stuff</h3>
         </div>
-        <%= link_to "Click Here", teas_path %>
+        <p>Click Here</p>
       </div>
     </div>
-    <div class="info-banner-section" id="our-teas">
+    <%= link_to teas_path, class: "info-banner-section" do %>
       <div class="zoom-bg" style='background-image: url(<%= asset_path 'tea-leaves.jpeg' %>)'></div>
       <div class="info-text-div">
         <div>
           <h3>Discover Stuff</h3>
         </div>
-        <%= link_to "Click Here", teas_path %>
+        <p>Click Here</p>
       </div>
-    </div>
-    <div class="info-banner-section" id="our-history" style='background-image: url(<%= asset_path 'romont.jpg' %>)'>
+    <% end %>
+    <%= link_to our_brand_path, class: "info-banner-section" do %>
       <div class="zoom-bg" style='background-image: url(<%= asset_path 'romont.jpg' %>)'></div>
       <div class="info-text-div">
         <div>
           <h3><%= t('our_brand') %></h3>
         </div>
-        <%= link_to "Click Here", our_brand_path %>
+        <p>Click Here</p>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
     }
 
+    resources :plants, only: [:index, :show]
+
     # order and cart functionality
     get 'carts/:id' => "carts#show", as: "cart"
     delete 'carts/:id' => "carts#destroy"
@@ -27,7 +29,6 @@ Rails.application.routes.draw do
     # pages not associated with a model
     root to: 'pages#home'
     get '/contact' => 'pages#contact'
-    get '/plants' => 'pages#plants'
     get '/terms-and-conditions' => 'pages#terms_and_conditions'
     get '/our-brand' => 'pages#our_brand'
 

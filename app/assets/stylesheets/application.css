@@ -23,6 +23,7 @@
  @import "~/stylesheets/pages/our_brand";
  @import "~/stylesheets/teas/index";
  @import "~/stylesheets/teas/show";
+ @import "~/stylesheets/plants/index";
  @import "~/stylesheets/devise/auth_form";
  @import "~/stylesheets/devise/user_dashboard";
  @import "~/stylesheets/admin/admin_form";

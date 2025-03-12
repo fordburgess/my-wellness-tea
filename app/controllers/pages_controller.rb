@@ -7,9 +7,6 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def plants
-  end
-
   def terms_and_conditions
   end
 

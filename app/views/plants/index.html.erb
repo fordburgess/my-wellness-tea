@@ -1,0 +1,9 @@
+<div class="plant-index-container">
+  <h1 class="font-light"><%= t('harmony') %></h1>
+  <h2 class="font-semibold"><%= t('our_plants') %></h2>
+  <div>
+    <% @plants_wellbeing_women.each do |plant| %>
+      <p><%= plant.name %></p>
+    <% end %>
+  </div>
+</div>

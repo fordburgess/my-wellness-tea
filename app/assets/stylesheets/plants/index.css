@@ -1,6 +1,10 @@
 .plant-index-container {
   width: 100%;
   padding: 10px 12px;
+}
+
+.plants-intro {
+  margin-bottom: 30px;
 
   h1 {
     font-size: 1.5rem;
@@ -11,9 +15,28 @@
   }
 }
 
+.plant-section-title {
+  font-size: 1.5rem !important;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.index-plant {
+  width: 48%;
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 5px;
+  }
+}
+
 @media (min-width: 900px) {
   .plant-index-container {
-    padding: 50px 0;
+    padding: 40px 0;
     width: 75%;
     margin: 0 auto;
 
@@ -23,6 +46,18 @@
 
     h2 {
       font-size: 1.25rem;
+    }
+  }
+
+  .index-plant {
+    width: 24%;
+
+    img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 5px;
     }
   }
 }

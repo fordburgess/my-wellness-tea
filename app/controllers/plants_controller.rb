@@ -17,5 +17,6 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
+    @relevant_teas = Tea.joins(:plants).where(plants: { id: @plant.id }).distinct
   end
 end

@@ -46,6 +46,9 @@ en:
   digestion_title: "Plants for Digestive Well-being: Harmony from Within"
   well_being_women_title: "Herbal Allies for Women: Nurturing Balance and Wellness"
   winter_title: "Plants for Winter Teas: Warmth and Protection Against the Cold"
+  common_name: "Common Name"
+  latin_name: "Latin name"
+  traditional_qualities: "Traditional qualities"
 
   # terms and conditions
   terms_and_conditions: "Terms & Conditions"

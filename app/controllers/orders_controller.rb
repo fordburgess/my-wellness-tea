@@ -26,10 +26,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         @current_cart.destroy
-        format.json { render json: @order.id }
-        format.html { redirect_to order_url(@order) }
-
-        # format.json { render :show, status: :created, location: @order }
+        format.json { render json: { id: @order.id } }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @order.errors, status: :unprocessable_entity }

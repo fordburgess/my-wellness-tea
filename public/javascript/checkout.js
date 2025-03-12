@@ -1,4 +1,4 @@
-document.addEventListener("turbo:load", () => {
+// document.addEventListener("turbo:load", () => {
 
   const stripe = Stripe("pk_test_51P5XAnHLVVBFu1EIy3lOWYCjjNFj7uxfFSKKQM14x9ERPEpWVlSD009gI3MiaIYohJ4XPmEicONVI29dA1Trk5Yx00dcwkpgaX");
 
@@ -146,7 +146,6 @@ document.addEventListener("turbo:load", () => {
         },
       })
       .then(res => {
-        console.log(res)
         if (res.paymentIntent.status == "succeeded") {
           fetch(`/${locale}/orders`, {
             method: 'POST',
@@ -158,7 +157,10 @@ document.addEventListener("turbo:load", () => {
             body: JSON.stringify({ order: formData })
           })
           .then(response => response.json())
-          .then(data => console.log("Order created:", data))
+          .then(data => {
+            console.log(data.id)
+            window.location.href = `/${locale}/orders/${data.id}`
+          })
           .catch(orderError => console.error("Error:", orderError));
         }
       })
@@ -235,4 +237,4 @@ document.addEventListener("turbo:load", () => {
       document.querySelector("#button-text").classList.remove("hidden");
     }
   }
-})
+// })

@@ -83,6 +83,13 @@
   display: block !important;
 }
 
+.active-nav-item {
+  /* color: #54aab8 !important; */
+  /* font-weight: 500; */
+  text-decoration: none !important;
+  border-bottom: solid 2px #54aab8;
+}
+
 @media (min-width: 900px) {
   .navbar-container {
     height: 10vh;

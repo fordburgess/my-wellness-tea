@@ -5,10 +5,10 @@
       <%= link_to image_tag("logo-main.png"), root_path, class: "navbar-logo" %>
     </div>
     <div class="desktop-links w-1/2 justify-around items-center">
-      <%= link_to t('welcome'), root_path %>
-      <%= link_to t('teas'), teas_path %>
-      <%= link_to t('plants'), plants_path %>
-      <%= link_to t('contact'), contact_path %>
+      <%= link_to t('welcome'), root_path, class: (request.path == root_path ? 'active-nav-item' : '') %>
+      <%= link_to t('teas'), teas_path, class: (request.path.starts_with?(teas_path) ? 'active-nav-item' : '') %>
+      <%= link_to t('plants'), plants_path, class: (request.path.starts_with?(plants_path) ? 'active-nav-item' : '') %>
+      <%= link_to t('contact'), contact_path, class: (request.path == contact_path ? 'active-nav-item' : '') %>
     </div>
     <div class="helpers flex justify-between justify-around items-center">
       <div class="relative inline-block text-left" id="lang-menu-container">

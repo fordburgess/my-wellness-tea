@@ -18,7 +18,7 @@
       <%= link_to "Commandes", admin_orders_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/orders' ? 'active-link' : '' %>
     </li>
     <li class="mb-4">
-      <%= link_to "Membres" %>
+      <%= link_to "Membres", admin_users_path, class: request.path == admin_users_path ? 'active-link' : '' %>
     </li>
     <p class="mb-2"><strong>Actions</strong></p>
     <li class="mb-4">

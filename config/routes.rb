@@ -39,6 +39,7 @@ Rails.application.routes.draw do
       resources :teas
       resources :plants
       resources :orders
+      resources :users, only: [:index]
     end
 
     resources :teas, only: [:index, :show]

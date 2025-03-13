@@ -3,8 +3,8 @@
     <div class="carousel-slide" id="carousel-slide-1">
       <div class="carousel-info">
         <h1>La solution à votre digestion</h1>
-        <p class="font-semibold text-lg mb-6">Pour le confort des gourmands</p>
-        <%= link_to "See our teas for digestion", teas_path, class: "carousel-link", style: "display: inline-block;" %>
+        <p class="font-semibold">Pour le confort des gourmands</p>
+        <%= link_to "See our teas for digestion", teas_path(category: 'Bien-être digestif'), class: "carousel-link", style: "display: inline-block;" %>
       </div>
       <%= image_tag "swiss-lake.jpg" %>
     </div>

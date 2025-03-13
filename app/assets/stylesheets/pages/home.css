@@ -1,38 +1,52 @@
 .main-banner {
+  position: relative;
   height: 450px;
   width: 100%;
   background-color: rgba(2, 92, 38, 0.639);
   margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+  padding: 50px 40px;
+  box-sizing: border-box;
 
   img {
-    height: 100%;
-    width: 40%;
+    height: 70%;
+    width: 75%;
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    border-radius: 50%;
     object-fit: cover;
-    border-radius: 300px 0 0 300px;
+    object-position: right bottom;
+    z-index: 0;
   }
 }
 
 .carousel-slide {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  /* padding: 50px; */
   color: #fff;
 
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    line-height: 2.1rem;
     font-weight: 200;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  a {
+    font-size: 0.75rem;
+    padding: 7px 12px !important;
+    z-index: 10;
   }
 }
 
 .carousel-info {
-  /* display: flex; */
-  /* flex-direction: column;
-  justify-content: center; */
-  padding: 125px 100px;
+  /* padding: 125px 100px; */
 }
 
 .carousel-link {
@@ -138,6 +152,49 @@
 }
 
 @media (min-width: 900px) {
+  .main-banner {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+
+    img {
+      position: static;
+      height: 100%;
+      width: 40%;
+      object-fit: cover;
+      border-radius: 300px 0 0 300px;
+    }
+  }
+
+  .carousel-slide {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 50px; */
+    color: #fff;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 200;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    a {
+      font-size: 1rem;
+      padding: 10px 20px !important;
+    }
+  }
+
+  .carousel-info {
+    padding: 125px 100px;
+  }
   .info-banner {
     height: 400px;
     flex-direction: row;

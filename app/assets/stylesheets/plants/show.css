@@ -43,14 +43,14 @@
     margin: 0 auto;
 
     h2 {
-      font-size: 2rem;
-      line-height: 2rem;
+      /* font-size: 2rem;
+      line-height: 2rem; */
     }
   }
 
   .tea-title-container {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
   }
 
   .plants-info-container {

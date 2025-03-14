@@ -91,6 +91,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (3.1.7)
+    dotenv-rails (3.1.7)
+      dotenv (= 3.1.7)
+      railties (>= 6.1)
     erubi (1.13.1)
     ffi (1.17.0-arm64-darwin)
     globalid (1.2.1)
@@ -248,6 +252,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   country_select (~> 8.0)
   devise
+  dotenv-rails
   importmap-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)

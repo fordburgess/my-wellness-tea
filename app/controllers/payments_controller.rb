@@ -1,22 +1,28 @@
-Class PaymentsController < ApplicationController
-  def new
-  end
+class PaymentsController < ApplicationController
+  Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
 
   def create
-    customer = Stripe::Customer.create({
-      :email => params[:stripeEmail],
-      :source => params[:stripeToken]
-    })
+    puts ENV["STRIPE_SECRET_KEY"]
+    # data = JSON.parse(request.body.read)
 
-    charge = Stripe::Charge.create({
-      :customer => customer.id,
-      :amount => 500,
-      :description => 'Description of your product',
-      :currency => 'usd'
-    })
+    def payment_amount
+      if @cart_total > 50
+        return (@cart_total * 100).to_i
+      else
+        return ((@cart_total + 6.50) * 100).to_i
+      end
+    end
 
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to new_payment_path
+    payment_intent = Stripe::PaymentIntent.create(
+      amount: payment_amount,  # Dynamic total from frontend
+      currency: 'chf',
+      # fields: {
+      #   billingDetails: "required",
+      #   shippingDetails: "auto",
+      # }
+    )
+
+    render json: { clientSecret: payment_intent.client_secret }
+
   end
 end

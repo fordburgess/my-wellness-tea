@@ -1,0 +1,45 @@
+<div class="w-full h-full px-24 py-8">
+  <div class="admin-header">
+    <h1 class="text-3xl font-light mb-6 flex items-center"><span class="mr-2"><%= t('admin_dashboard') %> /</span> <strong class="text-xl font-light">Commandes</strong></h1>
+  </div>
+  <div class="admin-info-board flex justify-between">
+    <%= render partial: "admin/partials/admin_links" %>
+    <div class="w-[78%]">
+      <div class="flex items-center" style="border: none;">
+        <div class="w-1/4">
+          <p class="font-semibold">Order ID</p>
+        </div>
+        <div class="w-1/4">
+          <p class="font-semibold">Total</p>
+        </div>
+        <div class="w-1/4">
+          <p class="font-semibold">Customer</p>
+        </div>
+        <div class="w-1/4">
+          <p class="font-semibold">Date</p>
+        </div>
+      </div>
+      <% @orders.each do |order| %>
+        <%= link_to admin_order_path(order.id) do %>
+          <div class="order-item flex items-center">
+            <div class="w-1/4">
+              <p style="color: #54aab8; font-weight: 600;">#<%= order.id %></p>
+            </div>
+            <div class="w-1/4">
+              <p><strong>CHF <%= sprintf('%.2f', order.order_total) %></strong></p>
+            </div>
+            <div class="w-1/4">
+              <p><%= order.name %></p>
+            </div>
+            <div class="w-1/4">
+              <p><%= order.created_at.day %> <%= order.created_at.strftime("%b") %> <%= order.created_at.year %> <%= order.created_at.hour %>:<%= order.created_at.min %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="mobile-message w-full">
+    <h1>Not Available in Mobile</h1>
+  </div>
+</div>

@@ -1,17 +1,16 @@
 <script src="/javascript/drawer_functionality.js"></script>
-<script src="/javascript/navbar_functionality.js"></script>
 <div class="navbar-container">
   <div class="w-full flex justify-between">
     <div class="">
-      <%= image_tag "logo-main.png", class: "navbar-logo" %>
+      <%= link_to image_tag("logo-main.png"), root_path, class: "navbar-logo" %>
     </div>
     <div class="desktop-links w-1/2 justify-around items-center">
-      <%= link_to t('welcome'), root_path %>
-      <%= link_to t('teas'), teas_path %>
-      <%= link_to t('plants'), plants_path %>
-      <%= link_to t('contact'), contact_path %>
+      <%= link_to t('welcome'), root_path, class: (request.path == root_path ? 'active-nav-item' : '') %>
+      <%= link_to t('teas'), teas_path, class: (request.path.starts_with?(teas_path) ? 'active-nav-item' : '') %>
+      <%= link_to t('plants'), plants_path, class: (request.path.starts_with?(plants_path) ? 'active-nav-item' : '') %>
+      <%= link_to t('contact'), contact_path, class: (request.path == contact_path ? 'active-nav-item' : '') %>
     </div>
-    <div class="desktop-helpers w-1/5 flex justify-between justify-around items-center">
+    <div class="helpers flex justify-between justify-around items-center">
       <div class="relative inline-block text-left" id="lang-menu-container">
         <div>
           <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" id="lang-menu-button" aria-expanded="true" aria-haspopup="true">
@@ -29,7 +28,7 @@
             </svg>
           </button>
         </div>
-        <div class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg ring-1 ring-black/5 focus:outline-none" id="lang-menu-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+        <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg ring-1 ring-black/5 focus:outline-none" id="lang-menu-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
           <div class="py-1" role="none">
             <%= link_to "Français", { :locale=> 'fr' }, class: "lang-menu-item block px-4 py-2 text-sm text-gray-700", role: "menu-item" %>
             <%= link_to "Deutsch", { :locale => 'de' }, class: "lang-menu-item block px-4 py-2 text-sm text-gray-700", role: "menu-item" %>

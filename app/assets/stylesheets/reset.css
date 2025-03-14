@@ -7,7 +7,7 @@ h1, p, a {
   font-family: 'Fira Sans', serif;
 }
 
-h3, h6, h4 {
+h2, h3, h6, h4 {
   font-family: 'Fira Sans', serif;
   font-weight: 200;
   /* color: #54aab8; */
@@ -32,10 +32,36 @@ select {
 
 textarea {
   resize: none;
+  height: 200px;
 }
 
 select {
   font-size: 1rem;
+}
+
+.custom-slim-select {
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  border: solid 1px #6b7280;
+}
+
+.ss-main, .ss-values, .ss-value, .ss-value-text {
+  font-size: 0.85rem !important;
+}
+
+.ss-value {
+  background-color: #54aab8 !important;
+}
+
+.ss-option {
+  border-radius: 4px !important;
+  margin-bottom: 2px;
+  font-size: 0.85rem;
+}
+
+.ss-selected {
+  background-color: #54aab8 !important;
 }
 
 input[type="submit"] {
@@ -53,6 +79,10 @@ input[type="submit"] {
   padding: 10px;
   border-radius: 5px;
   background-color: rgba(228, 228, 228, 0.481);
+}
+
+.inputError {
+  border: solid 2px #DF1B41 !important;
 }
 
 .divider {

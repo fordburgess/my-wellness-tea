@@ -7,7 +7,10 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def plants
+  def terms_and_conditions
+  end
+
+  def our_brand
   end
 
   def dashboard

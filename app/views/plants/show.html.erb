@@ -1,0 +1,29 @@
+<div class="plants-show-container">
+  <div class="tea-title-container">
+    <div class="mb-2 mr-6">
+      <p><%= t('common_name') %></p>
+      <h1><%= @plant.name %></h1>
+    </div>
+    <div>
+      <p><%= t('latin_name') %></p>
+      <h2><%= @plant.latin_name %></h2>
+    </div>
+  </div>
+    <div class="plants-info-container">
+      <%= image_tag @plant.images[0], class: "main-image" %>
+      <div class="plants-text-container">
+        <h6><%= t('traditional_qualities') %></h6>
+        <p class="mb-6"><%= @plant.traditional_qualities %></p>
+        <h6>Description</h6>
+        <p class="mb-6"><%= @plant.description %></p>
+        <h6>Part used</h6>
+        <p class="mb-6"><%= @plant.part_used %></p>
+        <h6>My Wellness Tea utilise cette plante dans la(les) tisane(s)</h6>
+        <div>
+          <% @relevant_teas.each do |tea| %>
+            <%= link_to tea.title, tea_path(tea.id)  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   let hamburgerMenu = document.getElementById("hamburger-menu");
   let navDrawerContainer = document.getElementById("nav-drawer-container");
   let navDrawerMenu = document.getElementById("nav-drawer-menu");
@@ -26,8 +26,30 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   cartIcon.addEventListener('click', () => {
-    console.log("HELLO")
+    console.log("cart icon clicked")
     cartDrawerContainer.style.display = 'block';
     cartDrawerMenu.classList.add('active');
+  })
+
+
+
+
+
+
+  let langMenuButton = document.getElementById("lang-menu-button");
+  let langMenuDropdown = document.getElementById("lang-menu-dropdown");
+
+  langMenuButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    console.log("Lang menu clicked")
+
+    langMenuDropdown.classList.toggle('active-dropdown')
+    // langMenuDropdown.style.display = langMenuDropdown.style.display == 'block' ? 'none' : 'block';
+  })
+
+  document.addEventListener('click', (e) => {
+    if (!langMenuButton.contains(e.target) && !langMenuDropdown.contains(e.target)) {
+      langMenuDropdown.classList.remove('active-dropdown')
+    }
   })
 });

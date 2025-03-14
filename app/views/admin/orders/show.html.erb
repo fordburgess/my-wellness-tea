@@ -1,0 +1,67 @@
+<div class="w-full h-full px-24 py-8">
+  <div class="admin-header">
+    <h1 class="text-3xl font-light mb-6 flex items-center"><span class="mr-2"><%= t('admin_dashboard') %> /</span> <strong class="text-xl font-light">Commande No. <%= @order.id %></strong></h1>
+  </div>
+  <div class="admin-info-board flex justify-between">
+    <%= render partial: "admin/partials/admin_links" %>
+    <div class="w-[78%]">
+      <div class="flex justify-between mb-4">
+        <div>
+          <p class="font-semibold">Nom</p>
+          <h1 class="font-light text-2xl"><%= @order.name %></h1>
+        </div>
+        <div class="text-right">
+          <p class="font-semibold">Total</p>
+          <h1 class="font-light text-2xl"><%= sprintf('%.2f', @order_total) %> CHF</h1>
+        </div>
+      </div>
+      <div class="flex justify-between mb-6">
+        <div>
+          <p class="font-semibold">Date</p>
+          <h1 class="font-light text-2xl"> <%= @order.created_at.strftime("%B") %> <%= @order.created_at.day %>, <%= @order.created_at.year %></h1>
+        </div>
+        <div class="text-right">
+          <p class="font-semibold">Adresse de livraison</p>
+          <p><%= @order.street_address %></p>
+          <p><%= @order.post_code %> <%= @order.city %></p>
+          <p><%= @order.country %></p>
+        </div>
+      </div>
+      <div>
+        <p class="font-semibold">Items</p>
+        <div class="w-full flex">
+          <div class="w-1/4 text-left">
+            <p class="font-normal">ID du produit</p>
+          </div>
+          <div class="w-1/4 text-left">
+            <p class="font-normal">Titre du produit</p>
+          </div>
+          <div class="w-1/4 text-left">
+            <p class="font-normal">Qty</p>
+          </div>
+          <div class="w-1/4 text-left">
+            <p class="font-normal">Prix</p>
+          </div>
+        </div>
+        <% @order.line_items.each do |item| %>
+          <%= link_to tea_path(item.product.id), class: "w-full" do %>
+            <div class="flex py-2" style="border-bottom: solid 1px #cacaca;">
+              <div class="w-1/4 text-left">
+                <p style="color: #54aab8">#<%= item.product.id %></p>
+              </div>
+              <div class="w-1/4 text-left">
+                <p><%= item.product.title %></p>
+              </div>
+              <div class="w-1/4 text-left">
+                <p><%= item.quantity %></p>
+              </div>
+              <div class="w-1/4 text-left">
+                <p><%= sprintf('%.2f', item.product.price) %> CHF</p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

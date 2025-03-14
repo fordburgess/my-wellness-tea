@@ -1,34 +1,55 @@
 <div class="footer-container">
   <div class="info-container lg:flex justify-between">
-    <div class="flex flex-col items-center justify-start">
-      <%= image_tag 'switzerland.png', id: 'swiss-graphic' %>
-      <p class="text-sm"><strong><%= t('made_in_switzerland') %></strong></p>
+    <div class="w-full lg:w-[60%] lg:flex lg:flex-row lg:justify-between">
+      <div class="flex flex-col items-center md:items-start lg:items-center justify-start mb-8 lg:mb-0">
+        <%= image_tag 'swiss-silhouette.png', id: 'swiss-graphic' %>
+        <p class="text-sm"><strong><%= t('made_in_switzerland') %></strong></p>
+      </div>
+      <div class="mb-8 lg:mb-0">
+        <h6 class="font-medium">La boutique en ligne</h6>
+        <ul>
+          <li>
+            <%= link_to t('contact'), contact_path %>
+          </li>
+          <li>
+            <%= link_to t('legal') %>
+          </li>
+          <li>
+            <%= link_to t('privacy_policy') %>
+          </li>
+          <li>
+            <%= link_to t('terms_and_conditions'), terms_and_conditions_path %>
+          </li>
+        </ul>
+      </div>
+      <div class="mb-8 lg:mb-0">
+        <h6 class="font-medium">My Wellness Tea</h6>
+        <ul>
+          <li>
+            <%= link_to t('our_brand'), our_brand_path %>
+          </li>
+          <li>
+            <%= link_to "Nos Tisanes", teas_path %>
+          </li>
+          <li>
+            <%= link_to "Plantes", plants_path %>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="mb-6">
-      <h6>My Wellness Tea</h6>
-      <ul>
-        <li>
-          <%= link_to "Notre Marque" %>
-        </li>
-        <li>
-          <%= link_to "Notre Vision" %>
-        </li>
-      </ul>
+    <div class="newsletter-signup">
+      <h6 class="font-medium">Newsletter</h6>
+      <div class="mb-2">
+        <input class="newsletter-input" placeholder="E-mail" />
+        <button class="newsletter-button">Sign Up</button>
+      </div>
+      <div class="flex">
+        <%= link_to image_tag("fb.png"), "https://www.facebook.com/mywellnesstea", target: 'blank', style: "height: 30px; width: 30px; margin-right: 5px" %>
+        <%= link_to image_tag("ig.png"), "https://www.instagram.com/wellnesstea.swiss/", target: 'blank', style: "height: 30px; width: 30px; margin-right: 5px" %>
+      </div>
     </div>
-    <div class="mb-6">
-      <h6>La boutique en ligne</h6>
-      <ul>
-        <li>
-          <%= link_to "Aide et Contact" %>
-        </li>
-        <li>
-          <%= link_to "Livraison" %>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <%= image_tag "visa-card.png", class: "payment-methods" %>
-      <%= image_tag "mastercard.png", class: "payment-methods" %>
-    </div>
+  </div>
+  <div class="w-full text-center">
+    <p>© <%= Time.now.year %> • Laboratoire J. Reboh et Fils SA • Route du Pontet 19 • CH -1744 Chénens • info@wellnesstea.ch • Webdesign: Ford Burgess LinkedIn: https://www.linkedin.com/in/ford-burgess/</p>
   </div>
 </div>

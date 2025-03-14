@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_01_19_122655) do
+ActiveRecord::Schema.define(version: 2025_03_10_103905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2025_01_19_122655) do
     t.string "post_code"
     t.string "country"
     t.string "city"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -76,6 +78,15 @@ ActiveRecord::Schema.define(version: 2025_01_19_122655) do
     t.string "part_used"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "plants_products", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "plant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plant_id"], name: "index_plants_products_on_plant_id"
+    t.index ["product_id"], name: "index_plants_products_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -115,5 +126,8 @@ ActiveRecord::Schema.define(version: 2025_01_19_122655) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "users"
+  add_foreign_key "plants_products", "plants"
+  add_foreign_key "plants_products", "products"
   add_foreign_key "tea_details", "products", on_delete: :cascade
 end

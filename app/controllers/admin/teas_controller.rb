@@ -9,7 +9,7 @@ class Admin::TeasController < ApplicationController
 
     if @tea.save
       @tea.tea_detail.update(product_id: @tea.id) if @tea.tea_detail
-      redirect_to admin_tea_path(@tea.id)
+      redirect_to admin_teas_path
     else
       puts @tea.errors.full_messages
       render :new

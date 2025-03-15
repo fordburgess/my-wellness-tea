@@ -19,11 +19,11 @@
   <%= form.fields_for :tea_detail, @tea.tea_detail do |details_form| %>
     <div class="product-form-section flex" id="1">
       <div class="flex flex-col mb-6 w-1/2 mr-2">
-        <%= details_form.label t('infusion_temperature') %>
+        <%= details_form.label "#{t('infusion_temperature')} (C°)" %>
         <%= details_form.number_field :infusion_temperature %>
       </div>
       <div class="flex flex-col mb-6 w-1/2 ml-2">
-        <%= details_form.label t('infusion_time') %>
+        <%= details_form.label "#{t('infusion_time')} (minutes)" %>
         <%= details_form.number_field :infusion_time %>
       </div>
     </div>
@@ -33,7 +33,7 @@
         <%= details_form.text_field :time_of_day %>
       </div>
       <div class="flex flex-col mb-6 w-1/2 ml-2">
-        <%= details_form.label t('dosage') %>
+        <%= details_form.label "#{t('dosage')} (cl)" %>
         <%= details_form.number_field :dosage %>
       </div>
     </div>

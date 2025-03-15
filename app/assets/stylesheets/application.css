@@ -14,22 +14,22 @@
  *= require_self
  */
 
- @import "~/stylesheets/reset";
- @import "~/stylesheets/components/navbar";
- @import "~/stylesheets/components/footer";
- @import "~/stylesheets/components/drawer";
- @import "~/stylesheets/pages/home";
- @import "~/stylesheets/pages/contact";
- @import "~/stylesheets/pages/our_brand";
- @import "~/stylesheets/teas/index";
- @import "~/stylesheets/teas/show";
- @import "~/stylesheets/plants/index";
- @import "~/stylesheets/plants/show";
- @import "~/stylesheets/devise/auth_form";
- @import "~/stylesheets/devise/user_dashboard";
- @import "~/stylesheets/admin/admin_form";
- @import "~/stylesheets/admin/admin_dashboard";
- @import "~/stylesheets/orders/orders";
+ @import "./stylesheets/reset";
+ @import "./stylesheets/components/navbar";
+ @import "./stylesheets/components/footer";
+ @import "./stylesheets/components/drawer";
+ @import "./stylesheets/pages/home";
+ @import "./stylesheets/pages/contact";
+ @import "./stylesheets/pages/our_brand";
+ @import "./stylesheets/teas/index";
+ @import "./stylesheets/teas/show";
+ @import "./stylesheets/plants/index";
+ @import "./stylesheets/plants/show";
+ @import "./stylesheets/devise/auth_form";
+ @import "./stylesheets/devise/user_dashboard";
+ @import "./stylesheets/admin/admin_form";
+ @import "./stylesheets/admin/admin_dashboard";
+ @import "./stylesheets/orders/orders";
 
 
  html, body {

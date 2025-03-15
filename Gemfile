@@ -11,8 +11,6 @@ gem 'sqlite3', '~> 1.4'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
 # importmap to replace webpacker
 gem 'importmap-rails'
 # turbo to replace turbolinks

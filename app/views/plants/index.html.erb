@@ -6,7 +6,7 @@
   <div class="mb-36">
     <h1 class="plant-section-title" style="color: #004f9f;"><%= t('well_being_title') %></h1>
     <p class="mb-4">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-    <div class="flex justify-between">
+    <div class="flex justify-between lg:justify-start flex-wrap">
       <% @plants_wellbeing.each do |plant| %>
         <%= link_to plant_path(plant.id), class: 'index-plant' do %>
           <%= image_tag plant.images[0] %>
@@ -19,7 +19,7 @@
   <div class="mb-36">
     <h1 class="plant-section-title" style="color: #008337;"><%= t('digestion_title') %></h1>
     <p class="mb-4">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-    <div class="flex justify-between">
+    <div class="flex justify-between lg:justify-start flex-wrap">
       <% @plants_digestion.each do |plant| %>
         <%= link_to plant_path(plant.id), class: 'index-plant' do %>
           <%= image_tag plant.images[0] %>
@@ -32,9 +32,9 @@
   <div class="mb-36">
     <h1 class="plant-section-title" style="color: #a60063;"><%= t('well_being_women_title') %></h1>
     <p class="mb-4">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-    <div class="flex">
+    <div class="flex justify-between lg:justify-start flex-wrap">
       <% @plants_wellbeing_women.each do |plant| %>
-        <%= link_to plant_path(plant.id), class: 'index-plant mr-4' do %>
+        <%= link_to plant_path(plant.id), class: 'index-plant' do %>
           <%= image_tag plant.images[0] %>
           <p class="font-semibold"><%= plant.name %></p>
           <p><%= plant.latin_name %></p>
@@ -45,7 +45,7 @@
   <div class="mb-36">
     <h1 class="plant-section-title" style="color: #67c4d3;"><%= t('winter_title') %></h1>
     <p class="mb-4">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-    <div class="flex justify-between">
+    <div class="flex justify-between lg:justify-start flex-wrap">
       <% @plants_winter.each do |plant| %>
         <%= link_to plant_path(plant.id), class: 'index-plant' do %>
           <%= image_tag plant.images[0] %>

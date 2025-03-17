@@ -1,4 +1,6 @@
 class Admin::TeasController < ApplicationController
+  before_action :set_tea, only: %i[show edit update destroy]
+
   def new
     @tea = Tea.new
     @tea.build_tea_detail
@@ -38,7 +40,20 @@ class Admin::TeasController < ApplicationController
     end
   end
 
+  def destroy
+    @tea.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to admin_teas_path, notice: "Tea was successfully deleted." }
+      format.json { head :no_content }
+    end
+  end
+
   private
+
+  def set_tea
+    @tea = Tea.find(params[:id])
+  end
 
   def tea_params
     params.require(:tea).permit(:title, :price, :stock, tea_detail_attributes: [:infusion_time, :infusion_temperature, :time_of_day, :dosage, :category], images: [], plant_ids: [])

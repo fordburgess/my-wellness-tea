@@ -22,3 +22,11 @@
   background-color: transparent;
   border: dotted 1px #000;
 }
+
+.tea-delete-button {
+  color: rgb(202, 17, 17);
+  border: solid 2px rgb(202, 17, 17);
+  padding: 8px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}

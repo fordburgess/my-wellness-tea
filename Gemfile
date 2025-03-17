@@ -25,6 +25,8 @@ gem 'devise'
 gem 'country_select', '~> 8.0'
 # stripe
 gem 'stripe'
+# for images
+gem 'cloudinary'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

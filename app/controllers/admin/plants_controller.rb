@@ -1,4 +1,5 @@
 class Admin::PlantsController < ApplicationController
+  before_action :set_plant, only: %i[show edit update destroy]
 
   def index
     @plants = Plant.all
@@ -33,7 +34,20 @@ class Admin::PlantsController < ApplicationController
     end
   end
 
+  def destroy
+    @plant.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to admin_plants_path, notice: "Plant was successfully deleted." }
+      format.json { head :no_content }
+    end
+  end
+
   private
+
+  def set_plant
+    @plant = Plant.find(params[:id])
+  end
 
   def plant_params
     params.require(:plant).permit(:name, :latin_name, :traditional_qualities, :description, :part_used, images: [])

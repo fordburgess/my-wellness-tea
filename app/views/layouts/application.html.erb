@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
     <title>My Wellness Tea</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,6 +14,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
     <%= favicon_link_tag asset_path('small-logo.png') %>
     <%= javascript_importmap_tags %>
+    <meta http-equiv="Content-Language" content="<%= I18n.locale %>">
     <script src="https://js.stripe.com/v3/"></script>
   </head>
   <body>

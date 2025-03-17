@@ -2,7 +2,6 @@ class PaymentsController < ApplicationController
   Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
 
   def create
-    puts ENV["STRIPE_SECRET_KEY"]
     # data = JSON.parse(request.body.read)
 
     def payment_amount

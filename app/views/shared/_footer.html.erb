@@ -6,7 +6,7 @@
         <p class="text-sm"><strong><%= t('made_in_switzerland') %></strong></p>
       </div>
       <div class="mb-8 lg:mb-0">
-        <h6 class="font-medium">La boutique en ligne</h6>
+        <h6 class="font-medium"><%= t('online_store') %></h6>
         <ul>
           <li>
             <%= link_to t('contact'), contact_path %>
@@ -29,10 +29,10 @@
             <%= link_to t('our_brand'), our_brand_path %>
           </li>
           <li>
-            <%= link_to "Nos Tisanes", teas_path %>
+            <%= link_to t('our_herbal_teas'), teas_path %>
           </li>
           <li>
-            <%= link_to "Plantes", plants_path %>
+            <%= link_to t('plants'), plants_path %>
           </li>
         </ul>
       </div>

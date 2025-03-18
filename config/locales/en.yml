@@ -32,7 +32,6 @@ en:
   review_your_order: "Review Your Order"
   contact_us: "Contact Us"
   legal: "Legal"
-  privacy_policy: "Privacy Policy"
   our_brand: "Our Brand"
   order_confirmation: "Order Confirmation"
   summary: "Summary"
@@ -53,3 +52,15 @@ en:
 
   # terms and conditions
   terms_and_conditions: "Terms & Conditions"
+
+  # home page
+  solution_digestion: "The Solution for Your Digestion"
+  sub_tagline: "Comfort for food lovers"
+  see_our_teas: "See our teas for digestion"
+  click_here: "Click Here"
+  our_promotions: "Special Deals"
+  see_our_teas: "Explore Our Teas"
+
+  # footer
+  online_store: "Online Store"
+  privacy_policy: "Privacy Policy"

@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @tea = Tea.find(2)
   end
 
   def create

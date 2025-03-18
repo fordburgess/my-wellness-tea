@@ -7,11 +7,11 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  padding: 50px 40px;
+  padding: 20px;
   box-sizing: border-box;
 
   img {
-    height: 70%;
+    height: 65%;
     width: 75%;
     position: absolute;
     bottom: -10%;
@@ -96,7 +96,6 @@
   flex-direction: column;
   box-sizing: border-box;
   padding: 0 40px;
-  margin-bottom: 100px;
   /* background-color: rgba(120, 251, 120, 0.611); */
 }
 
@@ -104,7 +103,7 @@
   box-sizing: border-box;
   height: 300px;
   width: 100%;
-  margin: 20px 0;
+  margin: 50px 0;
   position: relative;
   background-position: center;
   background-size: cover;
@@ -195,10 +194,12 @@
   .carousel-info {
     padding: 125px 100px;
   }
+
   .info-banner {
     height: 400px;
     flex-direction: row;
     justify-content: space-between;
+    box-sizing: border-box;
   }
 
   .info-banner-section {

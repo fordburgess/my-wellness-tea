@@ -11,6 +11,18 @@
   display: none;
 }
 
+#admin-title {
+  display: none;
+}
+
+#admin-root-div {
+  display: none;
+}
+
+#mobile-message {
+  display: block;
+}
+
 .order-item {
   border-top: solid 1px #e9e9e9;
   padding: 5px;
@@ -35,11 +47,19 @@
 
 
 @media (min-width: 900px) {
-  .mobile-message {
+  #mobile-message {
     display: none;
   }
 
+  #admin-root-div {
+    display: flex;
+  }
+
   .admin-header {
+    display: block;
+  }
+
+  #admin-title {
     display: block;
   }
 

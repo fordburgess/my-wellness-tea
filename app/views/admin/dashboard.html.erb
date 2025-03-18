@@ -1,6 +1,10 @@
 <div class="w-full px-24 py-8">
-  <h1 class="text-3xl font-light mb-6"><%= t('admin_dashboard') %></h1>
-  <div>
+  <h1 class="text-3xl font-light mb-6" id="admin-title"><%= t('admin_dashboard') %></h1>
+  <div class="flex" id="admin-root-div">
     <%= render partial: "admin/partials/admin_links" %>
+    <div class="w-[78%] text-center">
+      <p>Qu'aimeriez-vous avoir ici?</p>
+    </div>
   </div>
+  <div class="w-full text-center pt-4" id="mobile-message"><p>Non disponible sur mobile</p></div>
 </div>

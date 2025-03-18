@@ -56,10 +56,13 @@ en:
   # home page
   solution_digestion: "The Solution for Your Digestion"
   sub_tagline: "Comfort for food lovers"
-  see_our_teas: "See our teas for digestion"
+  see_our_digestion_teas: "See our teas for digestion"
   click_here: "Click Here"
   our_promotions: "Special Deals"
   see_our_teas: "Explore Our Teas"
+
+  # admin page
+  tea_stock: "In stock? Tea will not be shown if out of stock."
 
   # footer
   online_store: "Online Store"

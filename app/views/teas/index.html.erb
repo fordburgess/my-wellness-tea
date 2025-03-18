@@ -14,25 +14,27 @@
   </div>
   <div class="grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-8">
     <% @teas.each do |tea| %>
-      <%= link_to tea_path(tea.id), class: 'product-container', data: { :category => tea.tea_detail.category } do %>
-        <%
-          category_color = {
-            "Bien-être" => "#004f9f",
-            "Bien-être digestif" => "#008337",
-            "Bien-être chez la femme" => "#a60063",
-            "Hiver" => "#67c4d3",
-          }
-        %>
-        <div class="product-item">
-          <%= image_tag tea.images[0], class: "tea-index-image" %>
-          <div>
-            <div class="flex justify-between">
-              <h6><%= tea.title %></h6>
-              <h6><%= sprintf('%.2f', tea.price) %> CHF</h6>
+      <% if tea.stock %>
+        <%= link_to tea_path(tea.id), class: 'product-container', data: { :category => tea.tea_detail.category } do %>
+          <%
+            category_color = {
+              "Bien-être" => "#004f9f",
+              "Bien-être digestif" => "#008337",
+              "Bien-être chez la femme" => "#a60063",
+              "Hiver" => "#67c4d3",
+            }
+          %>
+          <div class="product-item">
+            <%= image_tag tea.images[0], class: "tea-index-image" %>
+            <div>
+              <div class="flex justify-between">
+                <h6><%= tea.title %></h6>
+                <h6><%= sprintf('%.2f', tea.price) %> CHF</h6>
+              </div>
+              <p style="color: <%= category_color[tea.tea_detail.category] || '#000' %>;"><strong><%= tea.tea_detail.category %></strong></p>
             </div>
-            <p style="color: <%= category_color[tea.tea_detail.category] || '#000' %>;"><strong><%= tea.tea_detail.category %></strong></p>
           </div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>

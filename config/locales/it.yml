@@ -43,9 +43,13 @@ it:
   # home page
   solution_digestion: "Il tuo alleato per una digestione serena"
   sub_tagline: "Piacere e benessere a ogni boccone"
-  see_our_teas: "Scopri i nostri tè per la digestione"
+  see_our_digestion_teas: "Scopri i nostri tè per la digestione"
   click_here: "Clicca qui"
   our_promotions: "Offerte imperdibili"
+  see_our_teas: "Scopri i nostri tè"
+
+  # admin page
+  tea_stock: "In stock? Il tè non verrà visualizzato se non è disponibile."
 
   # footer
   online_store: "Il negozio online"

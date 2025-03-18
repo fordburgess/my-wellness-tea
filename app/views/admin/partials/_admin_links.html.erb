@@ -1,6 +1,9 @@
-<div class="p-4 border-solid border-black rounded" style="width: 20%; border-width: 1px; height: 400px;">
+<div class="p-4 border-solid border-black rounded" style="width: 20%; border-width: 1px; height: 450px;">
   <ul>
     <p class="mb-2"><strong>Site Content</strong></p>
+    <li class="mb-2">
+      <%= link_to "Admin Home", admin_root_path, class: request.path == admin_root_path ? 'active-link' : '' %>
+    </li>
     <li class="mb-2">
       <%= link_to "Mes Produits", admin_teas_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas' ? 'active-link' : '' %>
     </li>

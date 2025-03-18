@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
     get '/contact' => 'pages#contact'
     get '/terms-and-conditions' => 'pages#terms_and_conditions'
+    get '/privacy-policy' => 'pages#privacy_policy'
     get '/our-brand' => 'pages#our_brand'
 
     # admin routes

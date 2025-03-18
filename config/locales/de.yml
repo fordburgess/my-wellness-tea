@@ -52,10 +52,13 @@ de:
   # home page
   solution_digestion: "Die sanfte Hilfe für Ihre Verdauung"
   sub_tagline: "Genuss mit Wohlgefühl"
-  see_our_teas: "Entdecken Sie unsere Tees für die Verdauung"
+  see_our_digestion_teas: "Entdecken Sie unsere Tees für die Verdauung"
   click_here: "Hier klicken"
   our_promotions: "Aktuelle Angebote"
   see_our_teas: "Unsere Tees entdecken"
+
+  # admin page
+  tea_stock: "Vorrätig? Der Tee wird nicht angezeigt, wenn er nicht vorrätig ist."
 
   # footer
   online_store: "Der Online-Shop"
@@ -89,3 +92,7 @@ de:
   applicable_law: "Die Verkäufe von Produkten von LJR&F unterliegen dem materiellen Schweizer Recht. Im Falle eines Rechtsstreits ist das Gericht in Fribourg zuständig, wenn die Klage vom Nutzer erhoben wird, und am Wohnsitz des Nutzers, wenn die Klage von LJR&F erhoben wird."
   personal_data_title: "Persönliche Daten"
   personal_data: "Die gesammelten Informationen unterliegen einer elektronischen Verarbeitung, die dem Versand eines Newsletters und/oder der Verwaltung der Bestellung des Käufers und/oder anderen Zwecken dient, die unter dem Abschnitt „Cookies“ beschrieben sind. Die Empfänger der Daten sind LJR&F und deren Dienstleister. Der Käufer hat das Recht auf Zugang, Berichtigung, Widerspruch und Löschung der ihn betreffenden Daten bei LJR&F, indem er sich per E-Mail an info@wellnesstea.ch wendet. Weitere Informationen sind auf der Website unter dem Abschnitt „Impressum“ verfügbar."
+
+  # privacy policy
+  data_protection: "Datenschutz: Sicherheit und Schutz im Internet"
+  data_protection_text: "Fragen zum Datenschutz und zur Sicherheit von Daten rufen bei Nutzern von Online-Diensten häufig Unsicherheiten und Fragen hervor. Um diese Unsicherheiten durch maximale Transparenz zu lindern, erläutern wir hier unsere Praktiken bezüglich der Datenerhebung bei der Nutzung unserer Website: Umfang, Zweck, Verwendung und mögliche Weitergabe. Wir informieren Sie auch über Ihre Rechte im Hinblick auf die Nutzung Ihrer Daten."

@@ -12,8 +12,8 @@
     </div>
   </div>
   <div class="field flex mb-8 items-center">
-    <%= form.label :in_stock, class: 'mr-2' %>
-    <%= form.check_box :stock %>
+    <%= form.check_box :stock, class: 'mr-2' %>
+    <%= form.label t('tea_stock') %>
   </div>
   <h4 class="text-xl mb-6">Détails du Tisane</h4>
   <%= form.fields_for :tea_detail, @tea.tea_detail do |details_form| %>

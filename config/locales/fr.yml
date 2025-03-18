@@ -84,7 +84,7 @@ fr:
   # home page
   solution_digestion: "La solution à votre digestion"
   sub_tagline: "Pour le confort des gourmands"
-  see_our_teas: "Découvrez nos thés pour la digestion"
+  see_our_digestion_teas: "Découvrez nos thés pour la digestion"
   click_here: "Cliquez ici"
   our_promotions: "Nos offres du moment"
   see_our_teas: "Découvrez nos thés"
@@ -92,6 +92,9 @@ fr:
   # footer
   online_store: "La boutique en ligne"
   privacy_policy: "Politique de confidentialité"
+
+  # admin pages
+  tea_stock: "En stock? Le thé ne sera pas affiché s'il n'est plus en stock"
 
 
   # terms and conditions
@@ -122,3 +125,8 @@ fr:
   applicable_law: "Les ventes de produits de LJR&F sont soumises au droit matériel suisse. En cas de litige, le for est à Fribourg lorsque l’action est intentée par l’Utilisateur et au domicile de l’Utilisateur lorsque l’action est intentée par LJR&F."
   personal_data_title: "Données personnelles"
   personal_data: "Les informations recueillies font l’objet d’un traitement informatique destiné à l’envoi d’une newsletter et/ou à la gestion de la commande de l’Acheteur et/ou à d’autres fins décrites sous la rubrique « Cookies ». Les destinataires des données sont LJR&F et ses prestataires. L'Acheteur dispose d'un droit d'accès, de rectification, d'opposition et de suppression aux données le concernant auprès de LJR&F en s’adressant par email à info@wellnesstea.ch. De plus amples informations figurent sur le Site sous les rubriques « Mentions légales »."
+
+
+  # privacy policy:
+  data_protection: "Protection des données: sécurité et protection sur Internet"
+  data_protection_text: "Les questions de protection et de sécurité des données suscitent fréquemment incertitudes et interrogations chez les utilisateurs de services en ligne. Dans le souci d'apaiser ces incertitudes par une transparence maximale, nous exposons ici nos pratiques en matière de collecte de données lors de l'utilisation de notre site : volume, but, mode d'utilisation et transmission éventuelle. Nous vous indiquons également vos droits s'agissant de l'utilisation de vos données."

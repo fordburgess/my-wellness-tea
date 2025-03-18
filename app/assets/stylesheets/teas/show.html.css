@@ -1,5 +1,5 @@
 .tea-show-page-container {
-  padding: 1rem 2rem 2rem 2rem;
+  padding: 1rem 2rem 5rem 2rem;
 }
 
 .tea-show-page-subcontainer {
@@ -9,7 +9,7 @@
 }
 
 .cart-add-button {
-  background-color: #66C4D3;
+  background-color: #54aab8 !important;
   color: #fff;
   font-size: 0.8rem;
   padding: 10px;
@@ -49,7 +49,9 @@
   }
 
   .tea-info-container {
+    height: 420px;
     width: 55%;
+    position: relative;
 
     h1 {
       font-size: 2rem;
@@ -60,6 +62,12 @@
       font-size: 1.25rem;
     }
   }
+
+  .cart-add-button {
+    position: absolute;
+    bottom: 0%;
+  }
+
 
   .tea-image-container {
     width: 43%;

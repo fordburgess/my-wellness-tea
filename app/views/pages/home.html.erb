@@ -2,9 +2,9 @@
   <div class="main-banner">
     <div class="carousel-slide" id="carousel-slide-1">
       <div class="carousel-info">
-        <h1>La solution à votre digestion</h1>
-        <p class="font-semibold">Pour le confort des gourmands</p>
-        <%= link_to "See our teas for digestion", teas_path(category: 'Bien-être digestif'), class: "carousel-link", style: "display: inline-block;" %>
+        <h1><%= t('solution_digestion') %></h1>
+        <p class="font-semibold"><%= t('sub_tagline') %></p>
+        <%= link_to t('see_our_teas'), teas_path(category: 'Bien-être digestif'), class: "carousel-link", style: "display: inline-block;" %>
       </div>
       <%= image_tag "swiss-lake.jpg" %>
     </div>
@@ -21,18 +21,18 @@
       <div class="zoom-bg" style='background-image: url(<%= asset_path 'lotion-stock.avif' %>)'></div>
       <div class="info-text-div">
         <div>
-          <h3>Discover Stuff</h3>
+          <h3><%= t('our_promotions') %></h3>
         </div>
-        <p>Click Here</p>
+        <p><%= t('click_here') %></p>
       </div>
     </div>
     <%= link_to teas_path, class: "info-banner-section" do %>
       <div class="zoom-bg" style='background-image: url(<%= asset_path 'tea-leaves.jpeg' %>)'></div>
       <div class="info-text-div">
         <div>
-          <h3>Discover Stuff</h3>
+          <h3><%= t('see_our_teas') %></h3>
         </div>
-        <p>Click Here</p>
+        <p><%= t('click_here') %></p>
       </div>
     <% end %>
     <%= link_to our_brand_path, class: "info-banner-section" do %>
@@ -41,7 +41,7 @@
         <div>
           <h3><%= t('our_brand') %></h3>
         </div>
-        <p>Click Here</p>
+        <p><%= t('click_here') %></p>
       </div>
     <% end %>
   </div>

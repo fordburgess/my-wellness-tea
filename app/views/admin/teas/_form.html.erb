@@ -51,9 +51,7 @@
   <div class="product-form-section w-full mb-6">
     <%= form.label t('image'), class: 'mb-4' %>
     <div class="flex mb-4">
-      <% @tea.images.each do |image| %>
-        <%= image_tag image, class: 'form-images' %>
-      <% end %>
+
       <%= form.file_field :images, multiple: true, class: 'image-input' %>
     </div>
   </div>

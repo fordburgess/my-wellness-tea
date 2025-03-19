@@ -2,7 +2,7 @@
   <div class="drawer-menu p-6" id="cart-drawer-menu">
     <div class="w-full flex justify-between items-center mb-6">
       <%= image_tag "x-icon.png", class: "x-icon", id: "x-icon-cart", style: "margin: 0" %>
-      <h1>Mon Panier</h1>
+      <h1><%= t('cart') %></h1>
     </div>
     <% if @current_cart.line_items.count > 0 %>
       <ul class="flex flex-col w-full mb-12">
@@ -15,7 +15,7 @@
                 <p><%= sprintf('%.2f', line_item.product.price) %> CHF</p>
               </div>
               <div class="flex items-center">
-                <%= button_to "Supprimer", line_item_path(line_item.id), class: "cart-item-delete", method: :delete %>
+                <%= button_to t('remove_entirely'), line_item_path(line_item.id), class: "cart-item-delete", method: :delete %>
                 <%= link_to image_tag("minus-icon.png"), line_item_reduce_path(:id => line_item), class: "increment-icons ml-6 mr-2", data: { turbo_method: :post } %>
                 <p class="mr-2" style="font-size: 1.25rem" id="line_item_<%= line_item.id %>_quantity"><%= line_item.quantity %></p>
                 <%= link_to image_tag("plus-icon.png"), line_item_add_path(:id => line_item), class: "increment-icons", data: { turbo_method: :post } %>
@@ -24,7 +24,7 @@
           </div>
         <% end %>
       </ul>
-      <%= link_to "Checkout", cart_path(@current_cart.id), class: "checkout-button" %>
+      <%= link_to t('checkout'), cart_path(@current_cart.id), class: "checkout-button" %>
     <% else %>
       <div class="w-full text-center"><h3 class="text-xl"><%= t('empty_cart') %></h3></div>
     <% end %>

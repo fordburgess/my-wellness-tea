@@ -72,6 +72,27 @@ fr:
   harmony: "En Harmonie avec la Nature"
   our_plants: "Les Plantes qui Composent Nos Thés"
   go_admin: "Accéder à l'administration"
+  add_to_cart: "Ajouter au Panier"
+
+  # form labels
+  title: "Titre"
+  price: "Prix"
+  ingredients: "Ingrédients"
+  image: "Image"
+  submit: "Soumettre"
+  tea_details: "Détails du thé"
+  preparation: "Préparation"
+  weight: "Poids"
+
+  # admin links
+  my_products: "Produits"
+  create_new_product: "Créer un nouveau thé"
+  edit_tea: "Editer le thé"
+  my_plants: "Plantes"
+  create_new_plant: "Créer une nouvelle plante"
+  edit_plant: "Éditer la plante"
+  admin_orders: "Commandes"
+  users: "Membres"
 
   # plants page
   well_being_title: "Équilibre et Vitalité: Plantes pour le Bien-être Quotidien"

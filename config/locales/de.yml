@@ -41,6 +41,26 @@ de:
   harmony: "Im Einklang mit der Natur"
   our_plants: "Die Geheimnisse unserer Teepflanzen"
   go_admin: "Zur Admin-Seite"
+  add_to_cart: "zum Warenkorb hinzufügen"
+
+  # form labels
+  title: "Titel"
+  ingredients: "Inhaltsstoffe"
+  image: "Bild"
+  submit: "Einreichen"
+  tea_details: "Tee Details"
+  preparation: "Vorbereitung"
+  weight: "Gewicht"
+
+  # admin links
+  my_products: "Produkte"
+  create_new_product: "Neuen Tee erstellen"
+  edit_tea: "Tee bearbeiten"
+  my_plants: "Pflanzen"
+  create_new_plant: "Neue Pflanze anlegen"
+  edit_plant: "Pflanze bearbeiten"
+  admin_orders: "Bestellungen"
+  users: "Benutzer"
 
   # plants page
   well_being_title: "Balance und Vitalität: Pflanzen für Ihr tägliches Wohlbefinden"

@@ -8,7 +8,7 @@
       <%= link_to t('my_products'), admin_teas_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas' ? 'active-link' : '' %>
     </li>
     <li class="mb-2">
-      <%= link_to t('create_new_plant'), new_admin_tea_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas/new' ? 'active-link' : '' %>
+      <%= link_to t('create_new_product'), new_admin_tea_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas/new' ? 'active-link' : '' %>
     </li>
     <li class="mb-2">
       <%= link_to t('my_plants'), admin_plants_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/plants' ? 'active-link' : '' %>

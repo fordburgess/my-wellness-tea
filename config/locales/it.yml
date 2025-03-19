@@ -40,6 +40,27 @@ it:
   harmony: "In Armonia con la Natura"
   our_plants: "Le Piante Dietro le Nostre Tisane"
   go_admin: "Vai alla pagina admin"
+  add_to_cart: "Aggiungi al carrello"
+
+  # form labels
+  title: "Titolo"
+  price: "Prezzo"
+  tea_details: "Dettagli sul tè"
+  ingredients: "Ingredienti"
+  image: "Immagine"
+  submit: "Invia"
+  preparation: "Preparazione"
+  weight: "Peso"
+
+  # admin links
+  my_products: "Prodotti"
+  create_new_product: "Creare un nuovo tè"
+  edit_tea: "Modifica del tè"
+  my_plants: "Piante"
+  create_new_plant: "Creare un nuovo impianto"
+  edit_plant: "Modifica impianto"
+  admin_orders: "Ordini"
+  users: "Membri"
 
   # home page
   solution_digestion: "Il tuo alleato per una digestione serena"

@@ -41,6 +41,24 @@ en:
   harmony: "In Harmony with Nature"
   our_plants: "The Plants Behind Our Teas"
   go_admin: "Go to Admin"
+  add_to_cart: "Add to Cart"
+
+  # form labels
+  title: "Title"
+  image: "Image"
+  submit: "Submit"
+  preparation: "Preparation"
+  weight: "Weight"
+
+  # admin links
+  my_products: "Products"
+  create_new_product: "Create New Tea"
+  edit_tea: "Edit Tea"
+  my_plants: "Plants"
+  create_new_plant: "Create New Plant"
+  edit_plant: "Pflanze bearbeiten"
+  admin_orders: "Orders"
+  users: "Users"
 
   # plants page
   well_being_title: "Balance and Vitality: Plants for Everyday Well-being"

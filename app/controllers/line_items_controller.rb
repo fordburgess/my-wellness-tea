@@ -1,17 +1,16 @@
 class LineItemsController < ApplicationController
   def create
     chosen_product = Product.find(params[:product_id])
-    current_cart = @current_cart
 
-    if current_cart.products.include?(chosen_product)
+    if @current_cart.products.include?(chosen_product)
       logger.debug "Cart already contains item"
       # Find the line_item with the chosen_product
-      @line_item = current_cart.line_items.find_by(:product_id => chosen_product)
+      @line_item = @current_cart.line_items.find_by(:product_id => chosen_product)
       # Iterate the line_item's quantity by one
       @line_item.quantity += 1
     else
       @line_item = LineItem.new
-      @line_item.cart = current_cart
+      @line_item.cart = @current_cart
       @line_item.product = chosen_product
 
       logger.debug "New Line Item created"
@@ -24,15 +23,24 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    logger.debug "Line Item Deleted"
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
 
+    @current_cart = @line_item.cart
+
     if request.referer&.include?("cart") || request.path.include?("cart")
-      redirect_to request.referrer
+      if @current_cart.line_items.length == 0
+        redirect_to teas_path
+      else
+        redirect_to request.referrer
+      end
     else
-      render turbo_stream:
-        turbo_stream.remove("line_item_#{params[:id]}")
+      if @current_cart.line_items.length == 0
+        redirect_to request.referrer
+      else
+        render turbo_stream:
+          turbo_stream.remove("line_item_#{params[:id]}")
+      end
     end
       # turbo_stream.replace("cart_items",
       #   partial: "shared/cart_drawer",
@@ -56,6 +64,8 @@ class LineItemsController < ApplicationController
 
   def reduce_quantity
     @line_item = LineItem.find(params[:id])
+    @current_cart = @line_item.cart
+
     if @line_item.quantity > 1
       @line_item.quantity -= 1
       @line_item.save
@@ -69,12 +79,11 @@ class LineItemsController < ApplicationController
           )
       end
     else
+      @line_item.destroy
       if request.referer&.include?("cart") || request.path.include?("cart")
-        redirect_to request.referrer
+        redirect_to teas_path
       else
-        render turbo_stream:
-          turbo_stream.remove("line_item_#{params[:id]}")
-        @line_item.destroy
+        redirect_to request.referrer
       end
     end
   end

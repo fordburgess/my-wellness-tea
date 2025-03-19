@@ -5,23 +5,23 @@
       <%= link_to "Admin Home", admin_root_path, class: request.path == admin_root_path ? 'active-link' : '' %>
     </li>
     <li class="mb-2">
-      <%= link_to "Mes Produits", admin_teas_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas' ? 'active-link' : '' %>
+      <%= link_to t('my_products'), admin_teas_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas' ? 'active-link' : '' %>
     </li>
     <li class="mb-2">
-      <%= link_to "Créer un nouveau produit", new_admin_tea_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas/new' ? 'active-link' : '' %>
+      <%= link_to t('create_new_plant'), new_admin_tea_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/teas/new' ? 'active-link' : '' %>
     </li>
     <li class="mb-2">
-      <%= link_to "Mes Plantes", admin_plants_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/plants' ? 'active-link' : '' %>
+      <%= link_to t('my_plants'), admin_plants_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/plants' ? 'active-link' : '' %>
     </li>
     <li class="mb-6">
-      <%= link_to "Créer une nouvelle plante", new_admin_plant_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/plants/new' ? 'active-link' : '' %>
+      <%= link_to t('create_new_plant'), new_admin_plant_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/plants/new' ? 'active-link' : '' %>
     </li>
     <p class="mb-2"><strong>Customers</strong></p>
     <li class="mb-2">
-      <%= link_to "Commandes", admin_orders_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/orders' ? 'active-link' : '' %>
+      <%= link_to t('admin_orders'), admin_orders_path, class: request.path.sub(/^\/#{I18n.locale}\//, '/') == '/admin/orders' ? 'active-link' : '' %>
     </li>
     <li class="mb-4">
-      <%= link_to "Membres", admin_users_path, class: request.path == admin_users_path ? 'active-link' : '' %>
+      <%= link_to t('users'), admin_users_path, class: request.path == admin_users_path ? 'active-link' : '' %>
     </li>
     <p class="mb-2"><strong>Actions</strong></p>
     <li class="mb-4">

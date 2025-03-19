@@ -23,7 +23,7 @@
         <p class="md:text-xl"><%= sprintf('%.2f', @tea.price) %> CHF</p>
       </div>
       <div class="mb-8">
-        <h4>Ingrédients</h4>
+        <h4><%= t('ingredients') %></h4>
         <div class="special-tea-info" style="border-top: solid 1px <%= category_color[@tea.tea_detail.category] || '#000' %>;">
           <% @tea.plants.each do |plant| %>
             <%= link_to plant.name, plant_path(plant.id), class: 'plant-link' %>
@@ -31,17 +31,17 @@
         </div>
       </div>
       <div>
-        <h4>Préparation</h4>
+        <h4><%= t('preparation') %></h4>
         <div class="special-tea-info mb-8" style="border-top: solid 1px <%= category_color[@tea.tea_detail.category] || '#000' %>;">
-          <p><strong>Temps d'infusion:</strong> <%= @tea.tea_detail.infusion_time %> minutes</p>
-          <p><strong>Température d'infusion:</strong> <%= @tea.tea_detail.infusion_temperature %>°</p>
-          <p><strong>Moment de journée:</strong> <%= @tea.tea_detail.time_of_day %></p>
-          <p><strong>Dosage:</strong> <%= @tea.tea_detail.dosage %>cl</p>
-          <p><strong>Poids:</strong> 60g</p>
+          <p><strong><%= t('infusion_time') %>:</strong> <%= @tea.tea_detail.infusion_time %> minutes</p>
+          <p><strong><%= t('infusion_temperature') %>:</strong> <%= @tea.tea_detail.infusion_temperature %>°</p>
+          <p><strong><%= t('time_of_day') %>:</strong> <%= @tea.tea_detail.time_of_day %></p>
+          <p><strong><%= t('dosage') %>:</strong> <%= @tea.tea_detail.dosage %>cl</p>
+          <p><strong><%= t('weight') %>:</strong> 60g</p>
         </div>
       </div>
       <div>
-        <%= button_to "Ajouter au Panier - #{sprintf('%.2f', @tea.price)} CHF", line_items_path(:product_id => @tea.id), class: "cart-add-button" %>
+        <%= button_to "#{t('add_to_cart')} - #{sprintf('%.2f', @tea.price)} CHF", line_items_path(:product_id => @tea.id), class: "cart-add-button" %>
       </div>
     </div>
   </div>

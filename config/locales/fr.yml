@@ -83,6 +83,7 @@ fr:
   tea_details: "Détails du thé"
   preparation: "Préparation"
   weight: "Poids"
+  tea_stock: "En stock? Le thé ne sera pas affiché s'il n'est plus en stock"
 
   # admin links
   my_products: "Produits"
@@ -114,10 +115,6 @@ fr:
   # footer
   online_store: "La boutique en ligne"
   privacy_policy: "Politique de confidentialité"
-
-  # admin pages
-  tea_stock: "En stock? Le thé ne sera pas affiché s'il n'est plus en stock"
-
 
   # terms and conditions
   terms_and_conditions: "Conditions générales de vente"
@@ -152,3 +149,10 @@ fr:
   # privacy policy:
   data_protection: "Protection des données: sécurité et protection sur Internet"
   data_protection_text: "Les questions de protection et de sécurité des données suscitent fréquemment incertitudes et interrogations chez les utilisateurs de services en ligne. Dans le souci d'apaiser ces incertitudes par une transparence maximale, nous exposons ici nos pratiques en matière de collecte de données lors de l'utilisation de notre site : volume, but, mode d'utilisation et transmission éventuelle. Nous vous indiquons également vos droits s'agissant de l'utilisation de vos données."
+
+
+  devise:
+    failure:
+      invalid: "Email ou mot de passe incorrect. Veuillez réessayer."
+      not_found_in_database: "Courriel ou mot de passe non valide."
+      unauthenticated: "You need to sign in before continuing."

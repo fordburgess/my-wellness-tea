@@ -51,6 +51,7 @@ de:
   tea_details: "Tee Details"
   preparation: "Vorbereitung"
   weight: "Gewicht"
+  tea_stock: "Vorrätig? Der Tee wird nicht angezeigt, wenn er nicht vorrätig ist."
 
   # admin links
   my_products: "Produkte"
@@ -77,9 +78,6 @@ de:
   click_here: "Hier klicken"
   our_promotions: "Aktuelle Angebote"
   see_our_teas: "Unsere Tees entdecken"
-
-  # admin page
-  tea_stock: "Vorrätig? Der Tee wird nicht angezeigt, wenn er nicht vorrätig ist."
 
   # footer
   online_store: "Der Online-Shop"
@@ -117,3 +115,10 @@ de:
   # privacy policy
   data_protection: "Datenschutz: Sicherheit und Schutz im Internet"
   data_protection_text: "Fragen zum Datenschutz und zur Sicherheit von Daten rufen bei Nutzern von Online-Diensten häufig Unsicherheiten und Fragen hervor. Um diese Unsicherheiten durch maximale Transparenz zu lindern, erläutern wir hier unsere Praktiken bezüglich der Datenerhebung bei der Nutzung unserer Website: Umfang, Zweck, Verwendung und mögliche Weitergabe. Wir informieren Sie auch über Ihre Rechte im Hinblick auf die Nutzung Ihrer Daten."
+
+
+  devise:
+    failure:
+      invalid: "Ungültige E-Mail oder ungültiges Passwort. Bitte versuchen Sie es erneut."
+      not_found_in_database: "Ungültige E-Mail oder ungültiges Passwort."
+      unauthenticated: "You need to sign in before continuing."

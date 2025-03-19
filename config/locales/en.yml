@@ -49,6 +49,7 @@ en:
   submit: "Submit"
   preparation: "Preparation"
   weight: "Weight"
+  tea_stock: "In stock? Tea will not be shown if out of stock."
 
   # admin links
   my_products: "Products"
@@ -80,9 +81,14 @@ en:
   our_promotions: "Special Deals"
   see_our_teas: "Explore Our Teas"
 
-  # admin page
-  tea_stock: "In stock? Tea will not be shown if out of stock."
-
   # footer
   online_store: "Online Store"
   privacy_policy: "Privacy Policy"
+
+
+  # devise
+  devise:
+    failure:
+      invalid: "Invalid email or password. Please try again."
+      not_found_in_database: "Invalid email or password."
+      unauthenticated: "You need to sign in before continuing."

@@ -51,6 +51,7 @@ it:
   submit: "Invia"
   preparation: "Preparazione"
   weight: "Peso"
+  tea_stock: "In stock? Il tè non verrà visualizzato se non è disponibile."
 
   # admin links
   my_products: "Prodotti"
@@ -70,9 +71,6 @@ it:
   our_promotions: "Offerte imperdibili"
   see_our_teas: "Scopri i nostri tè"
 
-  # admin page
-  tea_stock: "In stock? Il tè non verrà visualizzato se non è disponibile."
-
   # footer
   online_store: "Il negozio online"
   privacy_policy: "Politica sulla privacy"
@@ -84,3 +82,10 @@ it:
   winter_title: "Piante per i Tè Invernali: Calore e Protezione contro il Freddo"
   common_name: "Nome comune"
   latin_name: "Nome latino"
+
+  # devise
+  devise:
+    failure:
+      invalid: "Email o password non valide. Si prega di riprovare."
+      not_found_in_database: "Email o password non valide."
+      unauthenticated: "You need to sign in before continuing."

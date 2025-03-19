@@ -96,3 +96,7 @@ input[type="submit"] {
   color: #54aab8;
   text-decoration: underline;
 }
+
+#active-lang {
+  color: #54aab8;
+}

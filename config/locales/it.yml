@@ -29,8 +29,12 @@ it:
   infusion_time: "Tempo di infusione"
   dosage: "Dosaggio"
   time_of_day: "Momento della giornata"
+  cart: "Carrello"
   empty_cart: "Il carrello è vuoto"
   review_your_order: "Riepilogo del tuo ordine"
+  order_total: "Totale della spesa"
+  proceed_to_checkout: "Procedi al pagamento"
+  shipping_checkout: "Spese di spedizione calcolate al momento del pagamento"
   contact_us: "Contattaci"
   our_brand: "Il nostro marchio"
   order_confirmation: "Conferma dell'ordine"
@@ -41,6 +45,8 @@ it:
   our_plants: "Le Piante Dietro le Nostre Tisane"
   go_admin: "Vai alla pagina admin"
   add_to_cart: "Aggiungi al carrello"
+  checkout: "Vai al pagamento"
+  remove_entirely: "Elimina"
 
   # form labels
   title: "Titolo"

@@ -2,7 +2,7 @@
   <h1 class="text-3xl font-light mb-6"><%= t('review_your_order') %></h1>
   <div>
     <div class="w-full flex justify-between mb-6 pb-4" style="border-bottom: solid 0.5px rgba(84, 170, 184, 0.5)">
-      <h3 class="text-xl">Order Total: </h3>
+      <h3 class="text-xl"><%= t('order_total') %>: </h3>
       <h3 class="text-xl"><strong><%= sprintf('%.2f', @cart_total) %> CHF</strong></h3>
     </div>
     <div class="mb-12">
@@ -15,7 +15,7 @@
               <p><%= sprintf('%.2f', line_item.product.price) %> CHF</p>
             </div>
             <div class="flex items-center">
-              <%= button_to "Supprimer", line_item_path(line_item.id), class: "cart-item-delete", method: :delete %>
+              <%= button_to t('remove_entirely'), line_item_path(line_item.id), class: "cart-item-delete", method: :delete %>
               <%= link_to image_tag("minus-icon.png"), line_item_reduce_path(:id => line_item), class: "increment-icons ml-6 mr-2", data: { turbo_method: :post } %>
               <p class="mr-2" style="font-size: 1.25rem" id="line_item_<%= line_item.id %>_quantity"><%= line_item.quantity %></p>
               <%= link_to image_tag("plus-icon.png"), line_item_add_path(:id => line_item), class: "increment-icons", data: { turbo_method: :post } %>
@@ -23,8 +23,8 @@
           </div>
         </div>
       <% end %>
-      <p>*Shipping to be calculated at checkout</p>
+      <p>*<%= t('shipping_checkout') %></p>
     </div>
-    <%= link_to "Finaliser la commande", new_order_path, class: "checkout-button" %>
+    <%= link_to t('proceed_to_checkout'), new_order_path, class: "checkout-button" %>
   </div>
 </div>

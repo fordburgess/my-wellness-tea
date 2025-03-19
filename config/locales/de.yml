@@ -29,8 +29,12 @@ de:
   infusion_time: "Ziehzeit"
   dosage: "Dosierung"
   time_of_day: "Tageszeit"
+  cart: "Warenkorb"
   empty_cart: "Warenkorb ist leer"
   review_your_order: "Übersicht Ihrer Bestellung"
+  order_total: "Bestellsumme"
+  proceed_to_checkout: "Weiter zur Kasse"
+  shipping_checkout: "Versandkosten werden an der Kasse berechnet"
   contact_us: "Kontaktieren Sie uns"
   legal: "Impressum"
   our_brand: "Unsere Marke"
@@ -42,6 +46,8 @@ de:
   our_plants: "Die Geheimnisse unserer Teepflanzen"
   go_admin: "Zur Admin-Seite"
   add_to_cart: "zum Warenkorb hinzufügen"
+  checkout: "Zur Kasse"
+  remove_entirely: "Löschen"
 
   # form labels
   title: "Titel"

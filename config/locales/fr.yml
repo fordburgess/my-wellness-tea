@@ -60,8 +60,12 @@ fr:
   infusion_time: "Temps d'infusion"
   dosage: "Dosage"
   time_of_day: "Moment de journée"
+  cart: "Panier"
   empty_cart: "Le panier est vide"
   review_your_order: "Récapitulatif de votre Commande"
+  order_total: "Total de la commande"
+  proceed_to_checkout: "Finaliser la commande"
+  shipping_checkout: "Frais de livraison calculés lors du paiement"
   contact_us: "Nous contacter"
   legal: "Mentions légales"
   our_brand: "Notre marque"
@@ -73,6 +77,8 @@ fr:
   our_plants: "Les Plantes qui Composent Nos Thés"
   go_admin: "Accéder à l'administration"
   add_to_cart: "Ajouter au Panier"
+  checkout: "Paiement"
+  remove_entirely: "Supprimer"
 
   # form labels
   title: "Titre"

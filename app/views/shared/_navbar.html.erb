@@ -1,5 +1,4 @@
 <script src="/javascript/drawer_functionality.js"></script>
-<script src="/javascript/navbar_functionality.js"></script>
 <div class="navbar-container">
   <div class="w-full flex justify-between">
     <div class="">
@@ -11,31 +10,13 @@
       <%= link_to t('plants'), plants_path, class: (request.path.starts_with?(plants_path) ? 'active-nav-item' : '') %>
       <%= link_to t('contact'), contact_path, class: (request.path == contact_path ? 'active-nav-item' : '') %>
     </div>
-    <div class="helpers flex justify-between justify-around items-center">
+    <div class="helpers flex justify-between justify-around items-center" style="width: 23%">
       <div class="relative inline-block text-left" id="lang-menu-container">
-        <div>
-          <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" id="lang-menu-button" aria-expanded="true" aria-haspopup="true">
-            <%
-              lang_hash = {
-                'fr' => 'Français',
-                'de' => 'Deutsch',
-                'it' => 'Italiano',
-                'en' => 'English'
-              }
-            %>
-            <%= lang_hash[I18n.locale.to_s] %>
-            <svg class="-mr-1 size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-              <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-            </svg>
-          </button>
-        </div>
-        <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg ring-1 ring-black/5 focus:outline-none" id="lang-menu-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-          <div class="py-1" role="none">
-            <%= link_to "Français", { :locale=> 'fr' }, class: "lang-menu-item block px-4 py-2 text-sm text-gray-700", role: "menu-item" %>
-            <%= link_to "Deutsch", { :locale => 'de' }, class: "lang-menu-item block px-4 py-2 text-sm text-gray-700", role: "menu-item" %>
-            <%= link_to "Italiano", { :locale => 'it' }, class: "lang-menu-item block px-4 py-2 text-sm text-gray-700", role: "menu-item" %>
-            <%= link_to "English", { :locale=> 'en' }, class: "lang-menu-item block px-4 py-2 text-sm text-gray-700", role: "menu-item" %>
-          </div>
+        <div class="flex">
+          <%= link_to "FR", { :locale=> 'fr' }, class: "lang-menu-item block text-sm text-gray-700 mr-6", id: (request.path.include?("fr") ? 'active-lang' : '' ), role: "menu-item" %>
+          <%= link_to "DE", { :locale => 'de' }, class: "lang-menu-item block text-sm text-gray-700 mr-6", id: (request.path.include?("de") ? 'active-lang' : '' ), role: "menu-item" %>
+          <%= link_to "IT", { :locale => 'it' }, class: "lang-menu-item block text-sm text-gray-700 mr-6", id: (request.path.include?("it") ? 'active-lang' : '' ), role: "menu-item" %>
+          <%= link_to "EN", { :locale=> 'en' }, class: "lang-menu-item block text-sm text-gray-700", id: (request.path.include?("en") ? 'active-lang' : '' ), role: "menu-item" %>
         </div>
       </div>
       <div class="helper-image">

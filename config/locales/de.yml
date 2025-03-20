@@ -48,6 +48,7 @@ de:
   add_to_cart: "zum Warenkorb hinzufügen"
   checkout: "Zur Kasse"
   remove_entirely: "Löschen"
+  remember_me: "Angemeldet bleiben"
 
   # checkout
   shipping_details: "Versanddetails"

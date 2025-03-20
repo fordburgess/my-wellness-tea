@@ -79,6 +79,7 @@ fr:
   add_to_cart: "Ajouter au Panier"
   checkout: "Paiement"
   remove_entirely: "Supprimer"
+  remember_me: "Se souvenir de moi"
 
   # checkout
   shipping_details: "Détails de livraison"

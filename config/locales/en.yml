@@ -48,6 +48,7 @@ en:
   add_to_cart: "Add to Cart"
   checkout: "Checkout"
   remove_entirely: "Remove"
+  remember_me: "Remember me"
 
   # checkout
   shipping_details: "Shipping Details"

@@ -49,6 +49,19 @@ en:
   checkout: "Checkout"
   remove_entirely: "Remove"
 
+  # checkout
+  shipping_details: "Shipping Details"
+  required_field: "Indicates a required field"
+  first_name: "First Name"
+  last_name: "Last Name"
+  address_line_1: "Address Line 1"
+  address_line_2: "Address Line 2"
+  city: "City"
+  country: "Country"
+  post_code: "Post Code"
+  payment_info: "Payment Info"
+  free_shipping: "Free Shipping"
+
   # form labels
   title: "Title"
   image: "Image"

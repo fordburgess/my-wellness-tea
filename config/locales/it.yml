@@ -48,6 +48,19 @@ it:
   checkout: "Vai al pagamento"
   remove_entirely: "Elimina"
 
+  # checkout
+  shipping_details: "Dettagli di spedizione"
+  required_field: "ndica un campo obbligatorio"
+  first_name: "Nome"
+  last_name: "Cognome"
+  address_line_1: "Indirizzo (riga 1)"
+  address_line_2: "Indirizzo (riga 2)"
+  city: "Città"
+  country: "Paese"
+  post_code: "Codice postale"
+  payment_info: "Informazioni di pagamento"
+  free_shipping: "Spedizione gratuita"
+
   # form labels
   title: "Titolo"
   price: "Prezzo"

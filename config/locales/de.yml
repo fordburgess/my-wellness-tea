@@ -49,6 +49,19 @@ de:
   checkout: "Zur Kasse"
   remove_entirely: "Löschen"
 
+  # checkout
+  shipping_details: "Versanddetails"
+  required_field: "Kennzeichnet ein Pflichtfeld"
+  first_name: "Vorname"
+  last_name: "Nachname"
+  address_line_1: "Adresse (Zeile 1)"
+  address_line_2: "Adresse (Zeile 2)"
+  city: "Stadt"
+  country: "Land"
+  post_code: "Postleitzahl"
+  payment_info: "Zahlungsinformationen"
+  free_shipping: "Kostenloser Versand"
+
   # form labels
   title: "Titel"
   ingredients: "Inhaltsstoffe"

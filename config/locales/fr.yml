@@ -80,6 +80,18 @@ fr:
   checkout: "Paiement"
   remove_entirely: "Supprimer"
 
+  # checkout
+  shipping_details: "Détails de livraison"
+  required_field: "Indique un champ obligatoire"
+  first_name: "Prénom"
+  last_name: "Nom de famille"
+  address_line_1: "Adresse (ligne 1)"
+  city: "Localité"
+  country: "Pays"
+  post_code: "Code Postal"
+  payment_info: "Informations de paiement"
+  free_shipping: "Livraison gratuite"
+
   # form labels
   title: "Titre"
   price: "Prix"

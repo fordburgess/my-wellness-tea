@@ -12,13 +12,17 @@
   padding: 0 10px;
 }
 
+#desktop-logo {
+  display: none;
+}
+
 .desktop-links {
   display: none;
 }
 
 .navbar-logo img {
-  max-height: 40px;
-  max-width: 120px;
+  max-height: 50px;
+  max-width: 130px;
 }
 
 .helpers {
@@ -101,6 +105,14 @@
   .navbar-logo img {
     max-height: 60px;
     max-width: 200px;
+  }
+
+  #desktop-logo {
+    display: block;
+  }
+
+  #mobile-logo {
+    display: none;
   }
 
   .desktop-links {

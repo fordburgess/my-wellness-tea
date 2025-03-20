@@ -47,6 +47,7 @@ it:
   add_to_cart: "Aggiungi al carrello"
   checkout: "Vai al pagamento"
   remove_entirely: "Elimina"
+  remember_me: "Resta connesso"
 
   # checkout
   shipping_details: "Dettagli di spedizione"

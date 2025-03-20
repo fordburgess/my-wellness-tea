@@ -15,7 +15,7 @@
       <% if devise_mapping.rememberable? %>
         <div class="field mb-8 flex items-center">
           <%= f.check_box :remember_me, class: 'mr-0.5' %>
-          <%= f.label :remember_me, style: 'font-weight: 200' %>
+          <%= f.label t('remember_me'), style: 'font-weight: 200' %>
         </div>
       <% end %>
 

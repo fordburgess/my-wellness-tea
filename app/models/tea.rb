@@ -4,6 +4,6 @@ class Tea < Product
 
   validates :title, :price, :stock, presence: true
   validates :price, numericality: { greater_than: 0 }
-  validates :images, presence: true
+  validates :image, presence: true
   validates_associated :tea_detail
 end

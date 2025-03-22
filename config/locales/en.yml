@@ -111,4 +111,4 @@ en:
     failure:
       invalid: "Invalid email or password. Please try again."
       not_found_in_database: "Invalid email or password."
-      unauthenticated: "You need to sign in before continuing."
+      unauthenticated: ""

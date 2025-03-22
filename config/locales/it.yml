@@ -108,4 +108,4 @@ it:
     failure:
       invalid: "Email o password non valide. Si prega di riprovare."
       not_found_in_database: "Email o password non valide."
-      unauthenticated: "You need to sign in before continuing."
+      unauthenticated: ""

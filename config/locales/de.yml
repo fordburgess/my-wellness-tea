@@ -141,4 +141,4 @@ de:
     failure:
       invalid: "Ungültige E-Mail oder ungültiges Passwort. Bitte versuchen Sie es erneut."
       not_found_in_database: "Ungültige E-Mail oder ungültiges Passwort."
-      unauthenticated: "You need to sign in before continuing."
+      unauthenticated: ""
